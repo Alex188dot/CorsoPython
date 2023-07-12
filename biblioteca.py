@@ -27,12 +27,12 @@ class Biblioteca:
         libro.disponibile = False
 
     def printLista(self):
-        print(self.lista)
+        for l in self.lista:
+            print(l)
 
 
 
 biblio1 = Biblioteca("lista1")
-
 
 
 inp = input("Benvenuto nel gestionale della Biblioteca, premere invio per continuare")
@@ -92,3 +92,6 @@ while inp != "7":
         break
     else:
         print("Scelta non valida")
+
+
+biblio1.printLista()
