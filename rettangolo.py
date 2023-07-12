@@ -53,8 +53,8 @@ while inp != "6":
     """
     )
     if inp == "1":
-        base = int(input("Inserisci la base del triangolo: "))
-        altezza = int(input("Inserisci l'altezza del triangolo: "))
+        base = int(input("Inserisci la base del rettangolo: "))
+        altezza = int(input("Inserisci l'altezza del rettangolo: "))
         lista.append(Rettangolo(base, altezza))
     elif inp == "2":
         sum = 0
