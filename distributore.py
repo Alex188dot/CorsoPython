@@ -1,3 +1,6 @@
+import pickle
+import time
+
 """
 Creare un programma distributore. Ogni distributore ha associato un oggetto di tipo conto, con proprietà saldo, che rappresenta il saldo del conto, e id che rappresenta l'id del conto. L'oggetto distributore può invece: erogare caffè, erogare the, erogare acqua, erogare cioccolata a prezzi variabili, versare dei soldi nel conto. Il programma nel menu utente permette anche di creare un nuovo id con un nuovo saldo
 """
@@ -20,20 +23,59 @@ class Distributore:
             if el.id == id:
                 if el.saldo >= 1:
                     el.saldo -= 1
-                    print(f"Ecco il suo caffè! Il suo saldo rimanente è: {el.saldo}. Buona giornata")
+                    print("Erogazione in corso...")
+                    time.sleep(3)
+                    print(f"Ecco il suo caffè! Il suo saldo rimanente è: {el.saldo}€. Buona giornata")
                 else:
                     print("Saldo non sufficiente")
     def erogazioneThe(self, id):
-        id.saldo -= 1.8
+        for el in self.lista:
+            if el.id == id:
+                if el.saldo >= 1.8:
+                    el.saldo -= 1.8
+                    print("Erogazione in corso...")
+                    time.sleep(3)
+                    print(f"Ecco il suo thè! Il suo saldo rimanente è: {el.saldo}€. Buona giornata")
+                else:
+                    print("Saldo non sufficiente")
 
     def erogazioneAcqua(self, id):
-        id.saldo -= 1.5
+        for el in self.lista:
+            if el.id == id:
+                if el.saldo >= 1.5:
+                    el.saldo -= 1.5
+                    print("Erogazione in corso...")
+                    time.sleep(1)
+                    print(f"Ecco la sua acqua! Il suo saldo rimanente è: {el.saldo}€. Buona giornata")
+                else:
+                    print("Saldo non sufficiente")
 
     def erogazioneCioccolata(self, id):
-        id.saldo -= 2.5
+        for el in self.lista:
+            if el.id == id:
+                if el.saldo >= 2.5:
+                    el.saldo -= 2.5
+                    print("Erogazione in corso...")
+                    time.sleep(1)
+                    print(f"Ecco la sua cioccolata! Il suo saldo rimanente è: {el.saldo}€. Buona giornata")
+                else:
+                    print("Saldo non sufficiente")
+
+    def creaNuovaChiavetta(self, saldo, id):
+        self.lista.append(Conto(saldo, id))
+        print("Creazione in corso...")
+        time.sleep(0.5)
+        print("Chiavetta creata con successo!\nBuona giornata! ")
+
 
     def ricaricaChiavetta(self, importo, id):
-        id.saldo += importo
+        for el in self.lista:
+            if el.id == id:
+                el.saldo += importo
+                print("Ricarica in corso...")
+                time.sleep(0.5)
+                print(f"Ricarica effettuata con successo!Il suo saldo è: {el.saldo}€")
+
 
 
 
@@ -44,22 +86,56 @@ c2 = Conto(10, 2)
 lista_conti = [c1, c2]
 d1 = Distributore(lista_conti)
 
+
 inp = input("Benvenuto")
-id = int(input("Prego inserisca l'ID della sua chiavetta: "))
+id = int(input("Prego inserisca l'ID della sua chiavetta, se non ne possiede una inserisca 0: "))
+
+while id != 0:
+    for el in d1.lista:
+        if el.id == id:
+            print("Chiavetta riconosciuta")
+            continue
+    print("Chiavetta non esistente")
+    exit()
+
+
 while inp != "7":
     inp = input(
     """
     Inserisca il numero corrispondente all'operazione che vuole effettuare:
-    1) Caffè
-    2) Thè
-    3) Acqua
-    4) Cioccolata
+    1) Caffè (1€)
+    2) Thè (1.8€)
+    3) Acqua (1.5€)
+    4) Cioccolata (2.5€)
     5) Crea nuova utenza
     6) Ricarica chiavetta
     7) Esci
     """
     )
-    if inp == "1":
+    if inp == "0":
+        continue
+    elif inp == "1":
         d1.erogazioneCaffe(id)
+    elif inp == "2":
+        d1.erogazioneThe(id)
+    elif inp == "3":
+        d1.erogazioneAcqua(id)
+    elif inp == "4":
+        d1.erogazioneCioccolata(id)
+    elif inp == "5":
+        saldo = int(input("Inserisca il denaro nella sua nuova chiavetta: "))
+        id = (len(d1.lista) + 1)
+        print("Questo è l'ID della sua nuova chiavetta:", id)
+        d1.creaNuovaChiavetta(saldo, id)
+        break
+    elif inp == "6":
+        importo = int(input("Inserisca il denaro che vuole ricaricare nella sua chiavetta: "))
+        d1.ricaricaChiavetta(importo, id)
+    elif inp == "7":
+        break
+    else:
+        print("Scelta non valida, per favore scelga una opzioni qui sotto: ")
+
+
 
 
