@@ -127,7 +127,7 @@ while inp != "5":
         for c in b1.lista:
             if c.id == cliente.id:
                 print("Questo è il suo saldo:", c.saldo)
-                print(f"Questa la lista degli ultimi movimenti: {c.movimenti}")
+                print(f"Questa è la lista degli ultimi movimenti: {c.movimenti}")
     if inp == "5":
         f = open("conto.pkl", "wb")
         pickle.dump(b1.lista, f)
