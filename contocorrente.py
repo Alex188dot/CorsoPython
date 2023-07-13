@@ -12,6 +12,7 @@ class Contocorrente:
         self.id = id
         self.saldo = saldo
 
+
     def prelevare(self, importo):
         self.saldo -= importo
 
@@ -78,8 +79,7 @@ while inp != "5":
             if c.id == cliente.id:
                 if importo < c.saldo:
                     c.prelevare(importo)
-                    print("Importo prelevato correttamente")
-                    print(c.saldo)
+                    print("Importo prelevato correttamente, il suo saldo è:", c.saldo)
                     f = open("conto.pkl", "wb")
                     pickle.dump(b1.lista, f)
                     f.close()
@@ -111,7 +111,7 @@ while inp != "5":
                             f = open("conto.pkl", "wb")
                             pickle.dump(b1.lista, f)
                             f.close()
-                    print("Bonifico effettuato con successo, questo è il suo nuovo saldo:", c.saldo)
+                            print("Bonifico effettuato con successo, questo è il suo nuovo saldo:", c.saldo)
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
     if inp == "4":
