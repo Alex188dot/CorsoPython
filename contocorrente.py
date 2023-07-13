@@ -11,6 +11,7 @@ class Contocorrente:
         self.username = username
         self.id = id
         self.saldo = saldo
+        self.movimenti = []
 
 
     def prelevare(self, importo):
@@ -80,6 +81,7 @@ while inp != "5":
                 if importo < c.saldo:
                     c.prelevare(importo)
                     print("Importo prelevato correttamente, il suo saldo è:", c.saldo)
+                    c.movimenti.append(f"Prelievo: -{importo}")
                     f = open("conto.pkl", "wb")
                     pickle.dump(b1.lista, f)
                     f.close()
@@ -95,6 +97,7 @@ while inp != "5":
             if c.id == cliente.id:
                 c.versare(importo)
                 print("Operazione effettuata con successo, questo è il suo nuovo saldo:", c.saldo)
+                c.movimenti.append(f"Versamento: +{importo}")
                 f = open("conto.pkl", "wb")
                 pickle.dump(b1.lista, f)
                 f.close()
@@ -106,8 +109,10 @@ while inp != "5":
                     id = int(input("Inserire l'ID dell'utente a cui inviare il bonifico: "))
                     for i in b1.lista:
                         if i.id == id:
-                            i.versare(importo)
                             c.bonifico(importo)
+                            c.movimenti.append(f"Bonifico in uscita: -{importo}")
+                            i.versare(importo)
+                            i.movimenti.append(f"Bonifico in entrata: +{importo}")
                             f = open("conto.pkl", "wb")
                             pickle.dump(b1.lista, f)
                             f.close()
@@ -122,6 +127,7 @@ while inp != "5":
         for c in b1.lista:
             if c.id == cliente.id:
                 print("Questo è il suo saldo:", c.saldo)
+                print(f"Questa la lista degli ultimi movimenti: {c.movimenti}")
     if inp == "5":
         f = open("conto.pkl", "wb")
         pickle.dump(b1.lista, f)
