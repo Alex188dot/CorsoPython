@@ -32,7 +32,6 @@ class Contocorrente:
 
 class Bancomat:
     def __init__(self, lista):
-        lista = []
         self.lista = lista
 
     def __str__(self):
@@ -43,7 +42,8 @@ c1 = Contocorrente("Mario", 100, 2000)
 # print(c1)
 c2 = Contocorrente("Luigi", 101, 2000)
 # print(c2)
-b1 = Bancomat("lista1")
+lista = []
+b1 = Bancomat(lista)
 b1.lista.append(c1)
 b1.lista.append(c2)
 
@@ -87,7 +87,7 @@ while inp != "5":
                     f.close()
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
-    if inp == "2":
+    elif inp == "2":
         f = open("conto.pkl", "rb")
         unpickler = pickle.Unpickler(f)
         b1.lista = unpickler.load()
@@ -101,7 +101,7 @@ while inp != "5":
                 f = open("conto.pkl", "wb")
                 pickle.dump(b1.lista, f)
                 f.close()
-    if inp == "3":
+    elif inp == "3":
         importo = int(input("Inserire l'importo del bonifico: "))
         for c in b1.lista:
             if c.id == cliente.id:
@@ -119,7 +119,7 @@ while inp != "5":
                             print("Bonifico effettuato con successo, questo è il suo nuovo saldo:", c.saldo)
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
-    if inp == "4":
+    elif inp == "4":
         f = open("conto.pkl", "rb")
         unpickler = pickle.Unpickler(f)
         b1.lista = unpickler.load()
@@ -128,9 +128,11 @@ while inp != "5":
             if c.id == cliente.id:
                 print("Questo è il suo saldo:", c.saldo)
                 print(f"Questa è la lista degli ultimi movimenti: {c.movimenti}")
-    if inp == "5":
+    elif inp == "5":
         f = open("conto.pkl", "wb")
         pickle.dump(b1.lista, f)
         f.close()
         print("Logout effettuato con successo")
         break
+    else:
+        print("Scelta non valida, inserisca un numero tra quelli qui sotto: ")
