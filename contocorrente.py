@@ -57,8 +57,6 @@ while accesso == False:
             accesso = True
             cliente = c
 
-
-
 while inp != "5":
     inp = input(
         """
@@ -72,12 +70,21 @@ while inp != "5":
     """)
     if inp == "1":
         importo = int(input("Inserire l'importo da prelevare: "))
-        if importo < cliente.saldo:
-            cliente.prelevare(importo)
-            print("Importo prelevato correttamente")
-            print(cliente.saldo)
-        else:
-            print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
+        f = open("conto.pkl", "rb")
+        unpickler = pickle.Unpickler(f)
+        b1.lista = unpickler.load()
+        f.close()
+        for c in b1.lista:
+            if c.id == cliente.id:
+                if importo < c.saldo:
+                    c.prelevare(importo)
+                    print("Importo prelevato correttamente")
+                    print(c.saldo)
+                    f = open("conto.pkl", "wb")
+                    pickle.dump(b1.lista, f)
+                    f.close()
+                else:
+                    print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
     if inp == "2":
         f = open("conto.pkl", "rb")
         unpickler = pickle.Unpickler(f)
@@ -88,6 +95,9 @@ while inp != "5":
             if c.id == cliente.id:
                 c.versare(importo)
                 print("Operazione effettuata con successo, questo è il suo nuovo saldo:", c.saldo)
+                f = open("conto.pkl", "wb")
+                pickle.dump(b1.lista, f)
+                f.close()
     if inp == "3":
         importo = int(input("Inserire l'importo del bonifico: "))
         for c in b1.lista:
@@ -98,6 +108,9 @@ while inp != "5":
                         if i.id == id:
                             i.versare(importo)
                             c.bonifico(importo)
+                            f = open("conto.pkl", "wb")
+                            pickle.dump(b1.lista, f)
+                            f.close()
                     print("Bonifico effettuato con successo, questo è il suo nuovo saldo:", c.saldo)
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
