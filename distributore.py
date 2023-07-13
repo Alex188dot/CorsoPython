@@ -66,6 +66,9 @@ class Distributore:
         print("Creazione in corso...")
         time.sleep(0.5)
         print("Chiavetta creata con successo!\nBuona giornata! ")
+        f = open("distributore.pkl", "wb")
+        pickle.dump(lista_chiavette, f)
+        f.close()
 
 
     def ricaricaChiavetta(self, importo, id):
@@ -76,28 +79,31 @@ class Distributore:
                 time.sleep(0.5)
                 print(f"Ricarica effettuata con successo!Il suo saldo è: {el.saldo}€")
 
-
-
-
-
+"""
 c1 = Conto(10, 1)
 c2 = Conto(10, 2)
 
-lista_conti = [c1, c2]
-d1 = Distributore(lista_conti)
+lista_chiavette = [c1, c2]
+d1 = Distributore(lista_chiavette)
+"""
+
+f = open("distributore.pkl", "rb")
+unpickler = pickle.Unpickler(f)
+lista_chiavette = unpickler.load()
+d1 = Distributore(lista_chiavette)
 
 
-inp = input("Benvenuto")
-id = int(input("Prego inserisca l'ID della sua chiavetta, se non ne possiede una inserisca 0: "))
-
-while id != 0:
+accesso = False
+while accesso != True:
+    inp = input("Benvenuto")
+    id = int(input("Prego inserisca l'ID della sua chiavetta, se non ne possiede una inserisca 0: "))
+    if id == 0:
+        accesso = True
+        break
     for el in d1.lista:
         if el.id == id:
             print("Chiavetta riconosciuta")
-            continue
-    print("Chiavetta non esistente")
-    exit()
-
+            accesso = True
 
 while inp != "7":
     inp = input(
@@ -132,6 +138,10 @@ while inp != "7":
         importo = int(input("Inserisca il denaro che vuole ricaricare nella sua chiavetta: "))
         d1.ricaricaChiavetta(importo, id)
     elif inp == "7":
+        print("Arrivederci e buona giornata")
+        f = open("distributore.pkl", "wb")
+        pickle.dump(lista_chiavette, f)
+        f.close()
         break
     else:
         print("Scelta non valida, per favore scelga una opzioni qui sotto: ")
