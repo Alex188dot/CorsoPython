@@ -18,9 +18,9 @@ class Mach:
             if i.id == id:
                 if i.saldo > 2:
                     i.saldo -= 2
-                    stringa = "erogazione in corso"
+                    stringa = "Erogazione in corso"
                 else:
-                    stringa = "credito insufficiente"
+                    stringa = "Credito insufficiente"
                 return [stringa, i.saldo]
 
     def erogaThe(self, id):
@@ -28,9 +28,9 @@ class Mach:
             if i.id == id:
                 if i.saldo > 3:
                     i.saldo -= 3
-                    stringa = "erogazione in corso"
+                    stringa = "Erogazione in corso"
                 else:
-                    stringa = "credito insufficiente"
+                    stringa = "Credito insufficiente"
                 return [stringa, i.saldo]
 
     def erogaCiok(self, id):
@@ -38,9 +38,9 @@ class Mach:
             if i.id == id:
                 if i.saldo > 3.50:
                     i.saldo -= 3.50
-                    stringa = "erogazione in corso"
+                    stringa = "Erogazione in corso"
                 else:
-                    stringa = "credito insufficiente"
+                    stringa = "Credito insufficiente"
                 return [stringa, i.saldo]
 
     def erogaW(self, id):
@@ -48,11 +48,17 @@ class Mach:
             if i.id == id:
                 if i.saldo > 1.50:
                     i.saldo -= 1.50
-                    stringa = "erogazione in corso"
+                    stringa = "Erogazione in corso"
                 else:
-                    stringa = "credito insufficiente"
+                    stringa = "Credito insufficiente"
                 return [stringa, i.saldo]
 
+    def addMoney(self, id, importo):
+        for i in self.conti:
+            if i.id == id:
+                    i.saldo += importo
+                    stringa = "Ricarica effettuata con successo!"
+                    return [stringa, i.saldo]
 
 c1 = Conto("01", 20)
 c2 = Conto("02", 10)
@@ -155,6 +161,37 @@ def clicked():
                 show_alert(stringa)
                 show_alert(saldo)
 
+
+            def topUp():
+                new_window2 = tk.Toplevel(master)
+                new_window2.title("Nuova Finestra importo")
+                centerWindow(new_window2)
+
+                # adding a label to the root window
+                lblImporto = Label(new_window2, text="Inserire l'importo da ricaricare: ")
+                lbl3Ricevuta = Label(new_window2)
+
+                lblImporto.grid()
+                lbl3Ricevuta.grid()
+
+                # adding Entry Field
+                txtM = Entry(new_window2, width=10)
+                txtM.grid(column=1, row=0)
+                lbl3.grid(column=1, row=2)
+
+                def money():
+                    topUp1 = m1.addMoney(id1, int(txtM.get()))
+                    stringa = f"{topUp1[0]}"
+                    saldo = f"Saldo rimanente: {topUp1[1]}€"
+                    show_alert(stringa)
+                    show_alert(saldo)
+
+                btn6 = Button(new_window2, text="Done",
+                          fg="blue", command=money)
+                btn6.place(relx=0.5, rely=0.5, anchor=CENTER)
+
+                centerWindow(new_window2)
+
             btn1 = Button(new_window, text="Coffee ☕️",
                           fg="blue", command=coffee)
             btn2 = Button(new_window, text="Tea 🫖",
@@ -163,10 +200,13 @@ def clicked():
                           fg="blue", command=chocolate)
             btn4 = Button(new_window, text="Water 🚰",
                           fg="blue", command=water)
-            btn1.place(relx=0.5, rely=0.2, anchor=CENTER)
-            btn2.place(relx=0.5, rely=0.4, anchor=CENTER)
-            btn3.place(relx=0.5, rely=0.6, anchor=CENTER)
-            btn4.place(relx=0.5, rely=0.8, anchor=CENTER)
+            btn5 = Button(new_window, text="Top up 💰",
+                          fg="blue", command=topUp)
+            btn1.place(relx=0.5, rely=0.15, anchor=CENTER)
+            btn2.place(relx=0.5, rely=0.30, anchor=CENTER)
+            btn3.place(relx=0.5, rely=0.45, anchor=CENTER)
+            btn4.place(relx=0.5, rely=0.6, anchor=CENTER)
+            btn5.place(relx=0.5, rely=0.75, anchor=CENTER)
 
             new_window.mainloop()
 
