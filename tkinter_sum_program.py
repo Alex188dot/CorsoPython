@@ -4,24 +4,29 @@ La somma viene restituita alla pressione del pulsante
 """
 
 from tkinter import *
+from tkinter import messagebox
+import tkinter as tk
 
 master = Tk()
 
 # root window title and dimension
 master.title("Sum Calculator")
-# Set geometry(widthxheight)
 
-width = 600 # Width
-height = 300 # Height
+# Start code to center the window
+
+width = 600  # Width
+height = 300  # Height
 
 screen_width = master.winfo_screenwidth()  # Width of the screen
-screen_height = master.winfo_screenheight() # Height of the screen
+screen_height = master.winfo_screenheight()  # Height of the screen
 
 # Calculate Starting X and Y coordinates for Window
-x = (screen_width/2) - (width/2)
-y = (screen_height/2) - (height/2)
+x = (screen_width / 2) - (width / 2)
+y = (screen_height / 2) - (height / 2)
 
 master.geometry('%dx%d+%d+%d' % (width, height, x, y))
+
+# End code to center the window
 
 
 # adding a label to the root window
@@ -41,12 +46,21 @@ txt2.grid(column=1, row=1)
 lbl3.grid(column=1, row=2)
 
 
-# function to display user text when
+# function to display total when
 # button is clicked
-def clicked():
-    res = f"Total: {int(txt1.get()) + int(txt2.get())}"
-    lbl3.configure(text=res)
 
+def show_alert(x):
+    messagebox.showinfo(f"Total:", x)
+
+
+def clicked():
+    somma = int(txt1.get()) + int(txt2.get())
+    res = f"Total: {somma}"
+    lbl3.configure(text=res)
+    show_alert(somma)
+
+
+button = tk.Button(master, command=show_alert)
 
 # button widget with red color text inside
 btn = Button(master, text="Sum",
