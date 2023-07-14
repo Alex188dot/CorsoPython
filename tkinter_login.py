@@ -45,7 +45,7 @@ lbl3.grid(column=1, row=2)
 # button is clicked
 
 def show_alert(x):
-    messagebox.showinfo("test", x)
+    messagebox.showinfo("Login", x)
 
 
 username = "Mario"
