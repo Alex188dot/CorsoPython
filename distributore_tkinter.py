@@ -138,26 +138,30 @@ def clicked():
             centerWindow(new_window)
 
             def coffee():
-                stringa = m1.erogaCa(id1)[0]
-                saldo = f"Saldo rimanente: {m1.erogaCa(id1)[1]}€"
+                c = m1.erogaCa(id1)
+                stringa = c[0]
+                saldo = f"Saldo rimanente: {c[1]}€"
                 show_alert(stringa)
                 show_alert(saldo)
 
             def tea():
-                stringa = m1.erogaThe(id1)[0]
-                saldo = f"Saldo rimanente: {m1.erogaThe(id1)[1]}€"
+                t = m1.erogaThe(id1)
+                stringa = t[0]
+                saldo = f"Saldo rimanente: {t[1]}€"
                 show_alert(stringa)
                 show_alert(saldo)
 
             def chocolate():
-                stringa = m1.erogaCiok(id1)[0]
-                saldo = f"Saldo rimanente: {m1.erogaCiok(id1)[1]}€"
+                ch = m1.erogaCiok(id1)
+                stringa = ch[0]
+                saldo = f"Saldo rimanente: {ch[1]}€"
                 show_alert(stringa)
                 show_alert(saldo)
 
             def water():
-                stringa = m1.erogaW(id1)[0]
-                saldo = f"Saldo rimanente: {m1.erogaW(id1)[1]}€"
+                w = m1.erogaW(id1)
+                stringa = w[0]
+                saldo = f"Saldo rimanente: {w[1]}€"
                 show_alert(stringa)
                 show_alert(saldo)
 
