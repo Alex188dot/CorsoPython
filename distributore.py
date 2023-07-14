@@ -145,7 +145,3 @@ while inp != "7":
         break
     else:
         print("Scelta non valida, per favore scelga una opzioni qui sotto: ")
-
-
-
-
