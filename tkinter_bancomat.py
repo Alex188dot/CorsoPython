@@ -2,8 +2,6 @@ import pickle
 from tkinter import *
 import tkinter as tk
 
-movimenti = []
-
 
 class Contocorrente:
     def __init__(self, username, id, saldo):
@@ -103,8 +101,6 @@ def centerWindow(window):
 # End code to center the window
 
 
-print("Benvenuto nella tua home banking.")
-
 f = open("testBancomat1.pkl", "rb")
 unpickler = pickle.Unpickler(f)
 lista_utenti = unpickler.load()
@@ -119,17 +115,17 @@ def open_():
         if user == el.username and password == el.id:
             # Define the function p inside the open function
             def p():
-                importo = int(password_entry2.get())
+                importo = int(amount.get())
                 output = b1.prelievo(importo, password)
                 display_label.configure(text=output)
 
             def v():
-                importo = int(password_entry2.get())
+                importo = int(amount.get())
                 output = b1.versamento(importo, password)
                 display_label.configure(text=output)
 
             def b():
-                importo = int(password_entry2.get())
+                importo = int(amount.get())
                 output = b1.bonifico(importo, password)
                 display_label.configure(text=output)
 
@@ -159,7 +155,7 @@ def open_():
             Movimenti.pack()
             Logout = Button(root, text="Logout", command=close)
             Logout.pack()
-            password_entry2.pack()
+            amount.pack()
 
 
 # create root window
@@ -180,8 +176,8 @@ password_label1.pack()
 password_entry1 = Entry(root, show="*")
 password_entry1.pack()
 
-password_entry2 = Entry(root)
-password_entry2.pack_forget()
+amount = Entry(root)
+amount.pack_forget()
 display_label = Label(root)
 display_label.pack()
 
