@@ -3,6 +3,8 @@ from tkinter import *
 import tkinter as tk
 
 movimenti = []
+
+
 class Contocorrente:
     def __init__(self, username, id, saldo):
         self.username = username
@@ -62,8 +64,9 @@ class Bancomat:
     def stampa_movimenti(self, id):
         for i in self.conti:
             if i.id == id:
-                stampa = (f"Di seguito la lista dei suoi ultimi movimenti: {i.listamovimenti}")
+                stampa = (f"{i.listamovimenti}")
                 return stampa
+
 
 """
 utente1 = Contocorrente("User 1", "01", int(10000))
@@ -108,53 +111,8 @@ lista_utenti = unpickler.load()
 b1 = Bancomat(lista_utenti)
 f.close()
 
-validation = False
-'''
-while validation == False:
-    user = input("digita il tuo username: ")
-    idcode = input("digita il tuo ID utente: ")
-    for el in lista_utenti:
-        if user == el.username and idcode == el.id:
-            print("Utente convalidato.")
-            utente_attivo = el
-            validation = True
-            scelta = 0
-            while scelta != "6":
-                scelta = input("Digitare\n"
-                               "1 per prelevare\n"
-                               "2 per versare\n"
-                               "3 per effettuare un bonifico\n"
-                               "4 per visualizzare il saldo\n"
-                               "5 per visualizzare l'elenco movimenti\n"
-                               "6 per terminare: ")
-                if scelta == "1":
-                    importo = int(input("\nInserisci la cifra da prelevare: "))
-                    b1.prelievo(importo, utente_attivo.id)
-                elif scelta == "2":
-                    importo = int(input("\nInserisci la cifra da versare: "))
-                    b1.versamento(importo, utente_attivo.id)
-                elif scelta == "3":
-                    importo = int(input("\nInserisci l'importo del bonifico: "))
-                    b1.bonifico(importo, utente_attivo.id)
-                elif scelta == "4":
-                    b1.stampa_saldo(utente_attivo.id)
-                elif scelta == "5":
-                    b1.stampa_saldo(utente_attivo.id)
-                elif scelta == "":
-                    f = open("testBancomat1.pkl", "wb")
-                    pickle.dump(lista_utenti, f)
-                    f.close()
-                    exit()
-                else:
-                    print("Scelta non valida.")
 
-    if validation == False:
-        print("Utente non trovato. Riprova.")
-'''
-
-from tkinter import *
-
-def open():
+def open_():
     user = password_entry.get()
     password = password_entry1.get()
     for el in lista_utenti:
@@ -183,7 +141,11 @@ def open():
                 output = b1.stampa_movimenti(password)
                 display_label.configure(text=output)
 
-
+            def close():
+                f = open("testBancomat1.pkl", "wb")
+                pickle.dump(lista_utenti, f)
+                f.close()
+                root.destroy()
 
             Preleva = Button(root, text="Preleva", command=p)
             Preleva.pack()
@@ -195,6 +157,8 @@ def open():
             Saldo.pack()
             Movimenti = Button(root, text="Movimenti", command=m)
             Movimenti.pack()
+            Logout = Button(root, text="Logout", command=close)
+            Logout.pack()
             password_entry2.pack()
 
 
@@ -205,7 +169,7 @@ root.geometry('300x300')
 root.title("Bancomat Talentform")
 # Set geometry(widthxheight)
 # Creazione del pulsante di login
-login_button = Button(root, text="Login", command=open)
+login_button = Button(root, text="Login", command=open_)
 login_button.pack()
 password_label = Label(root, text="Username:")
 password_label.pack()
@@ -215,7 +179,6 @@ password_label1 = Label(root, text="Password:")
 password_label1.pack()
 password_entry1 = Entry(root, show="*")
 password_entry1.pack()
-
 
 password_entry2 = Entry(root)
 password_entry2.pack_forget()
