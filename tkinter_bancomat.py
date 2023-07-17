@@ -31,7 +31,7 @@ class Bancomat:
                     i.cifre[0].append(cifra)
                     return stampa
                 else:
-                    stampa = "saldo non disponibile"
+                    stampa = "Saldo non disponibile"
                     return stampa
 
     def versamento(self, cifra, id):
@@ -53,7 +53,7 @@ class Bancomat:
                     i.cifre[2].append(i.bonifici)
                     return stampa
                 else:
-                    stampa = "saldo non disponibile"
+                    stampa = "Saldo non disponibile"
                     return stampa
 
     def stampa_saldo(self, id):
