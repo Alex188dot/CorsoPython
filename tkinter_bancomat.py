@@ -65,16 +65,30 @@ class Bancomat:
     def mostra_movimenti(self, id):
         for i in self.conti:
             if i.id == id:
+                fig, axes = plt.subplots(1, 2)
+                # First graph
                 # Dati da visualizzare
                 categories = i.categorie
                 values = [sum(i.cifre[0]), sum(i.cifre[1]), sum(i.cifre[2])]
-                # Creazione dell'istogramma
-                plt.bar(categories, values)
-                # Personalizzazione dell'aspetto del grafico
-                plt.title("Istogramma")
-                plt.xlabel("Categorie")
-                plt.ylabel("Valori")
+                axes[0].bar(categories, values)
+                axes[0].set_title("Istogramma")
+                axes[0].set_xlabel("Categorie")
+                axes[0].set_ylabel("Valori")
+                # End first graph
+
+                # Second graph
+                # Dati da visualizzare
+                labels = categories
+                sizes = values
+                colors = ['red', 'blue', 'green']
+                # Creazione del grafico a torta
+                axes[1].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
+                axes[1].set_title("Grafico a torta")
+                # End second graph
+
                 plt.show()
+
+
 """
 utente1 = Contocorrente("User 1", "01", int(10000))
 utente2 = Contocorrente("User 2", "02", int(30000))
