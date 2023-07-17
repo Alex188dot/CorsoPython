@@ -1,6 +1,6 @@
 import pickle
 from tkinter import *
-import tkinter as tk
+import matplotlib.pyplot as plt
 
 
 class Contocorrente:
@@ -8,7 +8,8 @@ class Contocorrente:
         self.username = username
         self.id = id
         self.saldo = saldo
-        self.listamovimenti = []
+        self.categorie = ["Prelievi", "Versamenti", "Bonifici"]
+        self.cifre = [[], [], []]
 
     def __str__(self):
         return f"Username: {self.username}, ID conto: {self.id}, Saldo: € {self.saldo}\n"
@@ -27,7 +28,7 @@ class Bancomat:
                 if i.saldo > cifra:
                     i.saldo -= cifra
                     stampa = (f"Prelievo effettuato con successo\nIl saldo aggiornato è di € {i.saldo}")
-                    i.listamovimenti.append(stampa)
+                    i.cifre[0].append(cifra)
                     return stampa
                 else:
                     stampa = "saldo non disponibile"
@@ -38,7 +39,8 @@ class Bancomat:
             if i.id == id:
                 i.saldo += cifra
                 stampa = (f"Versamento effettuato con successo\nIl saldo aggiornato è di € {i.saldo}")
-                i.listamovimenti.append(stampa)
+                i.versamenti += cifra
+                i.cifre[1].append(i.versamenti)
                 return stampa
 
     def bonifico(self, cifra, id):
@@ -47,7 +49,8 @@ class Bancomat:
                 if i.saldo > cifra:
                     i.saldo -= cifra + 1.50
                     stampa = (f"Bonifico effettuato con successo\nIl saldo aggiornato è di € {i.saldo}")
-                    i.listamovimenti.append(stampa)
+                    i.bonifici += cifra
+                    i.cifre[2].append(i.bonifici)
                     return stampa
                 else:
                     stampa = "saldo non disponibile"
@@ -59,13 +62,19 @@ class Bancomat:
                 stampa = (f"Il saldo aggiornato è di € {i.saldo}")
                 return stampa
 
-    def stampa_movimenti(self, id):
+    def mostra_movimenti(self, id):
         for i in self.conti:
             if i.id == id:
-                stampa = (f"{i.listamovimenti}")
-                return stampa
-
-
+                # Dati da visualizzare
+                categories = i.categorie
+                values = [sum(i.cifre[0]), sum(i.cifre[1]), sum(i.cifre[2])]
+                # Creazione dell'istogramma
+                plt.bar(categories, values)
+                # Personalizzazione dell'aspetto del grafico
+                plt.title("Istogramma")
+                plt.xlabel("Categorie")
+                plt.ylabel("Valori")
+                plt.show()
 """
 utente1 = Contocorrente("User 1", "01", int(10000))
 utente2 = Contocorrente("User 2", "02", int(30000))
@@ -73,9 +82,6 @@ lista_utenti = []
 lista_utenti.append(utente1)
 lista_utenti.append(utente2)
 b1 = Bancomat(lista_utenti)
-b1.versamento(400, "02")
-b1.prelievo(200, "02")
-b1.stampa_movimenti("02")
 f = open("testBancomat1.pkl", "wb")
 pickle.dump(lista_utenti, f)
 f.close()
@@ -134,8 +140,8 @@ def open_():
                 display_label.configure(text=output)
 
             def m():
-                output = b1.stampa_movimenti(password)
-                display_label.configure(text=output)
+                b1.mostra_movimenti(password)
+
 
             def close():
                 f = open("testBancomat1.pkl", "wb")
