@@ -16,7 +16,7 @@ class Mach:
     def erogaCa(self, id):
         for i in self.conti:
             if i.id == id:
-                if i.saldo > 2:
+                if i.saldo >= 2:
                     i.saldo -= 2
                     stringa = "Erogazione in corso"
                 else:
@@ -26,7 +26,7 @@ class Mach:
     def erogaThe(self, id):
         for i in self.conti:
             if i.id == id:
-                if i.saldo > 3:
+                if i.saldo >= 3:
                     i.saldo -= 3
                     stringa = "Erogazione in corso"
                 else:
@@ -36,7 +36,7 @@ class Mach:
     def erogaCiok(self, id):
         for i in self.conti:
             if i.id == id:
-                if i.saldo > 3.50:
+                if i.saldo >= 3.50:
                     i.saldo -= 3.50
                     stringa = "Erogazione in corso"
                 else:
@@ -46,7 +46,7 @@ class Mach:
     def erogaW(self, id):
         for i in self.conti:
             if i.id == id:
-                if i.saldo > 1.50:
+                if i.saldo >= 1.50:
                     i.saldo -= 1.50
                     stringa = "Erogazione in corso"
                 else:
