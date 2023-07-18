@@ -30,7 +30,7 @@ print(mydb)
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="pwd",
+  password=pwd,
   database="user_access"
 )
 
