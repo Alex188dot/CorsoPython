@@ -169,7 +169,7 @@ def clicked():
                   fg="blue", command=mCarne)
     btn3 = Button(new_window, text="Menu Bimbi 👧🧒",
                   fg="blue", command=mBimbi)
-    btn4 = Button(new_window, text="Fatto!",
+    btn4 = Button(new_window, text="Fatto! ✅",
                   fg="blue", command=done)
     btn1.place(relx=0.5, rely=0.15, anchor=CENTER)
     btn2.place(relx=0.5, rely=0.30, anchor=CENTER)
@@ -181,7 +181,7 @@ def clicked():
 
 button = tk.Button(master, command=show_alert)
 
-# button widget with red color text inside
+# button widget with blue color text inside
 btn = Button(master, text="Entra",
              fg="blue", command=clicked)
 btn_2 = Button(master, text="Logout",
