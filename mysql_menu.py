@@ -56,36 +56,11 @@ mydb = mysql.connector.connect(
     database="restaurant_menu"
 )
 mycursor = mydb.cursor()
-email = input("Inserire Email: ")
-
-while inp != "0":
-    inp = input(
-    """
-    Inserire Scelta del menu:
-    1) Menu di pesce,
-    2) Menu di carne,
-    3) Menu bamibini
-    0) Per uscire
-    """)
-    if inp == "1":
-        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-        val = (email, inp, menuPesce.prezzo)
-        mycursor.execute(sql, val)
-        mydb.commit()
-        print(mycursor.rowcount, "Scelta registrata")
-    if inp == "2":
-        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-        val = (email, inp, menuCarne.prezzo)
-        mycursor.execute(sql, val)
-        mydb.commit()
-        print(mycursor.rowcount, "Scelta registrata")
-    if inp == "3":
-        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-        val = (email, inp, menuBambini.prezzo)
-        mycursor.execute(sql, val)
-        mydb.commit()
-        print(mycursor.rowcount, "Scelta registrata")
-    if inp == "0":
+email = ""
+while email != "0":
+    verification = True
+    email = input("Inserire Email, oppure 0 per uscire: ")
+    if email == "0":
         mycursor.execute("SELECT * FROM customers")
         myresult = mycursor.fetchall()
         sum = 0
@@ -93,3 +68,42 @@ while inp != "0":
             sum += int(x[2])
             print(x)
         print("Il totale incassi è:", sum)
+        verification = False
+    while verification:
+        inp = input(
+        """
+        Inserire Scelta del menu:
+        1) Menu di pesce,
+        2) Menu di carne,
+        3) Menu bamibini
+        0) Per uscire
+        """)
+        if inp == "1":
+            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+            val = (email, inp, menuPesce.prezzo)
+            mycursor.execute(sql, val)
+            mydb.commit()
+            print(mycursor.rowcount, "Scelta registrata")
+        if inp == "2":
+            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+            val = (email, inp, menuCarne.prezzo)
+            mycursor.execute(sql, val)
+            mydb.commit()
+            print(mycursor.rowcount, "Scelta registrata")
+        if inp == "3":
+            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+            val = (email, inp, menuBambini.prezzo)
+            mycursor.execute(sql, val)
+            mydb.commit()
+            print(mycursor.rowcount, "Scelta registrata")
+        if inp == "0":
+            verification = False
+    if email == "0":
+        mycursor.execute("SELECT * FROM customers")
+        myresult = mycursor.fetchall()
+        sum = 0
+        for x in myresult:
+            sum += int(x[2])
+            print(x)
+        print("Il totale incassi è:", sum)
+        verification = False
