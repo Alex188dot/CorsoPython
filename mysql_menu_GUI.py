@@ -26,7 +26,6 @@ menuPesce = Menu(30)
 menuCarne = Menu(25)
 menuBambini = Menu(15)
 
-
 # Created new database restaurant_menu
 """
 mydb = mysql.connector.connect(
@@ -63,14 +62,13 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-
-
 # GUI code starts here
 
 master = Tk()
 
 # root window title and dimension
 master.title("Login")
+
 
 # Start code to center the window
 
@@ -92,7 +90,6 @@ def centerWindow(window):
 
 centerWindow(master)
 
-
 # adding a label to the root window
 lbl1 = Label(master, text="Inserire il proprio indirizzo email: ")
 lbl3 = Label(master)
@@ -105,11 +102,14 @@ txt1 = Entry(master, width=10)
 txt1.grid(column=1, row=0)
 lbl3.grid(column=1, row=2)
 
+
 def show_login(x):
     messagebox.showinfo("Login", x)
 
+
 def show_alert(x):
     messagebox.showinfo("Result", x)
+
 
 def logout():
     mycursor.execute("SELECT * FROM customers")
@@ -120,6 +120,7 @@ def logout():
         print(x)
     print("Il totale incassi è:", sum)
     master.destroy()
+
 
 def clicked():
     email = txt1.get()
@@ -161,8 +162,6 @@ def clicked():
     def done():
         new_window.destroy()
 
-
-
     btn1 = Button(new_window, text="Menu Pesce 🐟️",
                   fg="blue", command=mPesce)
     btn2 = Button(new_window, text="Menu Carne 🥩",
@@ -185,11 +184,10 @@ button = tk.Button(master, command=show_alert)
 btn = Button(master, text="Entra",
              fg="blue", command=clicked)
 btn_2 = Button(master, text="Logout",
-             fg="blue", command=logout)
+               fg="blue", command=logout)
 # Set Button Grid
 btn.place(relx=0.5, rely=0.45, anchor=CENTER)
 btn_2.place(relx=0.5, rely=0.6, anchor=CENTER)
-
 
 # Execute Tkinter
 master.mainloop()
