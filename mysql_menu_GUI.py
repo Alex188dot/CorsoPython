@@ -55,7 +55,6 @@ mycursor = mydb.cursor()
 mycursor.execute("CREATE TABLE Customers (Email VARCHAR(255), Choice VARCHAR(255), Price VARCHAR(255))")
 """
 
-inp = input("Benvenuto nel programma di Prenotazione Menu, premere invio per continuare")
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -112,158 +111,85 @@ def show_login(x):
 def show_alert(x):
     messagebox.showinfo("Result", x)
 
+def logout():
+    mycursor.execute("SELECT * FROM customers")
+    myresult = mycursor.fetchall()
+    sum = 0
+    for x in myresult:
+        sum += int(x[2])
+        print(x)
+    print("Il totale incassi è:", sum)
+    master.destroy()
+
 def clicked():
     email = txt1.get()
-            res = "Email registrata con successo"
-            lbl3.configure(text=res)
-            show_login(res)
-            # open a new window
-            new_window = tk.Toplevel(master)
-            new_window.title("Nuova Finestra")
-            centerWindow(new_window)
+    res = "Email registrata con successo"
+    lbl3.configure(text=res)
+    show_login(res)
+    # open a new window
+    new_window = tk.Toplevel(master)
+    new_window.title("Nuova Finestra")
+    centerWindow(new_window)
 
-            def mPesce():
-                inp = "1"
-                sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-                val = (email, inp, menuPesce.prezzo)
-                mycursor.execute(sql, val)
-                mydb.commit()
-                show_alert("Scelta registrata")
-                print(mycursor.rowcount, "Scelta registrata")
+    def mPesce():
+        inp = "1"
+        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+        val = (email, inp, menuPesce.prezzo)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        show_alert("Scelta registrata")
+        print(mycursor.rowcount, "Scelta registrata")
 
-            def mCarne():
-                inp = "2"
-                sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-                val = (email, inp, menuCarne.prezzo)
-                mycursor.execute(sql, val)
-                mydb.commit()
-                show_alert("Scelta registrata")
-                print(mycursor.rowcount, "Scelta registrata")
+    def mCarne():
+        inp = "2"
+        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+        val = (email, inp, menuCarne.prezzo)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        show_alert("Scelta registrata")
+        print(mycursor.rowcount, "Scelta registrata")
 
-            def mBimbi():
-                inp = "3"
-                sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-                val = (email, inp, menuBambini.prezzo)
-                mycursor.execute(sql, val)
-                mydb.commit()
-                show_alert("Scelta registrata")
-                print(mycursor.rowcount, "Scelta registrata")
+    def mBimbi():
+        inp = "3"
+        sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
+        val = (email, inp, menuBambini.prezzo)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        show_alert("Scelta registrata")
+        print(mycursor.rowcount, "Scelta registrata")
 
-            def logout():
-                new_window.destroy()
+    def done():
+        new_window.destroy()
 
 
-            def topUp():
-                new_window2 = tk.Toplevel(master)
-                new_window2.title("Nuova Finestra importo")
-                centerWindow(new_window2)
 
-                # adding a label to the root window
-                lblImporto = Label(new_window2, text="Inserire l'importo da ricaricare: ")
-                lbl3Ricevuta = Label(new_window2)
+    btn1 = Button(new_window, text="Menu Pesce 🐟️",
+                  fg="blue", command=mPesce)
+    btn2 = Button(new_window, text="Menu Carne 🥩",
+                  fg="blue", command=mCarne)
+    btn3 = Button(new_window, text="Menu Bimbi 👧🧒",
+                  fg="blue", command=mBimbi)
+    btn4 = Button(new_window, text="Fatto!",
+                  fg="blue", command=done)
+    btn1.place(relx=0.5, rely=0.15, anchor=CENTER)
+    btn2.place(relx=0.5, rely=0.30, anchor=CENTER)
+    btn3.place(relx=0.5, rely=0.45, anchor=CENTER)
+    btn4.place(relx=0.5, rely=0.6, anchor=CENTER)
 
-                lblImporto.grid()
-                lbl3Ricevuta.grid()
-
-                # adding Entry Field
-                txtM = Entry(new_window2, width=10)
-                txtM.grid(column=1, row=0)
-                lbl3.grid(column=1, row=2)
-
-                def money():
-                    topUp1 = m1.addMoney(id1, int(txtM.get()))
-                    stringa = f"{topUp1[0]}"
-                    saldo = f"Saldo rimanente: {topUp1[1]}€"
-                    show_alert(stringa)
-                    show_alert(saldo)
-
-                btn6 = Button(new_window2, text="Done",
-                          fg="blue", command=money)
-                btn6.place(relx=0.5, rely=0.5, anchor=CENTER)
-
-                centerWindow(new_window2)
-
-            btn1 = Button(new_window, text="Coffee ☕️",
-                          fg="blue", command=coffee)
-            btn2 = Button(new_window, text="Tea 🫖",
-                          fg="blue", command=tea)
-            btn3 = Button(new_window, text="Chocolate 🍫",
-                          fg="blue", command=chocolate)
-            btn4 = Button(new_window, text="Water 🚰",
-                          fg="blue", command=water)
-            btn5 = Button(new_window, text="Top up 💰",
-                          fg="blue", command=topUp)
-            btn1.place(relx=0.5, rely=0.15, anchor=CENTER)
-            btn2.place(relx=0.5, rely=0.30, anchor=CENTER)
-            btn3.place(relx=0.5, rely=0.45, anchor=CENTER)
-            btn4.place(relx=0.5, rely=0.6, anchor=CENTER)
-            btn5.place(relx=0.5, rely=0.75, anchor=CENTER)
-
-            new_window.mainloop()
+    new_window.mainloop()
 
 
 button = tk.Button(master, command=show_alert)
 
 # button widget with red color text inside
-btn = Button(master, text="Login",
+btn = Button(master, text="Entra",
              fg="blue", command=clicked)
+btn_2 = Button(master, text="Logout",
+             fg="blue", command=logout)
 # Set Button Grid
-btn.grid(column=3, row=4)
+btn.place(relx=0.5, rely=0.45, anchor=CENTER)
+btn_2.place(relx=0.5, rely=0.6, anchor=CENTER)
+
 
 # Execute Tkinter
 master.mainloop()
-
-
-
-
-email = ""
-while email != "0":
-    verification = True
-    email = input("Inserire Email, oppure 0 per uscire: ")
-    if email == "0":
-        mycursor.execute("SELECT * FROM customers")
-        myresult = mycursor.fetchall()
-        sum = 0
-        for x in myresult:
-            sum += int(x[2])
-            print(x)
-        print("Il totale incassi è:", sum)
-        verification = False
-    while verification:
-        inp = input(
-        """
-        Inserire Scelta del menu:
-        1) Menu di pesce,
-        2) Menu di carne,
-        3) Menu bamibini
-        0) Per uscire
-        """)
-        if inp == "1":
-            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-            val = (email, inp, menuPesce.prezzo)
-            mycursor.execute(sql, val)
-            mydb.commit()
-            print(mycursor.rowcount, "Scelta registrata")
-        if inp == "2":
-            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-            val = (email, inp, menuCarne.prezzo)
-            mycursor.execute(sql, val)
-            mydb.commit()
-            print(mycursor.rowcount, "Scelta registrata")
-        if inp == "3":
-            sql = "INSERT INTO Customers (Email, Choice, Price) VALUES (%s, %s, %s)"
-            val = (email, inp, menuBambini.prezzo)
-            mycursor.execute(sql, val)
-            mydb.commit()
-            print(mycursor.rowcount, "Scelta registrata")
-        if inp == "0":
-            verification = False
-    if email == "0":
-        mycursor.execute("SELECT * FROM customers")
-        myresult = mycursor.fetchall()
-        sum = 0
-        for x in myresult:
-            sum += int(x[2])
-            print(x)
-        print("Il totale incassi è:", sum)
-        verification = False
