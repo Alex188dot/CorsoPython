@@ -98,12 +98,4 @@ while email != "0":
             print(mycursor.rowcount, "Scelta registrata")
         if inp == "0":
             verification = False
-    if email == "0":
-        mycursor.execute("SELECT * FROM customers")
-        myresult = mycursor.fetchall()
-        sum = 0
-        for x in myresult:
-            sum += int(x[2])
-            print(x)
-        print("Il totale incassi è:", sum)
-        verification = False
+
