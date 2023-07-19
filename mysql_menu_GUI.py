@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 import matplotlib.pyplot as plt
 
 
-pwd = "your-db-pwd"
+pwd = "your-db-password"
 
 
 
@@ -41,7 +41,7 @@ def invia_email(destinatario, oggetto, corpo):
 
 
 """
-1) Creiamo una classe menu ogni menu è rappresentato da un primo, un secondo, un contorno e la frutta. Inoltre ogni menu ha un prezzo a seconda che il menu sia di carne, pesce o da bambini. Il programma chiede all’utente quale menu desidera ordinare e dopo aver chiesto la mail dell’utente va a registrare su una tabella con database dedicato il tipo di menu, la mail del cliente e il prezzo del menu. Quando il programma termina, (l’utente preme 0) il programma stampa tutti gli ordini effettuati presenti sulla tabella, e il totale dell’incasso (somma dei prezzi presenti nella tabella)
+1) Creiamo una classe menu. Ogni menu ha un prezzo a seconda che il menu sia di carne, pesce o da bambini. Il programma chiede all’utente quale menu desidera ordinare e dopo aver chiesto la mail dell’utente va a registrare su una tabella con database dedicato il tipo di menu, la mail del cliente e il prezzo del menu. 
 
 2) Creare una interfaccia grafica per il programma precedente.
 Il programma prevede una finestra dove l’utente inserisce la mail. una volta inserita la mail si apre una nuova finestra dove l’utente può scegliere il menu. Scelto il menu questo viene registrato nella tabella mysql.
@@ -176,14 +176,7 @@ def show_alert(x):
     messagebox.showinfo("Result", x)
 
 
-def logout():
-    mycursor.execute("SELECT * FROM customers")
-    myresult = mycursor.fetchall()
-    sum = 0
-    for x in myresult:
-        sum += int(x[2])
-    #    print(x)
-    print("Il totale incassi è:", sum)
+def quit():
     master.destroy()
 
 
@@ -253,6 +246,8 @@ def clicked():
 
 
 def admin_section():
+    def admin_esci():
+        new_window2.destroy()
     def admin_login():
         mydb = mysql.connector.connect(
             host="localhost",
@@ -337,9 +332,9 @@ def admin_section():
                         fig, axes = plt.subplots(1, 2)
                         values = [sumPesce, sumCarne, sumBimbi]
                         axes[0].bar(categories, values)
-                        axes[0].set_title("Istogramma")
+                        axes[0].set_title("Vendite in € per menu")
                         axes[0].set_xlabel("Categorie")
-                        axes[0].set_ylabel("Valori")
+                        axes[0].set_ylabel("Euro")
                         # End first graph
 
                         # Second graph
@@ -349,9 +344,26 @@ def admin_section():
                         colors = ['red', 'blue', 'green']
                         # Creazione del grafico a torta
                         axes[1].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
-                        axes[1].set_title("Grafico a torta")
+                        axes[1].set_title("Vendite in percentuale")
                         # End second graph
 
+                        # Codice per centrare la finestra del grafico
+                        mngr = plt.get_current_fig_manager()
+                        # get the screen size in pixels
+                        root = mngr.window._root()
+                        width = root.winfo_screenwidth()
+                        height = root.winfo_screenheight()
+                        # get the figure size in pixels
+                        fig_width = fig.get_figwidth() * fig.dpi
+                        fig_height = fig.get_figheight() * fig.dpi
+                        # compute the x and y coordinates to center the figure
+                        x = (width - fig_width) / 2
+                        y = (height - fig_height) / 2
+                        # set the figure position and size
+                        mngr.window.geometry("%dx%d+%d+%d" % (fig_width, fig_height, x, y))
+                        # fine codice per centrare la finestra del grafico
+
+                        # Mostra il grafico
                         plt.show()
 
                     def mostra_per_utente():
@@ -389,26 +401,55 @@ def admin_section():
                         values = customer_total
 
                         # Creazione dell'istogramma
+                        fig = plt.figure()  # create a figure object
                         plt.bar(categories, values)
 
                         # Personalizzazione dell'aspetto del grafico
-                        plt.title("Istogramma")
-                        plt.xlabel("Categorie")
-                        plt.ylabel("Valori")
+                        plt.title("Vendite per utente")
+                        plt.xlabel("Utenti")
+                        plt.ylabel("€")
+
+                        # Codice per centrare la finestra del grafico
+                        mngr = plt.get_current_fig_manager()
+                        # get the screen size in pixels
+                        root = mngr.window._root()
+                        width = root.winfo_screenwidth()
+                        height = root.winfo_screenheight()
+                        # get the figure size in pixels
+                        fig_width = fig.get_figwidth() * fig.dpi  # use the fig object here
+                        fig_height = fig.get_figheight() * fig.dpi  # and here
+                        # compute the x and y coordinates to center the figure
+                        x = (width - fig_width) / 2
+                        y = (height - fig_height) / 2
+                        # set the figure position and size
+                        mngr.window.geometry("%dx%d+%d+%d" % (fig_width, fig_height, x, y))
+                        # fine codice per centrare la finestra del grafico
 
                         # Mostra il grafico
                         plt.show()
 
-                        # Mostra il grafico
-                        plt.show()
+
+                    def mostra_incassi():
+                        mycursor.execute("SELECT * FROM customers")
+                        myresult = mycursor.fetchall()
+                        sum = 0
+                        for x in myresult:
+                            sum += int(x[2])
+                        #    print(x)
+                        show_alert(f"Il totale incassi è: {sum}€")
+
+                    def logout_admin_home():
+                        new_window3.destroy()
 
                     btn_5 = Button(new_window3, text="Mostra Grafici per Categoria", fg="blue", command=mostra_categorie)
                     btn_5.place(relx=0.5, rely=0.30, anchor=CENTER)
                     btn_6 = Button(new_window3, text="Mostra Entrate per Utente", fg="blue", command=mostra_per_utente)
                     btn_6.place(relx=0.5, rely=0.45, anchor=CENTER)
-
+                    btn_9 = Button(new_window3, text="Mostra Incassi Totali", fg="blue", command=mostra_incassi)
+                    btn_9.place(relx=0.5, rely=0.60, anchor=CENTER)
+                    btn_7 = Button(new_window3, text="Logout", fg="blue", command=logout_admin_home)
+                    btn_7.place(relx=0.5, rely=0.80, anchor=CENTER)
                     new_window3.mainloop()
-
 
 
     # open a new window
@@ -425,6 +466,8 @@ def admin_section():
     password_entry1.pack()
     btn_4 = Button(new_window2, text="Login", fg="blue", command=admin_login)
     btn_4.pack()
+    btn_8 = Button(new_window2, text="Esci", fg="blue", command=admin_esci)
+    btn_8.pack()
 
 
 
@@ -436,7 +479,7 @@ button = tk.Button(master, command=show_alert)
 
 # button widget with blue color text inside
 btn = Button(master, text="Entra", fg="blue", command=clicked)
-btn_2 = Button(master, text="Logout", fg="blue", command=logout)
+btn_2 = Button(master, text="Esci", fg="blue", command=quit)
 btn_3 = Button(master, text="Area Riservata", fg="blue", command=admin_section)
 # Set Button Grid
 btn.place(relx=0.5, rely=0.45, anchor=CENTER)
