@@ -275,95 +275,100 @@ def admin_section():
                     new_window3.title("Sezione Admin")
                     centerWindow(new_window3)
 
-                    # Seleziono tutti i menu Pesce e li sommo
-                    mydb = mysql.connector.connect(
-                        host="localhost",
-                        user="root",
-                        password=pwd,
-                        database="restaurant_menu"
-                    )
-                    mycursor = mydb.cursor()
-                    sql = "SELECT * FROM Customers WHERE Choice ='1'"
-                    mycursor.execute(sql)
-                    myresult = mycursor.fetchall()
-                    sum = 0
-                    for x in myresult:
-                        sum += int(x[2])
-                    sumPesce = sum
-                    # Fine somma Menu Pesce
-                    # Seleziono tutti i menu Carne e li sommo
-                    mydb = mysql.connector.connect(
-                        host="localhost",
-                        user="root",
-                        password=pwd,
-                        database="restaurant_menu"
-                    )
-                    mycursor = mydb.cursor()
-                    sql = "SELECT * FROM Customers WHERE Choice ='2'"
-                    mycursor.execute(sql)
-                    myresult = mycursor.fetchall()
-                    sum = 0
-                    for x in myresult:
-                        sum += int(x[2])
-                    sumCarne = sum
-                    # Fine somma Menu Carne
-                    # Seleziono tutti i menu Bimbi e li sommo
-                    mydb = mysql.connector.connect(
-                        host="localhost",
-                        user="root",
-                        password=pwd,
-                        database="restaurant_menu"
-                    )
-                    mycursor = mydb.cursor()
-                    sql = "SELECT * FROM Customers WHERE Choice ='3'"
-                    mycursor.execute(sql)
-                    myresult = mycursor.fetchall()
-                    sum = 0
-                    for x in myresult:
-                        sum += int(x[2])
-                    sumBimbi = sum
-                    # Fine somma Menu Bimbi
-
-                    # First graph
-
-                    # Dati da visualizzare
-                    categories = ["M. Pesce", "M. Carne", "M. Bimbi"]
-                    fig, axes = plt.subplots(1, 2)
-                    values = [sumPesce, sumCarne, sumBimbi]
-                    axes[0].bar(categories, values)
-                    axes[0].set_title("Vendite in € per menu")
-                    axes[0].set_xlabel("Categorie")
-                    axes[0].set_ylabel("Euro")
-                    # End first graph
-
-                    # Second graph
-                    # Dati da visualizzare
-                    labels = categories
-                    sizes = values
-                    colors = ['red', 'blue', 'green']
-                    # Creazione del grafico a torta
-                    axes[1].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
-                    axes[1].set_title("Vendite in percentuale")
-                    # End second graph
-
-                    # Codice per centrare la finestra del grafico
-                    mngr = plt.get_current_fig_manager()
-                    # get the screen size in pixels
-                    root = mngr.window._root()
-                    width = root.winfo_screenwidth()
-                    height = root.winfo_screenheight()
-                    # get the figure size in pixels
-                    fig_width = fig.get_figwidth() * fig.dpi
-                    fig_height = fig.get_figheight() * fig.dpi
-                    # compute the x and y coordinates to center the figure
-                    x = (width - fig_width) / 2
-                    y = (height - fig_height) / 2
-                    # set the figure position and size
-                    mngr.window.geometry("%dx%d+%d+%d" % (fig_width, fig_height, x, y))
-                    # fine codice per centrare la finestra del grafico
-
                     def mostra_categorie():
+                        # Seleziono tutti i menu Pesce e li sommo
+                        mydb = mysql.connector.connect(
+                            host="localhost",
+                            user="root",
+                            password=pwd,
+                            database="restaurant_menu"
+                        )
+                        mycursor = mydb.cursor()
+                        sql = "SELECT * FROM Customers WHERE Choice ='1'"
+                        mycursor.execute(sql)
+                        myresult = mycursor.fetchall()
+                        sum = 0
+                        for x in myresult:
+                            sum += int(x[2])
+                        sumPesce = sum
+                        # Fine somma Menu Pesce
+                        # Seleziono tutti i menu Carne e li sommo
+                        mydb = mysql.connector.connect(
+                            host="localhost",
+                            user="root",
+                            password=pwd,
+                            database="restaurant_menu"
+                        )
+                        mycursor = mydb.cursor()
+                        sql = "SELECT * FROM Customers WHERE Choice ='2'"
+                        mycursor.execute(sql)
+                        myresult = mycursor.fetchall()
+                        sum = 0
+                        for x in myresult:
+                            sum += int(x[2])
+                        sumCarne = sum
+                        # Fine somma Menu Carne
+                        # Seleziono tutti i menu Bimbi e li sommo
+                        mydb = mysql.connector.connect(
+                            host="localhost",
+                            user="root",
+                            password=pwd,
+                            database="restaurant_menu"
+                        )
+                        mycursor = mydb.cursor()
+                        sql = "SELECT * FROM Customers WHERE Choice ='3'"
+                        mycursor.execute(sql)
+                        myresult = mycursor.fetchall()
+                        sum = 0
+                        for x in myresult:
+                            sum += int(x[2])
+                        sumBimbi = sum
+                        # Fine somma Menu Bimbi
+
+                        # First graph
+
+                        # Dati da visualizzare
+                        categories = ["M. Pesce", "M. Carne", "M. Bimbi"]
+                        fig, axes = plt.subplots(1, 2)
+                        values = [sumPesce, sumCarne, sumBimbi]
+                        axes[0].bar(categories, values)
+                        axes[0].set_title("Vendite in € per menu")
+                        axes[0].set_xlabel("Categorie")
+                        axes[0].set_ylabel("Euro")
+                        # End first graph
+
+                        # Second graph
+                        # Dati da visualizzare
+                        labels = categories
+                        sizes = values
+                        colors = ['red', 'blue', 'green']
+                        # Creazione del grafico a torta
+                        axes[1].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
+                        axes[1].set_title("Vendite in percentuale")
+                        # End second graph
+
+                        # Codice per centrare la finestra del grafico
+                        mngr = plt.get_current_fig_manager()
+                        # get the screen size in pixels
+                        root = mngr.window._root()
+                        width = root.winfo_screenwidth()
+                        height = root.winfo_screenheight()
+                        # get the figure size in pixels
+                        fig_width = fig.get_figwidth() * fig.dpi
+                        fig_height = fig.get_figheight() * fig.dpi
+                        # compute the x and y coordinates to center the figure
+                        x = (width - fig_width) / 2
+                        y = (height - fig_height) / 2
+                        # set the figure position and size
+                        mngr.window.geometry("%dx%d+%d+%d" % (fig_width, fig_height, x, y))
+                        # fine codice per centrare la finestra del grafico
+
+                        return fig
+
+                    def m_c():
+                        mostra_categorie()
                         plt.show()
+
 
                     def mostra_per_utente():
                         mydb = mysql.connector.connect(
@@ -400,13 +405,14 @@ def admin_section():
                         values = customer_total
 
                         # Creazione dell'istogramma
-                        fig2 = plt.figure()  # create a figure object
+                        fig = plt.figure(figsize=(12, 8))  # create a figure object
                         plt.bar(categories, values)
 
                         # Personalizzazione dell'aspetto del grafico
                         plt.title("Vendite per utente")
                         plt.xlabel("Utenti")
                         plt.ylabel("€")
+                        plt.xticks(fontsize=8, rotation=20)  # Imposta la dimensione del font a 12 e ruota le etichette di 45 gradi
 
                         # Codice per centrare la finestra del grafico
                         mngr = plt.get_current_fig_manager()
@@ -424,9 +430,13 @@ def admin_section():
                         mngr.window.geometry("%dx%d+%d+%d" % (fig_width, fig_height, x, y))
                         # fine codice per centrare la finestra del grafico
 
+                        # Ritorna il grafico
+                        return fig
 
-                        # Mostra il grafico
+                    def m_p_u():
+                        mostra_per_utente()
                         plt.show()
+
 
                     def mostra_incassi():
                         mycursor.execute("SELECT * FROM customers")
@@ -437,26 +447,28 @@ def admin_section():
                         #    print(x)
                         show_alert(f"Il totale incassi è: {sum}€")
 
-                    def salva_grafici_pdf():
+
+                    def salva_grafici_pdf2():
+                        fig = mostra_categorie()
+                        fig2 = mostra_per_utente()
                         with PdfPages('grafici.pdf') as pdf:
                             pdf.savefig(fig)
+                            pdf.savefig(fig2)
                             show_alert("PDF salvato con successo!")
-
-
 
 
                     def logout_admin_home():
                         new_window3.destroy()
 
-                    btn_5 = Button(new_window3, text="Mostra Grafici per Categoria 📊", fg="blue", command=mostra_categorie)
+                    btn_5 = Button(new_window3, text="Mostra Grafici per Categoria 📊", fg="blue", command=m_c)
                     btn_5.place(relx=0.5, rely=0.30, anchor=CENTER)
-                    btn_6 = Button(new_window3, text="Mostra Entrate per Utente 💰", fg="blue", command=mostra_per_utente)
+                    btn_6 = Button(new_window3, text="Mostra Entrate per Utente 💰", fg="blue", command=m_p_u)
                     btn_6.place(relx=0.5, rely=0.45, anchor=CENTER)
                     btn_9 = Button(new_window3, text="Mostra Incassi Totali 💵", fg="blue", command=mostra_incassi)
                     btn_9.place(relx=0.5, rely=0.60, anchor=CENTER)
                     btn_7 = Button(new_window3, text="Logout", fg="blue", command=logout_admin_home)
                     btn_7.place(relx=0.5, rely=0.90, anchor=CENTER)
-                    btn_10 = Button(new_window3, text="Stampa PDF 📄", fg="blue", command=salva_grafici_pdf)
+                    btn_10 = Button(new_window3, text="Stampa PDF 📄", fg="blue", command=salva_grafici_pdf2)
                     btn_10.place(relx=0.5, rely=0.80, anchor=CENTER)
                     new_window3.mainloop()
 
