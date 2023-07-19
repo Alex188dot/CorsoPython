@@ -1,5 +1,5 @@
 import mysql.connector
-pwd = "your-password"
+pwd = "your-db-pwd"
 
 # Per stampare tutti gli elementi di customers
 
@@ -19,7 +19,7 @@ myresult = mycursor.fetchall()
 for x in myresult:
   print(x)
 
-#################################################
+print("#################################################")
 
 # Per stampare tutti i campi della colonna name
 
@@ -32,7 +32,7 @@ myresult = mycursor.fetchall()
 for x in myresult:
   print(x)
 
-#################################################
+print("#################################################")
 
 
 # Per stampare nome specifico, tutti i record
@@ -48,4 +48,4 @@ myresult = mycursor.fetchall()
 for x in myresult:
   print(x)
 
-#################################################
+print("#################################################")
