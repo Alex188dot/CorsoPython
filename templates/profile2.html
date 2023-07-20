@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    {% if username == 'mrossi' and password == '1234' %}
+        <h1>Welcome, {{ username }}!</h1>
+    {% else %}
+        <h1>Utente non registrato</h1>
+    {% endif %}
+</body>
+</html>
