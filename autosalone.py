@@ -159,7 +159,7 @@ def mostra_selezione():
     elif marca == "Renault" and optional == "Full Optional":
         prezzo = "25000"
     subj = "Il suo Preventivo presso il Concessionario Solenghi"
-    body = f"\nDi seguito i dettagli del preventivo riguardanti la sua scelta\n\nMacchina selezionata: {marca}\nColore: {colore}\nOptional: {optional}\nPrezzo: {prezzo}\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: info@solenghiauto.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
+    body = f"Gentile cliente,\n\nDi seguito i dettagli del preventivo riguardanti la sua scelta\n\nMacchina selezionata: {marca}\nColore: {colore}\nOptional: {optional}\nPrezzo: {prezzo}\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: info@solenghiauto.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
     email = txt1.get()
     invia_email(email, subj, body)
     res = "Email inviata con successo"
@@ -319,9 +319,13 @@ def admin_section():
 
                         # Second graph
                         # Dati da visualizzare
-                        labels = categories
-                        sizes = values
-                        colors = ['red', 'blue', 'green', 'brown', 'white', 'yellow', 'lightblue', 'purple']
+                        values2 = [len(count_Fiat_base) + len(count_Fiat_fo), len(count_Ford_base) + len(count_Ford_fo),
+                                   len(count_Ww_base) + len(count_Ww_fo), len(count_Nissan_base) + len(count_Nissan_fo),
+                                   len(count_Renault_base) + len(count_Renault_fo)]
+                        categories2 = ["Fiat", "Ford", "Ww ", "Nissan", "Renault"]
+                        labels = categories2
+                        sizes = values2
+                        colors = ['red', 'blue', 'green', 'purple', 'yellow']
                         # Creazione del grafico a torta
                         axes[1].pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
                         axes[1].set_title("Interesse in percentuale")
