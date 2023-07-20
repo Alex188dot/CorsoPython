@@ -10,7 +10,6 @@ app = Flask(__name__)
 utenti = []
 utenti.append("Rossi")
 utenti.append("Bianchi")
-print(utenti)
 
 @app.route('/')
 def index():
@@ -19,12 +18,12 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
-    for user in utenti:
-        if username == user:
-            return render_template('profile3.html', utenti=utenti)
-        else:
-            utenti.append(username)
-            return render_template('profile3.html', utenti=utenti)
+    if username in utenti:
+        return render_template('profile3.html', utenti=utenti)
+    else:
+        utenti.append(username)
+        return render_template('profile3.html', utenti=utenti)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
