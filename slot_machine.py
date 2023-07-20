@@ -88,7 +88,7 @@ costo_partita = 0.50
 spin_button = ttk.Button(frame, text="Spin (Costo: {} euro)".format(costo_partita), command=spin)
 spin_button.grid(row=1, columnspan=3, padx=5, pady=10, sticky="nsew")  # Aggiunto sticky="nsew"
 
-risultato_label = ttk.Label(frame, text="Credito disponibile: {} euro".format(credito), font=("Helvetica", 16))
+risultato_label = ttk.Label(frame, text="Credito disponibile: {} euro".format(credito), font=("Helvetica", 16), anchor="center")
 risultato_label.grid(row=2, columnspan=3, padx=5, pady=5, sticky="nsew")  # Aggiunto sticky="nsew"
 
 
