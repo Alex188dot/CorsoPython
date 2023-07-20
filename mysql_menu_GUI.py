@@ -461,15 +461,15 @@ def admin_section():
                         new_window3.destroy()
 
                     btn_5 = Button(new_window3, text="Mostra Grafici per Categoria 📊", fg="blue", command=m_c)
-                    btn_5.place(relx=0.5, rely=0.30, anchor=CENTER)
+                    btn_5.place(relx=0.5, rely=0.1, anchor=CENTER)
                     btn_6 = Button(new_window3, text="Mostra Entrate per Utente 💰", fg="blue", command=m_p_u)
-                    btn_6.place(relx=0.5, rely=0.45, anchor=CENTER)
+                    btn_6.place(relx=0.5, rely=0.2, anchor=CENTER)
                     btn_9 = Button(new_window3, text="Mostra Incassi Totali 💵", fg="blue", command=mostra_incassi)
-                    btn_9.place(relx=0.5, rely=0.60, anchor=CENTER)
+                    btn_9.place(relx=0.5, rely=0.3, anchor=CENTER)
                     btn_7 = Button(new_window3, text="Logout", fg="blue", command=logout_admin_home)
-                    btn_7.place(relx=0.5, rely=0.90, anchor=CENTER)
+                    btn_7.place(relx=0.5, rely=0.6, anchor=CENTER)
                     btn_10 = Button(new_window3, text="Stampa PDF 📄", fg="blue", command=salva_grafici_pdf2)
-                    btn_10.place(relx=0.5, rely=0.80, anchor=CENTER)
+                    btn_10.place(relx=0.5, rely=0.4, anchor=CENTER)
                     new_window3.mainloop()
 
     # open a new window
@@ -502,9 +502,9 @@ btn = Button(master, text="Entra", fg="blue", command=clicked)
 btn_2 = Button(master, text="Esci", fg="blue", command=quit)
 btn_3 = Button(master, text="Area Riservata", fg="blue", command=admin_section)
 # Set Button Grid
-btn.place(relx=0.5, rely=0.45, anchor=CENTER)
-btn_2.place(relx=0.5, rely=0.6, anchor=CENTER)
-btn_3.place(relx=0.5, rely=0.8, anchor=CENTER)
+btn.place(relx=0.5, rely=0.35, anchor=CENTER)
+btn_2.place(relx=0.5, rely=0.5, anchor=CENTER)
+btn_3.place(relx=0.5, rely=0.65, anchor=CENTER)
 
 # Execute Tkinter
 master.mainloop()
