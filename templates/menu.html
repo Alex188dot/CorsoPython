@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scelta Menu</title>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Scelta Menu</span>
+      </div>
+    </nav>
+    <div class="container" style="width: 50%; margin: auto; margin-top: 4rem">
+      <form action="/stamp" method="post">
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <label for="floatingSelect">Scegli un Primo</label>
+        <select
+          class="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option selected>Scegli</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="floatingSelect">Scegli un Secondo</label>
+        <select
+          class="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option selected>Scegli</option>
+          <option value="4">One</option>
+          <option value="5">Two</option>
+          <option value="6">Three</option>
+        </select>
+        <label for="floatingSelect">Scegli un Contorno</label>
+        <select
+          class="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option selected>Scegli</option>
+          <option value="7">One</option>
+          <option value="8">Two</option>
+          <option value="9">Three</option>
+        </select>
+        <label for="floatingSelect">Scegli il Dolce</label>
+        <select
+          class="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option selected>Scegli</option>
+          <option value="10">One</option>
+          <option value="11">Two</option>
+          <option value="12">Three</option>
+        </select>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
