@@ -1,7 +1,8 @@
 import mysql.connector
 from flask import Flask, render_template, request
 
-pwd = "your-db-password"
+
+pwd = "your-db-pwd"
 
 """
 Creare un file html con 4 select che rappresentano le scelte degli utenti per un ristorante.
@@ -21,23 +22,23 @@ class Piatto:
 
 # Primi
 pastaBoscaiola = Piatto(1, 12)
-risotto = Piatto(2, 10)
+risottoZafferano = Piatto(2, 10)
 pizzaMargherita = Piatto(3, 8)
 
 # Secondi
-cotoletta = Piatto(1, 11)
-tagliata = Piatto(2, 15)
-salmone = Piatto(3, 14)
+cotoletta = Piatto(4, 11)
+tagliata = Piatto(5, 15)
+salmone = Piatto(6, 14)
 
 # Contorni
-cicoria = Piatto(1, 6)
-patatine = Piatto(2, 5)
-insalata = Piatto(3, 7)
+cicoria = Piatto(7, 6)
+patatine = Piatto(8, 5)
+insalata = Piatto(9, 7)
 
 # Dolci
-tiramisu = Piatto(1, 6)
-cremcaramel = Piatto(2, 6)
-pannacotta = Piatto(3, 6)
+tiramisu = Piatto(10, 6)
+cremcaramel = Piatto(11, 6)
+pannacotta = Piatto(12, 6)
 
 # Created new database restaurant_menu_flask
 """
@@ -51,8 +52,8 @@ mycursor = mydb.cursor()
 mycursor.execute("CREATE DATABASE restaurant_menu_flask")
 
 print(mydb)
-"""
 
+"""
 # Created Customers Table and added Email, Choice and Price columns
 """
 mydb = mysql.connector.connect(
@@ -68,53 +69,77 @@ mycursor.execute("CREATE TABLE Customers (Id INT AUTO_INCREMENT PRIMARY KEY, Ema
 """
 
 
-# Codice per ottenere le opzioni dall'HTML
-"""
-from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('select.html')
+    return render_template('menu.html')
 
 @app.route('/stamp', methods=['POST'])
 def stamp():
-    opzione1_selezionata = request.form['opzione1']
-    opzione2_selezionata = request.form['opzione2']
-    return f"Hai selezionato le opzioni: {opzione1_selezionata}, {opzione2_selezionata}"
+    cart = []
+    email = request.form['email']
+    primo = request.form['primo']
+    secondo = request.form['secondo']
+    contorno = request.form['contorno']
+    dolce = request.form['dolce']
+    if primo == "1":
+        primo = "Pasta Boscaiola"
+        cart.append(int(pastaBoscaiola.prezzo))
+    elif primo == "2":
+        primo = "Risotto allo Zafferano"
+        cart.append(int(risottoZafferano.prezzo))
+    elif primo == "3":
+        primo = "Pizza Margherita"
+        cart.append(int(pizzaMargherita.prezzo))
+    if secondo == "4":
+        secondo = "Cotoletta alla milanese"
+        cart.append(int(cotoletta.prezzo))
+    elif secondo == "5":
+        secondo = "Tagliata"
+        cart.append(int(tagliata.prezzo))
+    elif secondo == "6":
+        secondo = "Salmone"
+        cart.append(int(salmone.prezzo))
+    if contorno == "7":
+        contorno = "Cicoria"
+        cart.append(int(cicoria.prezzo))
+    elif contorno == "8":
+        contorno = "Patatine fritte"
+        cart.append(int(patatine.prezzo))
+    elif contorno == "9":
+        contorno = "Insalata"
+        cart.append(int(insalata.prezzo))
+    if dolce == "10":
+        dolce = "Tiramisù"
+        cart.append(int(tiramisu.prezzo))
+    elif dolce == "11":
+        dolce = "Crem Caramel"
+        cart.append(int(cremcaramel.prezzo))
+    elif dolce == "12":
+        dolce = "Panna Cotta"
+        cart.append(int(pannacotta.prezzo))
+    prezzo = sum(cart)
 
+    ordine = f"{primo}, {secondo}, {contorno}, {dolce}. Il totale è: {prezzo}€"
+
+
+   # This code will add the order to the DB
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="restaurant_menu_flask"
+    )
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO Customers (Email, Primo, Secondo, Contorno, Dolce, Price) VALUES (%s, %s, %s, %s, %s, %s)"
+    val = (email, primo, secondo, contorno, dolce, prezzo)
+    mycursor.execute(sql, val)
+    mydb.commit()
+    print(mycursor.rowcount, "Scelta registrata")
+
+    return render_template('menu_result.html', ordine=ordine)
 if __name__ == '__main__':
     app.run()
-"""
-# Codice HTML
-"""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Selezione Opzioni</title>
-</head>
-<body>
-    <h2>Seleziona due opzioni:</h2>
-    <form action="/stamp" method="post">
-        <label for="opzione1">Opzione 1:</label>
-        <select name="opzione1" id="opzione1">
-            <option value="opzione1">Opzione 1</option>
-            <option value="opzione2">Opzione 2</option>
-            <option value="opzione3">Opzione 3</option>
-        </select>
-        <br>
-        <label for="opzione2">Opzione 2:</label>
-        <select name="opzione2" id="opzione2">
-            <option value="opzioneA">Opzione A</option>
-            <option value="opzioneB">Opzione B</option>
-            <option value="opzioneC">Opzione C</option>
-        </select>
-        <br>
-        <input type="submit" value="Invia">
-    </form>
-</body>
-</html>
-"""
-
-
