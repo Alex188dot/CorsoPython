@@ -13,7 +13,7 @@ per il secondo “cotoletta”, “spigola” etc.
 
 
 class Piatto:
-    def __init__(self,id, prezzo):
+    def __init__(self, id, prezzo):
         self.prezzo = prezzo
         self.id = id
 
@@ -134,9 +134,16 @@ def stamp():
         database="restaurant_menu_flask"
     )
     mycursor = mydb.cursor()
-    sql = "INSERT INTO Customers (Email, Primo, Secondo, Contorno, Dolce, Price) VALUES (%s, %s, %s, %s, %s, %s)"
-    val = (email, primo, secondo, contorno, dolce, prezzo)
-    mycursor.execute(sql, val)
+    sql = "INSERT INTO Customers (Email, Primo, Secondo, Contorno, Dolce, Price) VALUES (%(email)s, %(primo)s, %(secondo)s, %(contorno)s, %(dolce)s, %(prezzo)s)"
+    data = {
+        "email": email,
+        "primo": primo,
+        "secondo": secondo,
+        "contorno": contorno,
+        "dolce": dolce,
+        "prezzo": prezzo
+    }
+    mycursor.execute(sql, data)
     mydb.commit()
     print(mycursor.rowcount, "Scelta registrata")
 
