@@ -23,7 +23,8 @@
           <input
             type="email"
             class="form-control"
-            id="floatingInput"
+            id="email"
+            name="email"
             placeholder="name@example.com"
           />
           <label for="floatingInput">Email address</label>
@@ -31,47 +32,57 @@
         <label for="floatingSelect">Scegli un Primo</label>
         <select
           class="form-select"
-          id="floatingSelect"
+          id="primo"
+          name="primo"
           aria-label="Floating label select example"
         >
           <option selected>Scegli</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">Pasta Boscaiola</option>
+          <option value="2">Risotto allo Zafferano</option>
+          <option value="3">Pizza Margherita</option>
         </select>
         <label for="floatingSelect">Scegli un Secondo</label>
         <select
           class="form-select"
-          id="floatingSelect"
+          id="secondo"
+          name="secondo"
           aria-label="Floating label select example"
         >
           <option selected>Scegli</option>
-          <option value="4">One</option>
-          <option value="5">Two</option>
-          <option value="6">Three</option>
+          <option value="4">Cotoletta alla milanese</option>
+          <option value="5">Tagliata</option>
+          <option value="6">Salmone</option>
         </select>
         <label for="floatingSelect">Scegli un Contorno</label>
         <select
           class="form-select"
-          id="floatingSelect"
+          id="contorno"
+          name="contorno"
           aria-label="Floating label select example"
         >
           <option selected>Scegli</option>
-          <option value="7">One</option>
-          <option value="8">Two</option>
-          <option value="9">Three</option>
+          <option value="7">Cicoria</option>
+          <option value="8">Patatine fritte</option>
+          <option value="9">Insalata</option>
         </select>
         <label for="floatingSelect">Scegli il Dolce</label>
         <select
           class="form-select"
-          id="floatingSelect"
+          id="dolce"
+          name="dolce"
           aria-label="Floating label select example"
         >
           <option selected>Scegli</option>
-          <option value="10">One</option>
-          <option value="11">Two</option>
-          <option value="12">Three</option>
+          <option value="10">Tiramisù</option>
+          <option value="11">Crem Caramel</option>
+          <option value="12">Panna Cotta</option>
         </select>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          value="Invia"
+          style="margin-top: 3rem"
+        />
       </form>
     </div>
     <script
