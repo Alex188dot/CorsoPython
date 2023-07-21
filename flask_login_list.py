@@ -64,7 +64,6 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 mycursor.execute("CREATE TABLE Users (Id INT AUTO_INCREMENT PRIMARY KEY, Username VARCHAR(255))")
 """
-# Manually inserted "Rossi" and "Bianchi" under Users, in Workbench
 
 app = Flask(__name__)
 
@@ -84,9 +83,7 @@ def login():
     mycursor = mydb.cursor()
     mycursor.execute("SELECT Username FROM flask_login.Users")
     myresult = mycursor.fetchall()
-    print(myresult)
     myresult = [x[0].strip("()'") for x in myresult]
-    print(myresult)
     if username in myresult:
         return render_template('profile3.html', myresult=myresult)
     else:
