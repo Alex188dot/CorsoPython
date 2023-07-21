@@ -33,7 +33,7 @@ class Auto:
 # Created new database autosalone
 mydb = mysql.connector.connect(
   host="localhost",
-  user="master",
+  user="root",
   password=pwd
 )
 
@@ -47,7 +47,7 @@ print(mydb)
 """
 mydb = mysql.connector.connect(
   host="localhost",
-  user="master",
+  user="root",
   password=pwd,
   database="autosalone"
 )
@@ -68,13 +68,13 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM restaurant_menu.Manager")
+mycursor.execute("SELECT * FROM autosalone")
 myresult = mycursor.fetchall()
 
 
 mycursor.execute("CREATE TABLE Manager (Username VARCHAR(255), Pwd VARCHAR(255))")
 
-# Added Username and PWD for Restaurant Manager
+# Added Username and PWD for Autosalone Manager
 
 UID = "Admin1"
 Admin_Pwd = "01"
