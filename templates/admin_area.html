@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scelta Menu</title>
+    <style>
+      form {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"
+          ><a class="navbar-brand" href="menu.html">Scelta Menu</a></span
+        >
+        <span class="navbar-brand mb-0 h1"
+          ><a class="navbar-brand" href="#">Area Riservata</a></span
+        >
+      </div>
+    </nav>
+
+    <div
+      class="container"
+      style="
+        width: 60%;
+        margin: auto;
+        margin-top: 4rem;
+        border: 1px solid black;
+      "
+    >
+      <h1>Ordini</h1>
+      <p>Ci sono i seguenti ordini da convalidare o annullare:</p>
+      <ul>
+        {% for x in myresult %}
+        <li style="font-size: 1.2rem">
+          {{x[0]}}), {{x[1]}}, {{x[2]}}, {{x[3]}}, {{x[4]}}, {{x[5]}}. Il totale
+          è: {{x[6]}}€
+          <form action="/accetta_ordine" method="post">
+            <input
+              class="btn btn-success"
+              type="submit"
+              value="Accetta"
+              style="margin-left: 0.5rem"
+            />
+          </form>
+          <form action="/rifiuta_ordine" method="post">
+            <input
+              class="btn btn-danger"
+              type="submit"
+              value="Rifiuta"
+              style="margin-left: 0.5rem"
+            />
+          </form>
+        </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

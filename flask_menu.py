@@ -54,7 +54,7 @@ mycursor.execute("CREATE DATABASE restaurant_menu_flask")
 print(mydb)
 
 """
-# Created Customers Table and added Email, Choice and Price columns
+# Created Customers Table and added Email, Primo, Secondo, Contorno, Dolce and Price columns
 """
 mydb = mysql.connector.connect(
   host="localhost",
@@ -68,6 +68,29 @@ mycursor = mydb.cursor()
 mycursor.execute("CREATE TABLE Customers (Id INT AUTO_INCREMENT PRIMARY KEY, Email VARCHAR(255), Primo VARCHAR(255), Secondo VARCHAR(255), Contorno VARCHAR(255), Dolce VARCHAR(255), Price VARCHAR(255))")
 """
 
+# Created Manager Table and added Username and Pwd columns
+"""
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password=pwd,
+  database="restaurant_menu_flask"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE Manager (Username VARCHAR(255), Pwd VARCHAR(255))")
+
+# Added Username and PWD for Restaurant Manager
+
+UID = "Admin1"
+Admin_Pwd = "01"
+
+sql = "INSERT INTO Manager (Username, Pwd) VALUES (%s, %s)"
+val = (UID, Admin_Pwd)
+mycursor.execute(sql, val)
+mydb.commit()
+"""
 
 
 
@@ -146,7 +169,52 @@ def stamp():
     mycursor.execute(sql, data)
     mydb.commit()
     print(mycursor.rowcount, "Scelta registrata")
-
     return render_template('menu_result.html', ordine=ordine)
+
+
+@app.route('/admin_login.html')
+def admin_login():
+    return render_template('admin_login.html')
+
+@app.route('/admin_area')
+def admin_area():
+    return render_template('admin_area.html')
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['text']
+    password = request.form['password']
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="restaurant_menu_flask"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM restaurant_menu_flask.Manager;")
+    myresult = mycursor.fetchall()
+    conta = []
+    for x in myresult:
+        if username not in x and password not in x:
+            conta.append("0")
+        elif username in x and password in x:
+            conta.append("1")
+            if conta.count("1") == 1:
+                print("Bentornato!")
+                mydb = mysql.connector.connect(
+                    host="localhost",
+                    user="root",
+                    password=pwd,
+                    database="restaurant_menu_flask"
+                )
+                mycursor = mydb.cursor()
+                mycursor.execute("SELECT * FROM Customers")
+                myresult = mycursor.fetchall()
+                admin_area()
+                return render_template('admin_area.html', myresult=myresult)
+            else:
+                error = "Username o Password errati"
+                return render_template('admin_area.html', error=error)
+
 if __name__ == '__main__':
     app.run()
