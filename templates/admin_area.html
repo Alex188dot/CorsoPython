@@ -20,43 +20,56 @@
     <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1"
-          ><a class="navbar-brand" href="menu.html">Scelta Menu</a></span
+          ><a class="navbar-brand" href="{{ url_for('index') }}"
+            >Scelta Menu</a
+          ></span
         >
         <span class="navbar-brand mb-0 h1"
-          ><a class="navbar-brand" href="#">Area Riservata</a></span
+          ><a class="navbar-brand" href="{{ url_for('admin_login') }}"
+            >Area Riservata</a
+          ></span
         >
       </div>
     </nav>
 
-    <div
-      class="container"
-      style="
-        width: 60%;
-        margin: auto;
-        margin-top: 4rem;
-        border: 1px solid black;
-      "
-    >
+    <div class="container" style="width: 60%; margin: auto; margin-top: 4rem">
       <h1>Ordini</h1>
       <p>Ci sono i seguenti ordini da convalidare o annullare:</p>
       <ul>
         {% for x in myresult %}
-        <li style="font-size: 1.2rem">
-          {{x[0]}}), {{x[1]}}, {{x[2]}}, {{x[3]}}, {{x[4]}}, {{x[5]}}. Il totale
-          è: {{x[6]}}€
-          <form action="/accetta_ordine" method="post">
+        <li style="font-size: 1.2rem; margin-top: 1.2rem">
+          <form
+            style="width: 100%"
+            action="/accettaRifiuta_ordine"
+            method="post"
+          >
+            <input
+              style="border-radius: 0.5rem; width: 80%"
+              type="text"
+              name="name"
+              value="{{x[0]}}), {{x[1]}}, {{x[2]}}, {{x[3]}}, {{x[4]}}, {{x[5]}}. Il totale è: {{x[6]}}€"
+              disabled
+            />
+            <input type="hidden" name="id" value="{{x[0]}}" />
+            <input type="hidden" name="email" value="{{x[1]}}" />
+            <input type="hidden" name="primo" value="{{x[2]}}" />
+            <input type="hidden" name="secondo" value="{{x[3]}}" />
+            <input type="hidden" name="contorno" value="{{x[4]}}" />
+            <input type="hidden" name="dolce" value="{{x[5]}}" />
+            <input type="hidden" name="price" value="{{x[6]}}" />
+
             <input
               class="btn btn-success"
               type="submit"
               value="Accetta"
+              name="accetta"
               style="margin-left: 0.5rem"
             />
-          </form>
-          <form action="/rifiuta_ordine" method="post">
             <input
               class="btn btn-danger"
               type="submit"
               value="Rifiuta"
+              name="rifiuta"
               style="margin-left: 0.5rem"
             />
           </form>

@@ -92,6 +92,20 @@ mycursor.execute(sql, val)
 mydb.commit()
 """
 
+# Created Accepted Orders Table and added Email, Primo, Secondo, Contorno, Dolce and Price columns
+"""
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password=pwd,
+  database="restaurant_menu_flask"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE Accepted_Orders (Id INT AUTO_INCREMENT PRIMARY KEY, Email VARCHAR(255), Primo VARCHAR(255), Secondo VARCHAR(255), Contorno VARCHAR(255), Dolce VARCHAR(255), Price VARCHAR(255))")
+"""
+
 
 
 app = Flask(__name__)
@@ -216,5 +230,59 @@ def login():
                 error = "Username o Password errati"
                 return render_template('admin_area.html', error=error)
 
+@app.route('/accettaRifiuta_ordine', methods=['POST'])
+def accettaRifiuta_ordine():
+    # Get the values of the input fields
+    id = request.form.get('id')
+    email = request.form.get('email')
+    primo = request.form.get('primo')
+    secondo = request.form.get('secondo')
+    contorno = request.form.get('contorno')
+    dolce = request.form.get('dolce')
+    price = request.form.get('price')
+    accetta = request.form.get('accetta')
+    rifiuta = request.form.get('rifiuta')
+    # Connect to the database
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="restaurant_menu_flask"
+    )
+    mycursor = mydb.cursor()
+    # Check which button was clicked
+    if accetta:
+        # Add the id to the database
+        sql = "INSERT INTO Accepted_Orders (id, email, primo, secondo, contorno, dolce, price) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        val = (id, email, primo, secondo, contorno, dolce, price)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        # Remove the record with the id from the database
+        sql = "DELETE FROM Customers WHERE id = %s"
+        val = (id,)
+        mycursor.execute(sql, val)
+        mydb.commit()
+    elif rifiuta:
+        # Remove the record with the id from the database
+        sql = "DELETE FROM Customers WHERE id = %s"
+        val = (id,)
+        mycursor.execute(sql, val)
+        mydb.commit()
+    # Return a response or redirect
+    # Query the database for the updated data
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM Customers")
+    myresult = mycursor.fetchall()
+    admin_area()
+    # Render the same template with the updated data
+    return render_template('admin_area.html', myresult=myresult)
+
+
+    
+
+
 if __name__ == '__main__':
     app.run()
+
+
+## Next things to do: add automated email to customer

@@ -10,6 +10,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scelta Menu</title>
+    <style>
+      select {
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
@@ -88,12 +93,14 @@
           <option value="11">Crem Caramel</option>
           <option value="12">Panna Cotta</option>
         </select>
-        <input
-          class="btn btn-primary"
-          type="submit"
-          value="Invia"
-          style="margin-top: 3rem"
-        />
+        <div style="display: flex; justify-content: center">
+          <input
+            class="btn btn-primary"
+            type="submit"
+            value="Invia"
+            style="margin-top: 3rem"
+          />
+        </div>
       </form>
     </div>
     <script
