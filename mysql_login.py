@@ -69,7 +69,5 @@ while inp != "0":
         sql = "INSERT INTO Customers (Username, Pwd) VALUES (%s, %s)"
         val = (inp, inp2)
         mycursor.execute(sql, val)
-
         mydb.commit()
-
         print(mycursor.rowcount, "record inserted.")
