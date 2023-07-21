@@ -101,11 +101,6 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-
-# mycursor.execute("SELECT * FROM restaurant_menu.Manager")
-# myresult = mycursor.fetchall()
-"""
-"""
 mycursor.execute("CREATE TABLE Manager (Username VARCHAR(255), Pwd VARCHAR(255))")
 """
 # Added Username and PWD for Restaurant Manager
