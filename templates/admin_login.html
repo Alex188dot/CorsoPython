@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scelta Menu</title>
-  </head>
+  {% extends "menu.html" %} {% block content %}
   <body>
-    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1"
-          ><a class="navbar-brand" href="{{ url_for('index') }}"
-            >Scelta Menu</a
-          ></span
-        >
-        <span class="navbar-brand mb-0 h1"
-          ><a class="navbar-brand" href="#">Area Riservata</a></span
-        >
-      </div>
-    </nav>
-
     <div class="container" style="width: 30%; margin: auto; margin-top: 4rem">
       <h2 style="text-align: center">Admin Login</h2>
       <form action="/login" method="post">
-        <div class="form-floating mb-3">
+        <div class="form-floating mb-3" style="margin-top: 2rem">
           <input
             type="text"
             class="form-control"
@@ -38,7 +15,7 @@
           />
           <label for="floatingInput">Username</label>
         </div>
-        <div class="form-floating mb-3">
+        <div class="form-floating mb-3" style="margin-top: 2rem">
           <input
             type="password"
             class="form-control"
@@ -54,7 +31,7 @@
       </form>
       <p>{{error}}</p>
     </div>
-
+    {% endblock %}
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
