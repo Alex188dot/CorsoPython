@@ -4,6 +4,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+
+
+
 pwd = "your-db-pwd"
 
 """
@@ -281,9 +284,17 @@ def accettaRifiuta_ordine():
     # Check which button was clicked
     if accetta:
         # Add the id to the database
-        sql = "INSERT INTO Accepted_Orders (id, email, primo, secondo, contorno, dolce, price) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        val = (id, email, primo, secondo, contorno, dolce, price)
-        mycursor.execute(sql, val)
+        sql = "INSERT INTO Accepted_Orders (id, email, primo, secondo, contorno, dolce, price) VALUES (%(id)s, %(email)s, %(primo)s, %(secondo)s, %(contorno)s, %(dolce)s, %(prezzo)s)"
+        data = {
+            "id": id,
+            "email": email,
+            "primo": primo,
+            "secondo": secondo,
+            "contorno": contorno,
+            "dolce": dolce,
+            "prezzo": price
+        }
+        mycursor.execute(sql, data)
         mydb.commit()
         # Remove the record with the id from the database
         sql = "DELETE FROM Customers WHERE id = %s"

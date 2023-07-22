@@ -37,6 +37,25 @@
       h1 {
         font-weight: bold;
       }
+      .custom-container {
+        width: 30%;
+        margin: auto;
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 576px) {
+        .custom-container {
+          width: 80%;
+        }
+      }
+      img {
+        transition: 0.3s; /* add a smooth transition */
+      }
+
+      img:hover {
+        transform: scale(1.1); /* scale the image to 110% */
+      }
+
       .col-12.col-md-4.col-lg-2 {
         width: auto;
       }
@@ -103,7 +122,7 @@
     {% endblock %} {% block content %}
     <h1>Ristorante Trattoria "La Bella Roma"</h1>
     <h4>Menu</h4>
-    <div class="container" style="width: 30%; margin: auto; margin-top: 4rem">
+    <div class="custom-container container-fluid">
       <form action="/stamp" method="post">
         <div class="form-floating mb-3">
           <input
