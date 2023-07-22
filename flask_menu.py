@@ -1,6 +1,8 @@
 import mysql.connector
 from flask import Flask, render_template, request
-
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 pwd = "your-db-pwd"
 
@@ -105,6 +107,32 @@ mycursor = mydb.cursor()
 
 mycursor.execute("CREATE TABLE Accepted_Orders (Id INT AUTO_INCREMENT PRIMARY KEY, Email VARCHAR(255), Primo VARCHAR(255), Secondo VARCHAR(255), Contorno VARCHAR(255), Dolce VARCHAR(255), Price VARCHAR(255))")
 """
+
+
+def invia_email(destinatario, oggetto, corpo):
+    # Configura il server SMTP per inviare l'email (in questo esempio utilizzo Gmail)
+    smtp_server = "smtp.gmail.com"
+    port = 587
+    sender_email = "your-email-address"  # Inserisci il tuo indirizzo email
+    sender_password = "your-app-password"  # Inserisci la tua password email
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = destinatario
+    message["Subject"] = oggetto
+    message.attach(MIMEText(corpo, "plain"))
+
+    # Connessione e invio dell'email
+    try:
+        server = smtplib.SMTP(smtp_server, port)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, destinatario, message.as_string())
+        print("Email inviata con successo!")
+    except Exception as e:
+        print("Errore nell'invio dell'email:", str(e))
+    finally:
+        server.quit()
+
 
 
 
@@ -262,12 +290,20 @@ def accettaRifiuta_ordine():
         val = (id,)
         mycursor.execute(sql, val)
         mydb.commit()
+        # Send email to customer to confirm order
+        subj = "Il suo ordine presso Ristorante Trattoria La Bella Roma"
+        body = f"Gentile Cliente,\n\nGrazie per il suo ordine!\nDi seguito trova i dettagli di ciò che ha ordinato:\n\n{primo}, {secondo}, {contorno}, {dolce}. Il totale è: {price}€\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
+        invia_email(email, subj, body)
     elif rifiuta:
         # Remove the record with the id from the database
         sql = "DELETE FROM Customers WHERE id = %s"
         val = (id,)
         mycursor.execute(sql, val)
         mydb.commit()
+        # Send email to customer to confirm order
+        subj = "Ordine presso Ristorante Trattoria La Bella Roma cancellato"
+        body = f"Gentile Cliente,\n\nQuesta email è per informarla che al momento, data la grande richiesta, non siamo in grado di gestire il suo ordine. Ci scusiamo per il disagio e le auguriamo un buon proseguimento.\n\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
+        invia_email(email, subj, body)
     # Return a response or redirect
     # Query the database for the updated data
     mycursor = mydb.cursor()
@@ -285,4 +321,5 @@ if __name__ == '__main__':
     app.run()
 
 
-## Next things to do: add automated email to customer
+
+
