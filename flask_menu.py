@@ -257,9 +257,6 @@ def login():
                 myresult = mycursor.fetchall()
                 admin_area()
                 return render_template('admin_area.html', myresult=myresult)
-            else:
-                error = "Username o Password errati"
-                return render_template('admin_area.html', error=error)
 
 @app.route('/accettaRifiuta_ordine', methods=['POST'])
 def accettaRifiuta_ordine():
