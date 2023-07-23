@@ -227,7 +227,7 @@ def admin_area():
 
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.form['text']
+    username = request.form['username']
     password = request.form['password']
     mydb = mysql.connector.connect(
         host="localhost",
