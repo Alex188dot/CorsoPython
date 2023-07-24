@@ -3,9 +3,11 @@ from flask import Flask, render_template, request
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
+from PIL import Image
 
 
 pwd = "your-db-pwd"
@@ -123,7 +125,15 @@ def invia_email(destinatario, oggetto, corpo):
     message["From"] = sender_email
     message["To"] = destinatario
     message["Subject"] = oggetto
-    message.attach(MIMEText(corpo, "plain"))
+    message.attach(MIMEText(corpo, "html"))
+    # Open the image file in binary mode
+    fp = open('static/email-logo.png', 'rb')
+    msgImage = MIMEImage(fp.read())
+    fp.close()
+
+    # Define the image's ID as referenced above
+    msgImage.add_header('Content-ID', '<email-logo>')
+    message.attach(msgImage)
 
     # Connessione e invio dell'email
     try:
@@ -326,8 +336,7 @@ def stats1():
     # Dati da visualizzare
     labels = dishes
     sizes = dishesCount
-    colors = ['red', 'blue', 'green', 'orange', 'lightblue', 'purple', 'yellow', 'white', 'black', 'lightgreen',
-              'brown', 'lightcyan']
+    colors = ['red', 'blue', 'green', 'orange', 'lightblue', 'purple', 'yellow', 'white', 'black', 'lightgreen', 'brown', 'lightcyan']
 
     plt.figure(figsize=(12, 10))
 
@@ -335,9 +344,43 @@ def stats1():
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
 
     # Personalizzazione dell'aspetto del grafico
-    plt.title("Percentuale vendite")
+    plt.title("Percentuale vendite", fontsize=14)
 
     plt.savefig('static/pie_chart.png')
+
+    ###################################
+
+    # Multi-pie chart graph
+
+    # Clear previous figure
+    plt.clf()
+
+    # Lists containing the values for the dishes
+    dishesCountPrimi = [dishesCount[0], dishesCount[1], dishesCount[2]]
+    dishesCountSecondi = [dishesCount[3], dishesCount[4], dishesCount[5]]
+    dishesCountContorni = [dishesCount[6], dishesCount[7], dishesCount[8]]
+    dishesCountDolci = [dishesCount[9], dishesCount[10], dishesCount[11]]
+
+    # Lists containing the labels for the dishes
+    dishesPrimi = ["Pasta Boscaiola", "Risotto allo Zafferano", "Pizza Margherita"]
+    dishesSecondi = ["Cotoletta alla milanese", "Tagliata", "Salmone"]
+    dishesContorni = ["Cicoria", "Patatine fritte", "Insalata"]
+    dishesDolci = ["Tiramisù", "Crem Caramel", "Panna Cotta"]
+
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+    # plot pie charts on each subplot using the lists
+    axes[0, 0].pie(dishesCountPrimi, labels=dishesPrimi, autopct='%.2f%%', textprops={'fontsize': 8})
+    axes[0, 0].set_title("Primi", fontsize=14)
+    axes[0, 1].pie(dishesCountSecondi, labels=dishesSecondi, autopct='%.2f%%', textprops={'fontsize': 8})
+    axes[0, 1].set_title("Secondi", fontsize=14)
+    axes[1, 0].pie(dishesCountContorni, labels=dishesContorni, autopct='%.2f%%', textprops={'fontsize': 8})
+    axes[1, 0].set_title("Contorni", fontsize=14)
+    axes[1, 1].pie(dishesCountDolci, labels=dishesDolci, autopct='%.2f%%', textprops={'fontsize': 8})
+    axes[1, 1].set_title("Dolci", fontsize=14)
+
+    # save the figure
+    plt.savefig('static/multi-pie-graph.png')
 
     return tot
 
@@ -442,8 +485,8 @@ def stats2():
 
     # Personalizzazione dell'aspetto del grafico
     plt.title("Vendite per Piatto")
-    plt.xlabel("Piatti")
-    plt.ylabel("€")
+    plt.xlabel("Piatti", fontsize=14)
+    plt.ylabel("€", fontsize=14)
     # Set the xtick labels and font size
     plt.xticks(categories, fontsize=8)
     # Rotate the xtick labels by 20 degrees
@@ -463,7 +506,6 @@ def stats3():
 
 @app.route('/stats', methods=['post'])
 def showStats():
-    stats1()
     tot = stats1()
     # Clear the current figure
     plt.clf()
@@ -554,7 +596,19 @@ def accettaRifiuta_ordine():
         mydb.commit()
         # Send email to customer to confirm order
         subj = "Il suo ordine presso Ristorante Trattoria La Bella Roma"
-        body = f"Gentile Cliente,\n\nGrazie per il suo ordine!\nDi seguito trova i dettagli di ciò che ha ordinato:\n\n{primo}, {secondo}, {contorno}, {dolce}. Il totale è: {price}€\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
+        body = f"""<p>Gentile Cliente,</p>
+        <p>Grazie per il suo ordine!</p>
+        <p>Di seguito trova i dettagli di ciò che ha ordinato:</p>
+        <ul>
+        <li>{primo}</li>
+        <li>{secondo}</li>
+        <li>{contorno}</li>
+        <li>{dolce}</li>
+        </ul>
+        <p>Il totale è: {price}€</p>
+        <p>Il Team di La Bella Roma</p>
+        <img class="email-logo" src="cid:email-logo" />
+        <p>Questo messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge.</p>"""
         invia_email(email, subj, body)
     elif rifiuta:
         # Remove the record with the id from the database
@@ -564,7 +618,11 @@ def accettaRifiuta_ordine():
         mydb.commit()
         # Send email to customer to confirm order
         subj = "Ordine presso Ristorante Trattoria La Bella Roma cancellato"
-        body = f"Gentile Cliente,\n\nQuesta email è per informarla che al momento, data la grande richiesta, non siamo in grado di gestire il suo ordine. Ci scusiamo per il disagio e le auguriamo un buon proseguimento.\n\n\nQuesto messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge."
+        body = f"""<p>Gentile Cliente,</p>
+        <p>Questa email è per informarla che al momento, data la grande richiesta, <b>non siamo in grado di gestire il suo ordine</b>. Ci scusiamo per il disagio e le auguriamo un buon proseguimento.</p>
+        <p>Il Team di La Bella Roma</p>
+        <img class="email-logo" src="cid:email-logo" />
+        <p>Questo messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: trattoria@labellaroma.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge.</p>"""
         invia_email(email, subj, body)
     # Return a response or redirect
     # Query the database for the updated data
