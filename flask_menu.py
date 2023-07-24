@@ -3,8 +3,9 @@ from flask import Flask, render_template, request
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
-
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 
 
 pwd = "your-db-pwd"
@@ -217,6 +218,229 @@ def stamp():
     return render_template('menu_result.html', ordine=ordine)
 
 
+def stats1():
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="restaurant_menu_flask"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT Price FROM Accepted_Orders")
+    myresult = mycursor.fetchall()
+    tot = 0
+    for x in myresult:
+        tot += int(x[0])
+
+    dishes_count = []
+    # Get the total counts for Pasta Boscaiola
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Primo = 'Pasta Boscaiola'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    boscaiolaCount = [x[0] for x in myresult]
+    dishes_count.append(boscaiolaCount)
+
+    # Get the total counts for Risotto allo Zafferano
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Primo = 'Risotto allo Zafferano'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    risottoCount = [x[0] for x in myresult]
+    dishes_count.append(risottoCount)
+
+    # Get the total counts for Pizza Margherita
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Primo = 'Pizza Margherita'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    pizzaCount = [x[0] for x in myresult]
+    dishes_count.append(pizzaCount)
+
+    # Get the total counts for Cotoletta alla milanese
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Secondo = 'Cotoletta alla milanese'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    cotolettaCount = [x[0] for x in myresult]
+    dishes_count.append(cotolettaCount)
+
+    # Get the total counts for Tagliata
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Secondo = 'Tagliata'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    tagliata = [x[0] for x in myresult]
+    dishes_count.append(tagliata)
+
+    # Get the total counts for Salmone
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Secondo = 'Salmone'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    salmone = [x[0] for x in myresult]
+    dishes_count.append(salmone)
+
+    # Get the total counts for Cicoria
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Contorno = 'Cicoria'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    cicoria = [x[0] for x in myresult]
+    dishes_count.append(cicoria)
+
+    # Get the total counts for Patatine Fritte
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Contorno = 'Patatine Fritte'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    patatine = [x[0] for x in myresult]
+    dishes_count.append(patatine)
+
+    # Get the total counts for Insalata
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Contorno = 'Insalata'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    insalata = [x[0] for x in myresult]
+    dishes_count.append(insalata)
+
+    # Get the total counts for Tiramisù
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Dolce = 'Tiramisù'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    tiramisu = [x[0] for x in myresult]
+    dishes_count.append(tiramisu)
+
+    # Get the total counts for Crem Caramel
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Dolce = 'Crem Caramel'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    cremCaramel = [x[0] for x in myresult]
+    dishes_count.append(cremCaramel)
+
+    # Get the total counts for Panna Cotta
+    sql = "SELECT COUNT(*) FROM Accepted_Orders WHERE Dolce = 'Panna Cotta'"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    pannaCotta = [x[0] for x in myresult]
+    dishes_count.append(pannaCotta)
+
+    # List containing the values for the dishes
+    dishesCount = [x[0] for x in dishes_count]
+
+    # List containing the labels for the dishes
+    dishes = ["Pasta Boscaiola", "Risotto allo Zafferano", "Pizza Margherita", "Cotoletta alla milanese", "Tagliata", "Salmone", "Cicoria", "Patatine fritte", "Insalata", "Tiramisù", "Crem Caramel", "Panna Cotta"]
+
+    # Dati da visualizzare
+    labels = dishes
+    sizes = dishesCount
+    colors = ['red', 'blue', 'green', 'orange', 'lightblue', 'purple', 'yellow', 'white', 'black', 'lightgreen',
+              'brown', 'lightcyan']
+
+    # Creazione del grafico a torta
+    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
+
+    # Personalizzazione dell'aspetto del grafico
+    plt.title("Percentuale vendite")
+
+    plt.savefig('static/pie_chart.png')
+
+    return tot
+
+
+def stats2():
+    # Connect to the database
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="restaurant_menu_flask"
+    )
+    mycursor = mydb.cursor()
+
+    # Define the dishes list
+    dishes = ["Pasta Boscaiola", "Risotto allo Zafferano", "Pizza Margherita", "Cotoletta alla milanese", "Tagliata",
+              "Salmone", "Cicoria", "Patatine fritte", "Insalata", "Tiramisù", "Crem Caramel", "Panna Cotta"]
+
+    primi = ["Pasta Boscaiola", "Risotto allo Zafferano", "Pizza Margherita"]
+    secondi = ["Cotoletta alla milanese", "Tagliata", "Salmone"]
+    contorni =["Cicoria", "Patatine fritte", "Insalata"]
+    dolci = ["Tiramisù", "Crem Caramel", "Panna Cotta"]
+
+    # Define an empty list to store the values
+    values = []
+
+    # Loop over the primi list
+    for dish in primi:
+        # Define the parameterized query
+        sql = "SELECT * FROM accepted_orders WHERE Primo = %s"
+        # Execute the query with the dish as a parameter
+        mycursor.execute(sql, (dish,))
+        # Fetch the results
+        myresult = mycursor.fetchall()
+        # Initialize a sum variable
+        sum = 0
+        # Loop over the results and add the quantity to the sum
+        for x in myresult:
+            sum += int(x[6])
+        # Append the sum to the values list
+        values.append(sum)
+
+    # Loop over the secondi list
+    for dish in secondi:
+        # Define the parameterized query
+        sql = "SELECT * FROM accepted_orders WHERE Secondo = %s"
+        # Execute the query with the dish as a parameter
+        mycursor.execute(sql, (dish,))
+        # Fetch the results
+        myresult = mycursor.fetchall()
+        # Initialize a sum variable
+        sum = 0
+        # Loop over the results and add the quantity to the sum
+        for x in myresult:
+            sum += int(x[6])
+        # Append the sum to the values list
+        values.append(sum)
+
+    # Loop over the contorni list
+    for dish in contorni:
+        # Define the parameterized query
+        sql = "SELECT * FROM accepted_orders WHERE Contorno = %s"
+        # Execute the query with the dish as a parameter
+        mycursor.execute(sql, (dish,))
+        # Fetch the results
+        myresult = mycursor.fetchall()
+        # Initialize a sum variable
+        sum = 0
+        # Loop over the results and add the quantity to the sum
+        for x in myresult:
+            sum += int(x[6])
+        # Append the sum to the values list
+        values.append(sum)
+
+    # Loop over the dolci list
+    for dish in dolci:
+        # Define the parameterized query
+        sql = "SELECT * FROM accepted_orders WHERE Dolce = %s"
+        # Execute the query with the dish as a parameter
+        mycursor.execute(sql, (dish,))
+        # Fetch the results
+        myresult = mycursor.fetchall()
+        # Initialize a sum variable
+        sum = 0
+        # Loop over the results and add the quantity to the sum
+        for x in myresult:
+            sum += int(x[6])
+        # Append the sum to the values list
+        values.append(sum)
+
+    # Print the values list
+    print(values)
+
+
+stats2()
+
+
+
+
+@app.route('/stats', methods=['post'])
+def showStats():
+    tot = stats1()
+    return render_template('stats.html', tot=tot)
+
+
 @app.route('/admin_login.html')
 def admin_login():
     return render_template('admin_login.html')
@@ -322,7 +546,6 @@ def accettaRifiuta_ordine():
     return render_template('admin_area.html', myresult=myresult)
 
 
-    
 
 
 if __name__ == '__main__':
