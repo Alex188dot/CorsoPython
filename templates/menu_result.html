@@ -18,6 +18,9 @@
     <p class="order-recap">Ha ordinato le seguenti portate: {{ ordine }}</p>
     <p class="order-recap">Riceverà a breve una mail di conferma ordine</p>
     <p class="order-recap">Grazie per averci scelto!</p>
+    <div style="display: flex; justify-content: center">
+      <img src="{{ url_for('static', filename='logo.png') }}" />
+    </div>
     {% endblock %}
 
     <script

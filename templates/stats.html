@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {% extends "menu.html" %}{% block title %}
-  <title>🍕 Statistiche</title>
+  <title>Statistiche</title>
   {% endblock %}
   <body>
     {% block content %}
@@ -43,6 +43,16 @@
         <img
           src="{{ url_for('static', filename='histogram.png') }}"
           alt="Histo"
+          class="img-fluid"
+        />
+      </div>
+      <div
+        class="col-12"
+        style="display: flex; justify-content: center; margin-bottom: 2rem"
+      >
+        <img
+          src="{{ url_for('static', filename='multi-pie-graph.png') }}"
+          alt="multi-pie-graph"
           class="img-fluid"
         />
       </div>
