@@ -7,7 +7,7 @@ from email.mime.image import MIMEImage
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
-from PIL import Image
+
 
 
 pwd = "your-db-pwd"
