@@ -329,6 +329,8 @@ def stats1():
     colors = ['red', 'blue', 'green', 'orange', 'lightblue', 'purple', 'yellow', 'white', 'black', 'lightgreen',
               'brown', 'lightcyan']
 
+    plt.figure(figsize=(12, 10))
+
     # Creazione del grafico a torta
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
 
@@ -360,7 +362,7 @@ def stats2():
     dolci = ["Tiramisù", "Crem Caramel", "Panna Cotta"]
 
     # Define an empty list to store the values
-    values = []
+    values_h = []
 
     # Loop over the primi list
     for dish in primi:
@@ -376,7 +378,7 @@ def stats2():
         for x in myresult:
             sum += int(x[6])
         # Append the sum to the values list
-        values.append(sum)
+        values_h.append(sum)
 
     # Loop over the secondi list
     for dish in secondi:
@@ -392,7 +394,7 @@ def stats2():
         for x in myresult:
             sum += int(x[6])
         # Append the sum to the values list
-        values.append(sum)
+        values_h.append(sum)
 
     # Loop over the contorni list
     for dish in contorni:
@@ -408,7 +410,7 @@ def stats2():
         for x in myresult:
             sum += int(x[6])
         # Append the sum to the values list
-        values.append(sum)
+        values_h.append(sum)
 
     # Loop over the dolci list
     for dish in dolci:
@@ -424,20 +426,48 @@ def stats2():
         for x in myresult:
             sum += int(x[6])
         # Append the sum to the values list
-        values.append(sum)
-
-    # Print the values list
-    print(values)
+        values_h.append(sum)
 
 
-stats2()
+    # Dati da visualizzare
+    categories = dishes
+    values = values_h
+
+    # Clear previous figure
+    plt.clf()
+
+    plt.figure(figsize=(12, 10))
+    # Creazione dell'istogramma
+    plt.bar(categories, values)
+
+    # Personalizzazione dell'aspetto del grafico
+    plt.title("Vendite per Piatto")
+    plt.xlabel("Piatti")
+    plt.ylabel("€")
+    # Set the xtick labels and font size
+    plt.xticks(categories, fontsize=8)
+    # Rotate the xtick labels by 20 degrees
+    plt.tick_params(axis='x', which='major', rotation=20)
+
+
+    plt.savefig('static/histogram.png')
+
+
+
+def stats3():
+    global dishesCount
+    global dishes
 
 
 
 
 @app.route('/stats', methods=['post'])
 def showStats():
+    stats1()
     tot = stats1()
+    # Clear the current figure
+    plt.clf()
+    stats2()
     return render_template('stats.html', tot=tot)
 
 
