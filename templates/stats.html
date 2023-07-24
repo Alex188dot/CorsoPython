@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% extends "menu.html" %}
+  {% extends "menu.html" %}{% block title %}
+  <title>🍕 Statistiche</title>
+  {% endblock %}
   <body>
     {% block content %}
-    <h1
-      style="
-        text-align: center;
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        font-weight: bold;
-      "
-    >
-      Statistiche
-    </h1>
-    <p
-      style="
-        margin-bottom: 2rem;
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.5rem;
-      "
-    >
-      Il totale incassi è: {{ tot }}€
-    </p>
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem">
-      <img
-        src="{{ url_for('static', filename='pie_chart.png') }}"
-        alt="Pie Chart"
-      />
+    <div class="container-fluid">
+      <h1
+        style="
+          text-align: center;
+          margin-top: 4rem;
+          margin-bottom: 2rem;
+          font-weight: bold;
+        "
+      >
+        Statistiche
+      </h1>
+      <p
+        style="
+          margin-bottom: 2rem;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.5rem;
+        "
+      >
+        Il totale incassi è: {{ tot }}€
+      </p>
+      <div
+        class="col-12"
+        style="display: flex; justify-content: center; margin-bottom: 2rem"
+      >
+        <img
+          src="{{ url_for('static', filename='pie_chart.png') }}"
+          alt="Pie Chart"
+          class="img-fluid"
+        />
+      </div>
+      <div
+        class="col-12"
+        style="display: flex; justify-content: center; margin-bottom: 2rem"
+      >
+        <img
+          src="{{ url_for('static', filename='histogram.png') }}"
+          alt="Histo"
+          class="img-fluid"
+        />
+      </div>
     </div>
-
     {% endblock %}
 
     <script

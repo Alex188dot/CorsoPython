@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% extends "menu.html" %} {% block head %} {{ super() }}
+  {% extends "menu.html" %} {% block head %} {% block title %}
+  <title>🍕 Il suo Ordine</title>
+  {% endblock %} {{ super() }}
   <style>
     .order-recap {
       text-align: center;
