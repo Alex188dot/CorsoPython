@@ -20,6 +20,8 @@
     body {
         background-color: #435165;
         margin: 0;
+        position: relative;
+        height: 90vh;
     }
     .custom-container {
         width: 30%;
@@ -36,57 +38,58 @@
 {% endblock %}
 {% block content %}
 <body>
+    <h4 style="margin-bottom: 2rem; margin-top: 2rem; text-align: center; color: white">{{msg}}</h4>
     <div class="custom-container container-fluid">
         <form action="/order" method="post">
           <div class="form-floating mb-3">
           </div>
-          <label for="floatingSelect">Prodotto da banco</label>
+          <label for="floatingSelect">Prodotti confezionati</label>
           <select
             class="form-select"
-            id="primo"
-            name="primo"
+            id="confezionati"
+            name="confezionati"
             aria-label="Floating label select example"
           >
-            <option selected>Scegli</option>
-            <option value="1">Pasta Boscaiola</option>
-            <option value="2">Risotto allo Zafferano</option>
-            <option value="3">Pizza Margherita</option>
+            <option value="0"> </option>
+            <option value="1">Pasta</option>
+            <option value="2">Riso</option>
+            <option value="3">Pane in cassetta</option>
           </select>
           <label for="floatingSelect">Prodotti freschi</label>
           <select
             class="form-select"
-            id="secondo"
-            name="secondo"
+            id="freschi"
+            name="freschi"
             aria-label="Floating label select example"
           >
-            <option selected>Scegli</option>
-            <option value="4">Cotoletta alla milanese</option>
-            <option value="5">Tagliata</option>
-            <option value="6">Salmone</option>
+            <option value="0"> </option>
+            <option value="4">Lattuga</option>
+            <option value="5">Cetrioli</option>
+            <option value="6">Carne</option>
           </select>
           <label for="floatingSelect">Prodotti da frigo</label>
           <select
             class="form-select"
-            id="contorno"
-            name="contorno"
+            id="frigo"
+            name="frigo"
             aria-label="Floating label select example"
           >
-            <option selected>Scegli</option>
-            <option value="7">Cicoria</option>
-            <option value="8">Patatine fritte</option>
-            <option value="9">Insalata</option>
+            <option value="0"> </option>
+            <option value="7">Ricotta</option>
+            <option value="8">Provola</option>
+            <option value="9">Latte</option>
           </select>
           <label for="floatingSelect">Elettrodomestici</label>
           <select
             class="form-select"
-            id="dolce"
-            name="dolce"
+            id="elettrodomestici"
+            name="elettrodomestici"
             aria-label="Floating label select example"
           >
-            <option selected>Scegli</option>
-            <option value="10">Tiramisù</option>
-            <option value="11">Crem Caramel</option>
-            <option value="12">Panna Cotta</option>
+            <option value="0"> </option>
+            <option value="10">Ferro da Stiro</option>
+            <option value="11">Lavatrice</option>
+            <option value="12">Asciuga Capelli</option>
           </select>
           <div style="display: flex; justify-content: center">
             <input
@@ -98,6 +101,7 @@
           </div>
         </form>
       </div>
+      <footer style="font-size: 0.8rem; font-style: italic; color: white;position: absolute; bottom: 0; text-align: center; width: 100%;">Ultimo accesso effettuato: {{ last_access_time }}</footer>
   
 </body>
 {% endblock %}
