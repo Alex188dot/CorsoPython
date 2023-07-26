@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% extends "flask_supermarket_login.html" %} {% block content %} 
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+            style="display: flex; justify-content: space-between"
+          >
+            <ul class="navbar-nav">
+              <li>
+                <a class="nav-link" href="{{ url_for('index') }}"><b>Login</b></a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li>
+                <a class="nav-link" href="{{ url_for('admin_login') }}"
+                  ><b>Area Riservata</b></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="login">
+      <h1>Admin Login</h1>
+      <form action="/login" method="post">
+        <label for="username">
+          <i class="fas fa-user"></i>
+        </label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          id="username"
+          required
+        />
+        <label for="password">
+          <i class="fas fa-lock"></i>
+        </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="password"
+          required
+        />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+  {% endblock %}
+</html>
