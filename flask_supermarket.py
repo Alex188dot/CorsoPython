@@ -1,8 +1,16 @@
 from flask import Flask, render_template, request, redirect, make_response
 import mysql.connector
+import datetime
 from datetime import datetime
+from datetime import date
+import collections
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 
 pwd = 'your-db-pwd'
+
+
 
 
 
@@ -14,6 +22,8 @@ Creare un programma supermarketFlask che rappresenta la gestione di un supermerc
 
 
 """
+
+
 
 
 
@@ -61,6 +71,160 @@ def index():
 @app.route('/register')
 def register_page():
     return render_template('flask_supermarket_register.html')
+@app.route('/admin_login')
+def admin_login():
+    return render_template('flask_supermarket_admin_login.html')
+
+@app.route('/admin_area', methods=['POST'])
+def admin_area():
+    username = request.form['username']
+    password = request.form['password']
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="Talentform"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM Talentform.admin;")
+    myresult = mycursor.fetchall()
+    conta = []
+    for x in myresult:
+        if username not in x and password not in x:
+            conta.append("0")
+        elif username in x and password in x:
+            conta.append("1")
+            if conta.count("1") == 1:
+                print("Bentornato!")
+
+                # Calculate today's revenue
+
+                mydb = mysql.connector.connect(
+                    host="localhost",
+                    user="root",
+                    password=pwd,
+                    database="Talentform"
+                )
+                mycursor = mydb.cursor()
+
+                # Get the current date as a string in the format YYYY-MM-DD
+                today = datetime.today().strftime("%Y-%m-%d")
+
+                # Execute the SQL query with the WHERE clause
+                mycursor.execute(f"SELECT totale FROM prodotti_scelti WHERE last_access LIKE '{today}%';")
+                myresult = mycursor.fetchall()
+                totale = []
+                for x in myresult:
+                    totale.append(x[0])
+                incassi = sum(totale)
+
+
+                # Format today's date to include in the HTML
+                today_formatted = datetime.today().strftime("%d-%m-%Y")
+
+                # First graph - Calculate when there are most accesses to the website
+
+                mycursor = mydb.cursor()
+                mycursor.execute("SELECT last_access FROM prodotti_scelti;")
+                myresult = mycursor.fetchall()
+                new_result = []
+                for row in myresult:
+                    dt_tuple = row
+                    dt_obj = dt_tuple[0]
+                    # Format it into a string with the desired components separated by commas
+                    dt_str = dt_obj.strftime("%Y,%m,%d,%H,%M,%S")
+                    # Split the string into a list of its components
+                    dt_list = dt_str.split(",")
+                    # Convert each element of the list into an integer
+                    dt_int = map(int, dt_list)
+                    # Convert the list into a tuple
+                    final_tuple = tuple(dt_int)
+                    # Print the final tuple
+                    print(final_tuple)
+                    new_result.append(final_tuple)
+
+                # Create an empty list to store the hours
+                hours = []
+
+                # Loop through each row in myresult
+                for row in new_result:
+                    # Create a datetime object from the tuple elements
+                    last_access = datetime(row[0], row[1], row[2], row[3], row[4], row[5])
+                    # Get the hour component and append it to the list
+                    if last_access.date() == date.today():
+                        # Get the hour component and append it to the list
+                        hours.append(last_access.hour)
+
+                # Print the list of hours
+                print(hours)
+
+                # Create a Counter object from the list
+                counter = collections.Counter(hours)
+
+                # Get a list of the counts
+                counts = list(counter.values())
+                # Print the list of counts
+                print(counts)
+
+                # Create a set object from the list
+                myset = set(hours)
+
+                # Convert the set object to a list
+                unique = list(myset)
+
+                # Print the list of unique numbers
+                print(unique)
+
+                # Pie chart graph: purchases per hour in percentages
+
+                # Clear previous figure
+                plt.clf()
+
+                # Create new figure
+                plt.figure(figsize=(12, 10))
+
+                # Personalizzazione dell'aspetto del grafico
+                plt.title("Acquisti per ora della giornata in percentuale")
+
+                # Dati da visualizzare
+                labels = unique
+                sizes = counts
+                colors = ['red', 'blue', 'green', 'orange', 'lightblue', 'purple', 'yellow', 'white', 'black', 'lightgreen', 'brown', 'lightcyan']
+
+                # Creazione del grafico a torta
+                plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
+
+                plt.savefig('static/purchases_per_hour_piechart.png')
+
+
+                # Second graph: linegraph
+
+                # Clear previous figure
+                plt.clf()
+
+                # Dati da visualizzare
+                x = unique
+                y = counts
+
+                # Creazione del grafico a linee
+                plt.plot(x, y)
+
+                # Personalizzazione dell'aspetto del grafico
+                plt.title("Acquisti per ora della giornata")
+                plt.xlabel("Orario (24h)", fontsize=14)
+                plt.ylabel("N. Acquisti", fontsize=14)
+                # Set the tick locations and labels on the x-axis (9-22)
+                plt.xticks(range(9, 23))
+
+                # Mostra il grafico
+                plt.savefig('static/purchases_per_hour_linegraph.png')
+
+
+
+                return render_template('flask_supermarket_admin_area.html', today_formatted=today_formatted, incassi=incassi)
+
+
+
 
 
 @app.route('/registrate', methods=['POST'])
@@ -196,8 +360,9 @@ def order():
     mycursor = mydb.cursor()
     username = request.cookies.get('username')
     email = request.cookies.get('email')
-    sql = "INSERT INTO prodotti_scelti (confezionati, freschi, frigo, elettrodomestici, username, email, totale) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    val = (confezionati, freschi, frigo, elettrodomestici, username, email, prezzo)
+    last_access = datetime.now().isoformat()
+    sql = "INSERT INTO prodotti_scelti (confezionati, freschi, frigo, elettrodomestici, username, email, totale, last_access) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    val = (confezionati, freschi, frigo, elettrodomestici, username, email, prezzo, last_access)
     mycursor.execute(sql, val)
     mydb.commit()
     print(mycursor.rowcount, "Scelta registrata")
