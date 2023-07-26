@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, make_response
+from flask import Flask, render_template, request, redirect, make_response
 import mysql.connector
 from datetime import datetime
 
@@ -77,15 +77,22 @@ def registration():
         username = request.form['username']
         password = request.form['password']
         last_access = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        query = "INSERT INTO users3 (email, username, password, last_access) VALUES (%s, %s, %s, %s)"
-        values = (email, username, password, last_access)
+        query = "INSERT INTO users3 (email, username, password, last_access) VALUES (%(email)s, %(username)s, %(password)s, %(last_access)s)"
+        values = {
+            "email": email,
+            "username": username,
+            "password": password,
+            "last_access": last_access
+        }
         cursor.execute(query, values)
         connection.commit()
         print("Dati salvati correttamente nel database.")
-        response = make_response('Cookie impostati con successo!')
-        response.set_cookie('username', username)
-        response.set_cookie('last_access_time', datetime.now().isoformat())
         msg = "Registrazione effettuata con successo"
+        response = make_response(redirect('/', code=302))
+        response.set_cookie('username', username)
+        response.set_cookie('email', email)
+        response.set_cookie('last_access_time', datetime.now().isoformat())
+        return response
     except mysql.connector.Error as error:
         print("Errore durante il salvataggio dei dati:", error)
     finally:
@@ -114,7 +121,7 @@ def login():
         elif username in x and password in x:
             conta.append("1")
             if conta.count("1") == 1:
-                # Leggi il cookie esistente, se presente
+                # Read the existing cookie, if present
                 last_access_time = request.cookies.get('last_access_time')
                 msg = f"Bentornato {username}! Scegli tra i prodotti disponibili per la tua spesa a domicilio: "
                 return render_template('flask_supermarket_choose_product.html', msg=msg, last_access_time=last_access_time)
@@ -178,22 +185,7 @@ def order():
         elettrodomestici = ""
         cart.append(int(sceltaNulla.prezzo))
     prezzo = sum(cart)
-    username = request.cookies.get('username')
     ordine = f"La sua spesa: {confezionati}, {freschi}, {frigo}, {elettrodomestici}. Il totale è: {prezzo}€"
-    # This code will retrieve the email of the user
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password=pwd,
-        database="Talentform"
-    )
-    mycursor = mydb.cursor()
-    sql = f"SELECT * FROM users3 WHERE username ='{username}'"
-    mycursor.execute(sql)
-    myresult = mycursor.fetchall()
-    email = ""
-    for x in myresult:
-        email = x[1]
     # This code will add the order to the DB
     mydb = mysql.connector.connect(
         host="localhost",
@@ -202,6 +194,8 @@ def order():
         database="Talentform"
     )
     mycursor = mydb.cursor()
+    username = request.cookies.get('username')
+    email = request.cookies.get('email')
     sql = "INSERT INTO prodotti_scelti (confezionati, freschi, frigo, elettrodomestici, username, email, totale) VALUES (%s, %s, %s, %s, %s, %s, %s)"
     val = (confezionati, freschi, frigo, elettrodomestici, username, email, prezzo)
     mycursor.execute(sql, val)
