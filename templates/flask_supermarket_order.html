@@ -2,7 +2,18 @@
 <html lang="en">
   {% extends "flask_supermarket_login.html" %} {% block content %}
   <body>
-    <h3 style="text-align: center; color: white">{{ordine}}</h3>
+    <h3 style="text-align: center; color: white; margin-top: 4rem">
+      {{ordine}}
+    </h3>
+    <div
+      class="logo"
+      style="display: flex; justify-content: center; margin-bottom: 0"
+    >
+      <img
+        src="{{ url_for('static', filename='supermarket-logo.png') }}"
+        alt="logo"
+      />
+    </div>
   </body>
   {% endblock %}
 </html>

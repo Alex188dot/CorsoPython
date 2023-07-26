@@ -22,7 +22,7 @@
         -moz-osx-font-smoothing: grayscale;
       }
       body {
-        background-color: #435165;
+        background-color: hsla(206, 91%, 66%, 1);
         margin: 0;
       }
       .login,
@@ -30,12 +30,12 @@
         width: 400px;
         background-color: #ffffff;
         box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-        margin: 100px auto;
+        margin: auto;
       }
       .login h1,
       .register h1 {
         text-align: center;
-        color: #5b6574;
+        color: #276f24;
         font-size: 24px;
         padding: 20px 0 20px 0;
         border-bottom: 1px solid #dee0e4;
@@ -59,8 +59,8 @@
       }
       .login .links a.active,
       .register .links a.active {
-        border-bottom: 3px solid #3274d6;
-        color: #3274d6;
+        border-bottom: 3px solid #ffde59;
+        color: #ffde59;
       }
       .login form,
       .register form {
@@ -76,7 +76,7 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background-color: #3274d6;
+        background-color: #ffde59;
         color: #ffffff;
       }
       .login form input[type="password"],
@@ -96,16 +96,17 @@
         width: 100%;
         padding: 15px;
         margin-top: 20px;
-        background-color: #3274d6;
+        background-color: #ffde59;
         border: 0;
         cursor: pointer;
         font-weight: bold;
-        color: #ffffff;
+        color: #276f24;
         transition: background-color 0.2s;
       }
       .login form input[type="submit"]:hover,
       .register form input[type="submit"]:hover {
-        background-color: #2868c7;
+        background-color: #276f24;
+        color: #ffde59;
         transition: background-color 0.2s;
       }
       .navtop {
@@ -157,7 +158,7 @@
         padding: 25px 0;
         font-size: 22px;
         border-bottom: 1px solid #e0e0e3;
-        color: #4a536e;
+        color: #276f24;
       }
       .content > p,
       .content > div {
@@ -173,18 +174,26 @@
       .content > p table td:first-child,
       .content > div table td:first-child {
         font-weight: bold;
-        color: #4a536e;
+        color: #276f24;
         padding-right: 15px;
       }
       .content > div p {
         padding: 5px;
         margin: 0 0 10px 0;
       }
+      .custom-container {
+        width: 30%;
+        margin: auto;
+        margin-top: 2rem;
+      }
     </style>
   </head>
   {% endblock %} {% block content %}
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary"
+      style="background-color: #ffde59 !important"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
         <button
@@ -218,6 +227,15 @@
         </div>
       </div>
     </nav>
+    <div
+      class="logo"
+      style="display: flex; justify-content: center; margin-bottom: 0"
+    >
+      <img
+        src="{{ url_for('static', filename='supermarket-logo.png') }}"
+        alt="logo"
+      />
+    </div>
     <div class="login">
       <h1>Login</h1>
       <div class="links">
