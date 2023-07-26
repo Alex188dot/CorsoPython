@@ -13,7 +13,6 @@
     />
     <style>
       * {
-        box-sizing: border-box;
         font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto,
           oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue",
           Arial, sans-serif;
@@ -23,7 +22,6 @@
       }
       body {
         background-color: hsla(206, 91%, 66%, 1);
-        margin: 0;
       }
       .login,
       .register {
@@ -185,6 +183,11 @@
         width: 30%;
         margin: auto;
         margin-top: 2rem;
+      }
+      @media (max-width: 576px) {
+        .custom-container {
+          width: 80%;
+        }
       }
     </style>
   </head>

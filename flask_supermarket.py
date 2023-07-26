@@ -95,7 +95,6 @@ def admin_area():
         elif username in x and password in x:
             conta.append("1")
             if conta.count("1") == 1:
-                print("Bentornato!")
 
                 # Calculate today's revenue
 
@@ -139,8 +138,6 @@ def admin_area():
                     dt_int = map(int, dt_list)
                     # Convert the list into a tuple
                     final_tuple = tuple(dt_int)
-                    # Print the final tuple
-                    print(final_tuple)
                     new_result.append(final_tuple)
 
                 # Create an empty list to store the hours
@@ -155,25 +152,16 @@ def admin_area():
                         # Get the hour component and append it to the list
                         hours.append(last_access.hour)
 
-                # Print the list of hours
-                print(hours)
-
                 # Create a Counter object from the list
                 counter = collections.Counter(hours)
-
                 # Get a list of the counts
                 counts = list(counter.values())
-                # Print the list of counts
-                print(counts)
-
                 # Create a set object from the list
                 myset = set(hours)
-
                 # Convert the set object to a list
                 unique = list(myset)
 
-                # Print the list of unique numbers
-                print(unique)
+
 
                 # Pie chart graph: purchases per hour in percentages
 
