@@ -3,7 +3,7 @@ from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 import hashlib
 from cryptography.fernet import Fernet
-from flask import Flask, render_template, request, redirect, make_response
+from flask import Flask, render_template, request
 
 
 
