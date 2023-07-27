@@ -3,6 +3,14 @@ import json
 import time
 import random
 
+"""
+
+Create a chain of blocks (blockchain) each of which represents the development of a product from its creation 
+to its distribution. Use the example provided in class.
+
+"""
+
+
 
 class Block:
     def __init__(self, index, timestamp, data, previous_hash):
