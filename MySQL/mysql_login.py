@@ -6,7 +6,10 @@ pwd = "your-password"
 
 """
 
-scrivere un programma che chiede all'utente di inserire username e password e li va a registrare in una tabella creata ad hoc. Il programma se l'utente è già presente nella tabella stampa bentornato  lo username altrimenti stampa registrazione avvenuta con successo. Attenzione: se l'utente è già presente nella tabella non deve essere registrato due volte.
+scrivere un programma che chiede all'utente di inserire username e password e li va a registrare in una tabella 
+creata ad hoc. Il programma se l'utente è già presente nella tabella stampa bentornato  lo username altrimenti 
+stampa registrazione avvenuta con successo. Attenzione: se l'utente è già presente nella tabella non deve essere 
+registrato due volte.
 
 """
 """
