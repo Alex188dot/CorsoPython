@@ -9,8 +9,14 @@ import matplotlib.pyplot as plt
 pwd = "your-db-pwd"
 
 """
-Creare una applicazione flask che utilizza i cookie di sessione. In particolare vogliamo registrare di un utente lo username e l’ultimo accesso.
+Creare una applicazione flask che utilizza i cookie di sessione. In particolare vogliamo registrare di un utente 
+lo username e l’ultimo accesso.
 Questi dati vengono registrati in un database. Creare delle statistiche sui dati di accesso dell’utente.
+
+Create a flask application that uses session cookies. Specifically we want to register a user's
+username and last access.
+This data is recorded in a database. Create statistics on user access data.
+
 """
 
 

@@ -69,12 +69,12 @@ while inp != "6":
             sum += r.area()
         print("La somma delle aree è:", sum)
     elif inp == "4":
-        f = open("lista.pkl", "wb")
+        f = open("Input Programs/lista.pkl", "wb")
         pickle.dump(lista, f)
         f.close()
         print("File salvato con successo")
     elif inp == "5":
-        f = open("lista.pkl", "rb")
+        f = open("Input Programs/lista.pkl", "rb")
         unpickler = pickle.Unpickler(f)
         lista = unpickler.load()
         f.close()
