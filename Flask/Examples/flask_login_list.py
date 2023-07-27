@@ -4,9 +4,17 @@ import mysql.connector
 pwd = "your-db-pwd"
 
 """
-1) Inizializza una lista di user arbitrari ("Rossi" "Bianchi" etc...). Dopo aver reso il login va a leggere lo user inserito e se non lo trova nella lista lo aggiunge, altrimenti la lista rimane invariata. Infine passiamo la lista e la stampiamo per bene all'interno della pagina html
+1) Inizializza una lista di user arbitrari ("Rossi" "Bianchi" etc...). Dopo aver reso il login va a leggere lo user 
+inserito e se non lo trova nella lista lo aggiunge, altrimenti la lista rimane invariata. Infine passiamo la lista e 
+la stampiamo per bene all'interno della pagina html
 
 2) Fai la stessa cosa ma il controllo questa volta tramite lista proveniente da database
+
+1) Initialize a list of arbitrary users ("Red" "White" etc...). After making the login it goes to read the user
+entered and if it does not find it in the list, it adds it, otherwise the list remains unchanged. Finally we pass 
+the list and we print it on the html page
+
+2) Do the same thing but this time using a list from the database
 
 """
 # 1)
