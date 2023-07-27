@@ -134,7 +134,7 @@ def clicked():
             show_login(res)
             # open a new window
             new_window = tk.Toplevel(master)
-            new_window.title("Nuova Finestra")
+            new_window.title("Vending Machine")
             centerWindow(new_window)
 
             def coffee():

@@ -5,12 +5,12 @@ from tkinter import *
 root = Tk()
 
 # root window title and dimension
-root.title("Welcome to GeekForGeeks")
+root.title("Hello world!")
 # Set geometry(widthxheight)
 root.geometry('350x200')
 
 # adding a label to the root window
-lbl = Label(root, text="Are you a Geek?")
+lbl = Label(root, text="Are you a Italian?")
 lbl.grid()
 
 # adding Entry Field
