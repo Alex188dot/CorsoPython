@@ -446,7 +446,7 @@ def admin_section():
                     def salva_grafici_pdf2():
                         fig = mostra_categorie()
                         fig2 = mostra_per_utente()
-                        with PdfPages('../grafici.pdf') as pdf:
+                        with PdfPages('grafici.pdf') as pdf:
                             pdf.savefig(fig)
                             pdf.savefig(fig2)
                             show_alert("PDF salvato con successo!")

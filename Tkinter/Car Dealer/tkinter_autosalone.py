@@ -356,7 +356,7 @@ def admin_section():
 
                     def salva_grafici_pdf():
                         fig = mostra_grafici()
-                        with PdfPages('../../grafici_autosalone.pdf') as pdf:
+                        with PdfPages('grafici_autosalone.pdf') as pdf:
                             pdf.savefig(fig)
                             show_alert("PDF salvato con successo!")
 
