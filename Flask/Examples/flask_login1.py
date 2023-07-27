@@ -1,5 +1,7 @@
 """
-Creiamo una applicazione che chiede all'utente nome e passowrd (tramite un form html) Impostare user e password già all'inizio. Successivamente il programma se queste variabili vengono riconosciute stampa benvenuto e il nome dell'user altrimenti stampa utente non ricnosciuto
+Creiamo una applicazione che chiede all'utente nome e passowrd (tramite un form html)
+Impostare user e password già all'inizio. Successivamente il programma se queste variabili
+vengono riconosciute stampa benvenuto e il nome dell'user altrimenti stampa utente non ricnosciuto
 
 """
 

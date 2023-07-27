@@ -18,8 +18,21 @@ pwd = 'your-db-pwd'
 
 Esercizio supermarket
 
-Creare un programma supermarketFlask che rappresenta la gestione di un supermercato online. Inizialmente creare l’interfaccia per l’utente: l’utente può scegliere tra 4 select prodotti da banco, prodotti freschi, prodotti da frigo, inoltre nell’ultima select  possiamo scegliere tra vari elettrodomestici. In questo programma l’utente può anche scegliere di non selezionare alcuni prodotti (stringa vuota o null). Inoltre una volta effettuato l’ordine il programma va a scrivere su una tabella mysql i dati. ATTENZIONE: tra i dati sono presenti la mail e la password dell’utente, e quindi i relativi cookie dei dati di sessione.
+Creare un programma supermarketFlask che rappresenta la gestione di un supermercato online. 
+Inizialmente creare l’interfaccia per l’utente: l’utente può scegliere tra 4 select:
+prodotti confezionati, prodotti freschi, prodotti da frigo, etc..
+Inoltre nell’ultima select possiamo scegliere tra vari elettrodomestici. 
+In questo programma l’utente può anche scegliere di non selezionare alcuni prodotti (stringa vuota o null). 
+Inoltre una volta effettuato l’ordine il programma va a scrivere su una tabella mysql i dati. 
 
+Supermarket exercise
+
+Create a Flask Supermarket program that represents the CRM of an online supermarket.
+Initially create the interface for the user: the user can choose between 4 options:
+packaged products, fresh products, refrigerated products, etc...
+Furthermore, in the last select we can choose between various appliances.
+In this program the user can also choose not to select some products (empty string or null).
+Then, once the order has been placed, the program writes the data to a mysql table.
 
 """
 
