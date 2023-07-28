@@ -19,7 +19,7 @@ And then they can choose the meals they want to order:
 <img width="602" alt="user's choice" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/a12c1e18-4012-4a8f-9bec-22a5be2dc61e">
 
 
-Once they are done, they can click on the Fatto✅ button, which will trigger an automated email  
+Once they are done, they can click on the Fatto!✅ button, which will trigger an automated confirmation email  
 that will be sent to the user, example below:
 
 <img width="567" alt="Confirmation email" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/35b14fc1-6399-4fe0-b68d-38593d17626a">
@@ -30,7 +30,8 @@ The manager, on the other hand has their own Reserved Area where they can login
 <img width="600" alt="Admin login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fe09d6ac-a6f3-44a8-8450-1fac17041447">
 
 
-and check how the business is going, through the use of graphs, and/or download a PDF of the stats:
+and check how the business is going (total revenue), by itself or through the use of graphs, and/or download a PDF of the stats:
 
+<img width="257" alt="Total revenue" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7774b989-4b08-4790-94c3-6aa3e85a0c5d">
 <img width="598" alt="Admin Area" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/d28f3634-7b42-4ea1-a663-9351a5e0e610">
-<img width="257" alt="Total revenue" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/9d32596e-40aa-4ae3-b0eb-cd57713ca236">
+[grafici.pdf](https://github.com/Alex188dot/CorsoPython/files/12195123/grafici.pdf)
