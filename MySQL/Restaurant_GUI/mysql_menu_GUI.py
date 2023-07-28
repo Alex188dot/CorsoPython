@@ -41,12 +41,31 @@ def invia_email(destinatario, oggetto, corpo):
 
 
 """
-1) Creiamo una classe menu. Ogni menu ha un prezzo a seconda che il menu sia di carne, pesce o da bambini. Il programma chiede all’utente quale menu desidera ordinare e dopo aver chiesto la mail dell’utente va a registrare su una tabella con database dedicato il tipo di menu, la mail del cliente e il prezzo del menu. 
+1) Creiamo una classe menu. Ogni menu ha un prezzo a seconda che il menu sia di carne, pesce o da bambini. 
+Il programma chiede all’utente quale menu desidera ordinare e dopo aver chiesto la mail dell’utente va a registrare 
+su una tabella con database dedicato il tipo di menu, la mail del cliente e il prezzo del menu. 
 
 2) Creare una interfaccia grafica per il programma precedente.
-Il programma prevede una finestra dove l’utente inserisce la mail. una volta inserita la mail si apre una nuova finestra dove l’utente può scegliere il menu. Scelto il menu questo viene registrato nella tabella mysql.
+Il programma prevede una finestra dove l’utente inserisce la mail. una volta inserita la mail si apre una 
+nuova finestra dove l’utente può scegliere il menu. Scelto il menu questo viene registrato nella tabella mysql.
 
-3) Implementare l’interfaccia del gestore. L’interfaccia va fatta con tkinter: il gestore inserisce username e password (ad esempio “rossi” “1234”) quando questi dati vengono verificati si apre una nuova finestra dove sono stampate: la lista degli ordini effettuati, statistiche con grafici utilizzando la libreria matplotlib
+3) Implementare l’interfaccia del gestore. L’interfaccia va fatta con tkinter: il gestore inserisce 
+username e password (ad esempio “rossi” “1234”) quando questi dati vengono verificati si apre una nuova finestra 
+dove sono stampate: la lista degli ordini effettuati, statistiche con grafici utilizzando la libreria matplotlib
+
+English below:
+
+1) Let's create a menu class. Each menu has a price depending on whether the menu is meat, fish or children's.
+The program asks the user which menu they want to order and after asking for the user's email it goes to register
+it on a table on the database.
+
+2) Create a graphical interface for the previous program.
+The program provides a window where the user enters the email. Once the email has been entered,
+a new window opens up where the user can choose the menu which is then recorded in the relevant mysql table.
+
+3) Implement the manager interface. The interface must be done with Tkinter: the manager inserts
+username and password (for example "rossi" "1234") when the data is verified a new window opens up
+where there will be: a list of all the orders, statistics with graphs using the matplotlib library
 
 """
 
