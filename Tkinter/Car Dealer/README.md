@@ -1,5 +1,14 @@
 # Car Dealership program
 
+The requirements to run this program are the following 4 libraries:
+
+mysql-connector-python==8.0.28  
+tkinter==8.6  
+smtplib==0.0.1  
+matplotlib==3.5.1  
+
+MySQL Connector to connect to the database, Tkinter for the GUI, SMTPlib for sending confirmation emails, Matplotlib to create graphs.
+
 This program mimics a landing page for a car dealer where the user can input their email address 
 
 <img width="595" alt="Screenshot 2023-07-28 at 16 21 04" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/ef29c56a-f1ef-4b5e-98a0-2cd3a763ada8">
