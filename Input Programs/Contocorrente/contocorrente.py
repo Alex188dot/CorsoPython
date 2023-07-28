@@ -33,8 +33,7 @@ class Contocorrente:
 
     def bonifico(self, importo):
         self.saldo = self.saldo - importo - 1.5
-    # I added the transfer to another user function, which was not requested, but
-    # it sounded cool. 1.5 euros represents the fee to pay for the transfer.
+    # Transfer to another user function 1.5 euros represents the fee to pay for the transfer.
     def visualizzare(self):
         return self.saldo
 
