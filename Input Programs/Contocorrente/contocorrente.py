@@ -1,7 +1,17 @@
 import pickle
 
 """
-scrivere una classe contocorrente che rappresenta un conto corrente bancario. Il conto è rappresentato da uno username, un id e un saldo. Successivamente scrivere la classe bancomat che inizializza una lista di contocorrente e permette di prelevare dal conto, versare sul conto, fare un bonifico, visualizzare il saldo (plus se nel saldo riusciamo a visualizzare la lista movimenti). Inoltre scrivere un programma che permette all'utente di usufruire del bancomat dopo aver digitato lo username e l'id corretto associato al conto
+Scrivere una classe contocorrente che rappresenta un conto corrente bancario. Il conto è rappresentato da uno username, 
+un id e un saldo. Successivamente scrivere la classe bancomat che inizializza una lista di contocorrente e permette 
+di prelevare dal conto, versare sul conto, fare un bonifico, visualizzare il saldo (plus se nel saldo riusciamo 
+a visualizzare la lista movimenti). Inoltre scrivere un programma che permette all'utente di usufruire del bancomat 
+dopo aver digitato lo username e l'id corretto associato al conto.
+
+Write a checking account class that represents a checking account. The account is represented by a username,
+an id and a balance. Then write the ATM class that initializes a current account list and allows
+to withdraw from the account, pay into the account, make a transfer, view the balance (plus if we succeed, 
+display the movement list). Also write a program that allows the user to use the ATM
+after entering the correct username and id associated with the account.
 
 """
 
@@ -13,6 +23,7 @@ class Contocorrente:
         self.saldo = saldo
         self.movimenti = []
 
+    # I created the methods in the checking account instead of in the ATM
 
     def prelevare(self, importo):
         self.saldo -= importo
