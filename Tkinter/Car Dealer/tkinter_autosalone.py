@@ -12,8 +12,12 @@ from matplotlib import pyplot as plt
 pwd = "your-db-pwd"
 
 """
-Creiamo una classe auto: ogni auto possiede una marca, un colore e uno stato optional che può essere “base” o “full optional”.
-Successivamente creare una finestra dove l’utente può scegliere (ATTRAVERSO UNA COMBOBOX) tra una serie di scelte es: “Fiat, Ford, etc.”. L’utente cliccando il pulsante riceverà una mail con il prezzo dell’auto da lui scelta (inserire una entry per la mai dell’utente). Inoltre l’auto opzionata sarà inserita in una tabella di nome autoOpzionata con queste intestazioni :id : (potete usare l’autoincrement), marca, colore e prezzo.
+Creiamo una classe auto: ogni auto possiede una marca, un colore e uno stato optional che può essere “base” o 
+“full optional”.
+Successivamente creare una finestra dove l’utente può scegliere (ATTRAVERSO UNA COMBOBOX) tra una serie di scelte es: 
+“Fiat, Ford, etc.”. L’utente cliccando il pulsante riceverà una mail con il prezzo dell’auto da lui scelta 
+(inserire una entry per la mai dell’utente). Inoltre l’auto opzionata sarà inserita in una tabella di nome autoOpzionata
+ con queste intestazioni :id : (potete usare l’autoincrement), marca, colore e prezzo.
 
 """
 
