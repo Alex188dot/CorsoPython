@@ -2,10 +2,10 @@
 
 The requirements to run this program are the following 4 libraries:
 
-mysql-connector-python==8.0.28
-tkinter==8.6
-smtplib==0.0.1
-matplotlib==3.5.1
+mysql-connector-python==8.0.28  
+tkinter==8.6  
+smtplib==0.0.1   
+matplotlib==3.5.1  
 
 MySQL Connector to connect to the database, Tkinter for the GUI, SMTPlib for sending confirmation emails, Matplotlib to create graphs. 
 
