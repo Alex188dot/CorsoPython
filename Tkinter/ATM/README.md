@@ -8,9 +8,10 @@ After running the program a window will prompt the user for login:
 
 To try the program just insert "User 1" for username and "01" as the pwd. 
 
+Once the user is logged in, they have several choices:  
+
 <img width="600" alt="Login succesful" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/bcaab7e7-4b59-40a0-a77a-cecaa25e4b54">
 
-Once the user is logged in, they have several choices:  
 1) Preleva, to withdraw money from the account;
 2) Versa, to deposit money to the account;
 3) Bonifico, to transfer money from the account (fees will be charged);
