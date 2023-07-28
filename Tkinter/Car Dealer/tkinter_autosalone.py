@@ -19,6 +19,14 @@ Successivamente creare una finestra dove l’utente può scegliere (ATTRAVERSO U
 (inserire una entry per la mai dell’utente). Inoltre l’auto opzionata sarà inserita in una tabella di nome autoOpzionata
  con queste intestazioni :id : (potete usare l’autoincrement), marca, colore e prezzo.
 
+Let's create a car class: each car has a brand, a color and an "optional" status which can be "basic" or
+"full-featured".
+Then create a window where the user can choose (through a combobox) from a series of choices, e.g.:
+“Fiat, Ford, etc.”. By clicking on the button, the user will receive an email with the price of the car they have chosen
+(enter an entry for the user's mail). Furthermore, the optioned car will be inserted in the db 
+in a table named optionedCar with these headers of : id (you can use autoincrement), brand, color and price.
+
+
 """
 
 class Auto:
