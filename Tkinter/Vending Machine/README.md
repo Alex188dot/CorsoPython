@@ -22,8 +22,8 @@ showing that the item is being prepared and another one with the updated total b
 
 <img width="249" alt="Screenshot 2023-07-28 at 16 50 24" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c6cbc69e-f03a-4a57-a87c-2ea06fa33f52">
 
-To top up a user can simply press the button and inser the amount of money they want to insert. This will be followed by a confirmation message and the   
-display of the total balance.
+To top up a user can simply press the button and inser the amount of money they want to insert.   
+This will be followed by a confirmation message and the display of the total balance.
 
 <img width="591" alt="Screenshot 2023-07-28 at 16 50 38" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/ac0537ec-d81f-43fe-ba41-9c2141a57b26">
 <img width="249" alt="Screenshot 2023-07-28 at 16 50 46" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/ad005da1-0b6a-4a5a-b87b-4dc40debdb11">
