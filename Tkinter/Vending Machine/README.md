@@ -15,7 +15,8 @@ Then they can choose between Coffee, Tea, Chocolate, Water or Top up their accou
 <img width="594" alt="Screenshot 2023-07-28 at 16 50 00" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/95b61f98-ab40-4ebb-aa30-559387f33b0a">
 
 User 1, with ID 01, for example, starts with 20 euros. 
-Every time they choose something, two pop up will come out: one that the item is being prepared and another one with the updated total balance
+Every time they choose something, two pop up will come out: one   
+showing that the item is being prepared and another one with the updated total balance
 
 <img width="250" alt="Screenshot 2023-07-28 at 16 50 17" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/9ea5053d-7a99-4be9-ab51-55e8eaf9912f">
 
