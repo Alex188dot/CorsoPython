@@ -33,7 +33,8 @@ class Contocorrente:
 
     def bonifico(self, importo):
         self.saldo = self.saldo - importo - 1.5
-
+    # I added the transfer to another user function, which was not requested, but
+    # it sounded cool. 1.5 euros represents the fee to pay for the transfer.
     def visualizzare(self):
         return self.saldo
 
@@ -76,7 +77,7 @@ while inp != "5":
     Inserire uno dei seguenti pulsanti per avviare la corrispondente operazione:
     1) Prelevare dal conto
     2) Versare sul conto
-    3) Fare un bonifico ad un altro utente
+    3) Fare un bonifico ad un altro utente 
     4) Visualizzare il proprio saldo
     5) Logout
     
