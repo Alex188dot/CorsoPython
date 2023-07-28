@@ -10,7 +10,7 @@ A pop up will appear if the login is successful
 
 <img width="249" alt="Screenshot 2023-07-28 at 16 49 44" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/d1f39ab3-d4e6-4ceb-9bd7-2baf23578853">
 
-Then they can choose between Coffee, Tea, Chocolate, water or Top up their account
+Then they can choose between Coffee, Tea, Chocolate, Water or Top up their account
 
 <img width="594" alt="Screenshot 2023-07-28 at 16 50 00" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/95b61f98-ab40-4ebb-aa30-559387f33b0a">
 
