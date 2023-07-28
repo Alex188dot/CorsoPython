@@ -1,31 +1,3 @@
-"""
-Programma Temperature
-"""
-
-temperatures = [12.3, 15.5, 14.9, 28.9, 10.3, 18.8, 29.1, 23.2, 28.3, 12.2, 17.2, 15.3]
-
-
-def calcAvgTemp(temp):
-    sum = 0
-    for i in temp:
-        sum += i
-    print(sum)
-    avg = sum / len(temp)
-    print(avg)
-    for i in temp:
-        if i > avg:
-            print("La temperatura è superiore alla media")
-        elif i < avg:
-            print("La temperatura è inferiore alla media")
-        else:
-            print("La temperatura è uguale alla media")
-
-
-calcAvgTemp(temperatures)
-
-
-
-print("------------------------------------")
 
 class Canzone:
     def __init__(self, titolo, autore, pubblicazione):
