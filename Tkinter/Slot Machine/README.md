@@ -8,6 +8,8 @@ The user starts with a credit of 20 Euros
 
 A spin costs 50 cents and will subtract the money from the total. 
 
+<img width="372" alt="Screenshot 2023-07-28 at 16 35 14" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/2249ad15-22d8-42c3-a85f-50e1906cd181">
+
 If the user wins (three of a kind), there will be a pop up like the one below:
 
 <img width="255" alt="Screenshot 2023-07-28 at 16 35 27" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c3eab10a-f396-4f8e-a25d-75255af57473">
