@@ -3,12 +3,19 @@ import mysql.connector
 pwd = "your-db-password"
 
 """
-Creiamo una classe menu ogni menu è rappresentato da un primo, un secondo, un contorno e la frutta. 
-Inoltre ogni menu ha un prezzo a seconda che il menu sia di carne, pesce o da bambini. 
+Creiamo una classe menu che ha un prezzo a seconda che il menu sia di pesce, carne o da bambini. 
 Il programma chiede all’utente quale menu desidera ordinare e dopo aver chiesto la mail dell’utente 
 va a registrare su una tabella con database dedicato il tipo di menu, la mail del cliente e il prezzo del menu. 
 Quando il programma termina, (l’utente preme 0) il programma stampa tutti gli ordini effettuati presenti sulla tabella, 
 e il totale dell’incasso (somma dei prezzi presenti nella tabella)
+
+Let's create a menu class that has a price according to whether the menu is fish, meat or children's.
+The program asks the user which menu they want to order and after asking for the user's mail
+goes to record the type of menu, the customer's email and the price of the menu on a table in a dedicated database.
+When the program ends (the user presses 0) the program prints all the orders on the db,
+and the total revenue (sum of the prices on the table)
+
+
 """
 
 
