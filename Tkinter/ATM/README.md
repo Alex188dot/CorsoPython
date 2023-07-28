@@ -20,7 +20,7 @@ Once the user is logged in, they have several choices:
 6) Logout, which will save the progress on a pkl file so next time the balance will be the same, as before quitting the app. 
 
 After inserting the amount and pressing on one of the buttons,   
-the user will be givenan on screen confirmation and the new total balance will be displayed, example below:
+the user will be given an on screen confirmation and the new total balance will be displayed, example below:
 
 <img width="599" alt="Confirmation" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/29a8b305-5749-43a6-8a3f-07d8dbb79395">
 
