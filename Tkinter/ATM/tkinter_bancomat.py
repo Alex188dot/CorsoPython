@@ -184,9 +184,6 @@ root.geometry('300x300')
 # root window title and dimension
 root.title("Bancomat Talentform")
 # Set geometry(widthxheight)
-# Creazione del pulsante di login
-login_button = Button(root, text="Login", command=open_)
-login_button.pack()
 password_label = Label(root, text="Username:")
 password_label.pack()
 password_entry = Entry(root)
@@ -195,6 +192,9 @@ password_label1 = Label(root, text="Password:")
 password_label1.pack()
 password_entry1 = Entry(root, show="*")
 password_entry1.pack()
+# Creazione del pulsante di login
+login_button = Button(root, text="Login", command=open_)
+login_button.pack()
 
 amount = Entry(root)
 amount.pack_forget()
