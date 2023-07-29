@@ -29,6 +29,6 @@ https://github.com/Alex188dot/CorsoPython/assets/117444853/00c81dc5-ecc9-4ab2-ae
 
 Each new block contains random data and the next sequential index in the chain. The code also verifies the validity of the blockchain and shows the new block's details. 
 
-This program uses the hashlib module to compute the hash of each block. The hash serves as a unique fingerprint for the block. It is derived from the block's index, timestamp, data, previous hash, and nonce. The nonce is a random number that is used to solve a cryptographic puzzle, known as mining. The difficulty of mining determines how hard it is to find a nonce that produces a hash that begins with a certain number of zeros, in this case 4.
+This program uses the hashlib module to compute the hash of each block. The hash serves as a unique fingerprint for the block. It is derived from the block's index, timestamp, data, previous hash, and nonce. The nonce is a random number that is used to solve a cryptographic puzzle, known as mining. The difficulty of mining determines how hard it is to find a nonce that produces a hash that begins with a certain number of zeros.
 
 The code uses the time module to obtain the current timestamp which indicates when the block was created. The random module generates random data and random numbers for the nonce. 
