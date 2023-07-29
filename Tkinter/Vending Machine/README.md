@@ -15,14 +15,14 @@ Then they can choose between Coffee, Tea, Chocolate, Water or Top up their accou
 <img width="594" alt="Screenshot 2023-07-28 at 16 50 00" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/95b61f98-ab40-4ebb-aa30-559387f33b0a">
 
 User 1, with ID 01, for example, starts with 20 euros. 
-Every time they choose something, two pop up will come out: one   
+Every time they choose something, two pop ups will come out: one   
 showing that the item is being prepared and another one with the updated total balance
 
 <img width="250" alt="Screenshot 2023-07-28 at 16 50 17" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/9ea5053d-7a99-4be9-ab51-55e8eaf9912f">
 
 <img width="249" alt="Screenshot 2023-07-28 at 16 50 24" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c6cbc69e-f03a-4a57-a87c-2ea06fa33f52">
 
-To top up a user can simply press the button and inser the amount of money they want to insert.   
+To top up a user can simply press the button and insert the amount of money they want to use.   
 This will be followed by a confirmation message and the display of the total balance.
 
 <img width="591" alt="Screenshot 2023-07-28 at 16 50 38" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/ac0537ec-d81f-43fe-ba41-9c2141a57b26">   
