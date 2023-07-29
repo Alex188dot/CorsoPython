@@ -1,4 +1,4 @@
-# Simple Browser cookie program
+# Browser cookie Flask application
 
 This is a very simple Flask application where a user is prompted to insert their username and password, the credentials are saved in a database and then graphs are issued on the accesses/registrations per user. 
 
