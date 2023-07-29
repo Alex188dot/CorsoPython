@@ -1,6 +1,8 @@
-# Blockchain simulator
+# Blockchain simulator 
 
-This program creates a blockchain, with each block representing the development of a product from its creation to its distribution. The code uses the following classes:
+This program creates a blockchain, with each block representing the development of a product from its creation to its distribution. The product in question is cheese and the blockchain tracks the following types: Parmigiano, Brie, Gouda, Emmental, Cheddar. Because each cheese is local they can only be produced by specific companies (Parmesan Co., Brie LLC, Gouda Corp., Emmy Gmbh, Cheddy Ltd.) and in specific locations (Italy, France, Netherlands, Switzerland, USA). The assumption is that this is a private logistics blockchain and that all the companies belong to the same group called Cheese Corp.
+        
+The code uses the following classes:
 
 Block represents a single block in the blockchain. It has the following attributes:
 - index is the index of the block in the chain.
@@ -22,7 +24,7 @@ Blockchain represents the entire blockchain. It has the following methods:
 This code demonstrates how to create a basic blockchain. It starts by initializing a blockchain object and adding the genesis block, which contains arbitrary data. Then, it enters an infinite loop that creates and displays a new block every second (see below). 
 
 
-https://github.com/Alex188dot/CorsoPython/assets/117444853/b52d3a76-b36c-4466-b982-85f7bb38c7a7
+https://github.com/Alex188dot/CorsoPython/assets/117444853/00c81dc5-ecc9-4ab2-ae3a-97c69d20eb68
 
 
 Each new block contains random data and the next sequential index in the chain. The code also verifies the validity of the blockchain and shows the new block's details. 
