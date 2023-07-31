@@ -7,6 +7,11 @@ import collections
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+
 
 pwd = 'your-db-pwd'
 
@@ -72,8 +77,44 @@ asciugaCapelli = Prodotto(12, 49)
 
 sceltaNulla = Prodotto(0, 0)
 
-app = Flask(__name__)
 
+
+
+def invia_email(destinatario, oggetto, corpo):
+    # Configura il server SMTP per inviare l'email (in questo esempio utilizzo Gmail)
+    smtp_server = "smtp.gmail.com"
+    port = 587
+    sender_email = "your-email-address"  # Inserisci il tuo indirizzo email
+    sender_password = "your-app-password"  # Inserisci la tua password email
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = destinatario
+    message["Subject"] = oggetto
+    message.attach(MIMEText(corpo, "html"))
+    # Open the image file in binary mode
+    fp = open('static/email-logo.png', 'rb')
+    msgImage = MIMEImage(fp.read())
+    fp.close()
+
+    # Define the image's ID as referenced above
+    msgImage.add_header('Content-ID', '<email-logo>')
+    message.attach(msgImage)
+
+    # Connessione e invio dell'email
+    try:
+        server = smtplib.SMTP(smtp_server, port)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, destinatario, message.as_string())
+        print("Email inviata con successo!")
+    except Exception as e:
+        print("Errore nell'invio dell'email:", str(e))
+    finally:
+        server.quit()
+
+
+
+app = Flask(__name__)
 
 
 
@@ -351,6 +392,24 @@ def order():
         cart.append(int(sceltaNulla.prezzo))
     prezzo = sum(cart)
     ordine = f"La sua spesa: {confezionati}, {freschi}, {frigo}, {elettrodomestici}. Il totale è: {prezzo}€"
+    # Send email to customer to confirm order
+    email = request.cookies.get('email')
+    username = request.cookies.get('username')
+    subj = "Il suo ordine presso Flask Supermarket"
+    body = f"""<p>Gentile {username},</p>
+            <p>Grazie per aver ordinato la spesa con noi!</p>
+            <p>Di seguito trova i dettagli di ciò che ha ordinato:</p>
+            <ul>
+            <li>{confezionati}</li>
+            <li>{freschi}</li>
+            <li>{frigo}</li>
+            <li>{elettrodomestici}</li>
+            </ul>
+            <p>Il totale è: {prezzo}€</p>
+            <p>Il Team di Flask Supermarket</p>
+            <img class="email-logo" src="cid:email-logo" />
+            <p>Questo messaggio e gli eventuali allegati sono destinati esclusivamente al destinatario indicato e possono contenere informazioni confidenziali o riservate. Se avete ricevuto questa mail per errore, vi preghiamo di cancellarla immediatamente e di informare il mittente al seguente indirizzo: info@flasksupermarket.com. Qualsiasi uso non autorizzato del contenuto di questa mail è vietato e può costituire una violazione della legge.</p>"""
+    invia_email(email, subj, body)
     # This code will add the order to the DB
     mydb = mysql.connector.connect(
         host="localhost",
@@ -359,8 +418,6 @@ def order():
         database="Talentform"
     )
     mycursor = mydb.cursor()
-    username = request.cookies.get('username')
-    email = request.cookies.get('email')
     last_access = datetime.now().isoformat()
     sql = "INSERT INTO prodotti_scelti (confezionati, freschi, frigo, elettrodomestici, username, email, totale, last_access) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     val = (confezionati, freschi, frigo, elettrodomestici, username, email, prezzo, last_access)
