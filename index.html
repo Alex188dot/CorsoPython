@@ -41,7 +41,7 @@
         padding: 3rem;
         margin-top: 0;
         width: 70%;
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
         background-color: #8ee4af !important;
       }
       .p {
@@ -60,8 +60,26 @@
       .card-title {
         font-size: 1.6rem;
         font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
       }
-
+      .card-title:hover {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+      }
+      .card-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .card-text:hover {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+      }
       .card-body {
         background-color: #8ee4af;
         color: #05386b;
@@ -82,7 +100,7 @@
 
       .front-end,
       .programs,
-      .full-stack-applications {
+      .full-stack {
         width: 100%;
         font-size: 2.3rem;
         font-weight: 700;
@@ -136,7 +154,7 @@
               <a class="nav-link" href="#programs">Programs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Full Stack Applications</a>
+              <a class="nav-link" href="#full-stack">Full Stack Applications</a>
             </li>
           </ul>
         </div>
@@ -253,7 +271,7 @@
     <div id="programs" class="container-fluid welcome g-0 rounded-3">
       <div class="row">
         <div class="programs">Programs</div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -274,7 +292,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -295,7 +313,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/3652781/pexels-photo-3652781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -316,7 +334,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -337,7 +355,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/5999936/pexels-photo-5999936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -358,7 +376,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/984888/pexels-photo-984888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -367,7 +385,7 @@
             />
             <div class="card-body">
               <h5 class="card-title">Restaurant with GUI</h5>
-              <p class="card-text">A Tkinter GUI Restaurant program</p>
+              <p class="card-text">A Tkinter Restaurant program</p>
               <div class="btn-container">
                 <a
                   href="https://github.com/Alex188dot/CorsoPython/tree/master/MySQL/Restaurant_GUI"
@@ -379,7 +397,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/7144181/pexels-photo-7144181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -400,7 +418,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/3021120/pexels-photo-3021120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -421,7 +439,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/2338113/pexels-photo-2338113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -442,7 +460,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.pexels.com/photos/1546890/pexels-photo-1546890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -453,12 +471,17 @@
               <h5 class="card-title">Cookies</h5>
               <p class="card-text">A browser cookie program</p>
               <div class="btn-container">
-                <a href="#" class="btn" target="_blank">Learn more</a>
+                <a
+                  href="https://github.com/Alex188dot/CorsoPython/tree/master/Cookies"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
@@ -467,14 +490,19 @@
             />
             <div class="card-body">
               <h5 class="card-title">Cryptography</h5>
-              <p class="card-text">A simple cryptography program</p>
+              <p class="card-text">A simple encoder program</p>
               <div class="btn-container">
-                <a href="#" class="btn" target="_blank">Learn more</a>
+                <a
+                  href="https://github.com/Alex188dot/CorsoPython/tree/master/Cryptography"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 col-lg-2">
+        <div class="col-12 col-md-3 col-xxl-2">
           <div class="card" style="width: auto">
             <img
               src="https://images.unsplash.com/photo-1620393470010-fd62b8ab841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
@@ -485,7 +513,12 @@
               <h5 class="card-title">Blockchain</h5>
               <p class="card-text">A blockchain simulator program</p>
               <div class="btn-container">
-                <a href="#" class="btn" target="_blank">Learn more</a>
+                <a
+                  href="https://github.com/Alex188dot/CorsoPython/tree/master/Blockchain"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
@@ -493,6 +526,96 @@
       </div>
     </div>
     <!-- end Programs -->
+    <!-- Full Stack Applications -->
+    <div
+      id="full-stack"
+      class="container-fluid g-0 rounded-3 justify-content-center"
+    >
+      <div class="row">
+        <div class="full-stack">Full Stack Applications</div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card" style="width: auto">
+            <img src="training.png" class="card-img-top" alt="training" />
+            <div class="card-body">
+              <h5 class="card-title">Training school</h5>
+              <p class="card-text">A training school built with Django</p>
+              <div class="btn-container">
+                <a
+                  href="https://github.com/Alex188dot/training-school-Django"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card" style="width: auto">
+            <img
+              src="bella roma.png"
+              class="card-img-top"
+              alt="la-bella-roma-logo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">La Bella Roma</h5>
+              <p class="card-text">A Flask restaurant application</p>
+              <div class="btn-container">
+                <a
+                  href="https://github.com/Alex188dot/CorsoPython/tree/master/Flask/La%20Bella%20Roma%20-%20Restaurant"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card" style="width: auto">
+            <img
+              src="flask_supermarket.png"
+              class="card-img-top"
+              alt="flask_supermarket"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Flask Supermarket</h5>
+              <p class="card-text">A Flask Supermarket application</p>
+              <div class="btn-container">
+                <a
+                  href="https://github.com/Alex188dot/CorsoPython/tree/master/Flask/Flask%20Supermarket"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card" style="width: auto">
+            <img
+              src="final_project.jpg"
+              class="card-img-top"
+              alt="final_project"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Final Project</h5>
+              <p class="card-text">Final project of the Python course</p>
+              <div class="btn-container">
+                <a
+                  href="https://github.com/Alex188dot/pizzeria-app-react"
+                  class="btn"
+                  target="_blank"
+                  >Learn more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Full Stack Applications -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
