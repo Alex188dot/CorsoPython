@@ -1,7 +1,7 @@
 # Flask Supermarket
 
 This project is a Flask Application that makes use of both the Front End (to get the data from the users) and the Backend
-(to register the data and send data to the Admin area for statistics purposes).
+(to save the data, for validation and statistical purposes).
 
 Below I will illustrate how this application works. On the homepage the user is prompted to either register or login. Let's start with Register:
 
