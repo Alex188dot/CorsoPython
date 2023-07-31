@@ -13,7 +13,7 @@ Once successfully registered, the user will be redirected to the login page, whe
 
 <img width="2221" alt="login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/eb2f9979-7861-4b16-8fa4-a3f774961817">
 
-On successful login the user will be able to select the products they want for their groceries, among packaged, fresh and refrigerated products plus appliances:
+On successful login the user will be able to select the products they want for their groceries, among packaged, fresh and refrigerated products and/or appliances:
 
 <img width="2221" alt="choose products" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/2e08ca1d-296b-47f4-8a73-535c2f1f3d0d">
 
