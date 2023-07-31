@@ -15,7 +15,11 @@ At this point the Manager, who logs in through the top right link in the navbar,
 
 <img width="2223" alt="admin_login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/8d24b615-e2c6-454c-a955-9098d7dccfad">
 
-will be able to accept or reject the order. If they accept the order, the customer will receive an email like this one below:  
+will be able to accept or reject the order. 
+
+![admin-accept-reject-order](https://github.com/Alex188dot/CorsoPython/assets/117444853/77501091-24d0-4ea3-b95a-f8e45be52411)
+
+If they accept the order, the customer will receive an email like this one below:  
 
 <img width="1850" alt="email-body" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/bbf8b3bd-7418-42b2-9262-97a9e4e00cbe">
 
