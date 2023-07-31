@@ -27,14 +27,14 @@ If they reject the order, the customer will receive another email:
 
 <img width="1843" alt="rejected order" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/1dd8f363-5816-4938-af03-292ce532fdcf">
 
-Additionally the Manager, by clicking on the "Statistiche" button, will be able to see up-to-date stats on how the business is doing: i.e. revenue and sales in percentage per dish:
+Additionally the Manager, by clicking on the "Statistiche" button, will be able to see up-to-date stats on how the business is doing: i.e. Revenue and Sales per dish, in percentage:
 
 <img width="1177" alt="stats1" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/55b55518-09d8-46ff-b955-6a441d49e314">
 
-sales in € per dish:
+Sales per dish, in €:
 
 <img width="1131" alt="stats2" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/307b36ce-36de-4412-9553-febf943639b2">
 
-sales per dish in percentage, divided by category, in order to immediately find out the best-selling products: 
+Sales per dish in percentage, divided by category, in order to immediately identify the best-selling products: 
 
 <img width="1120" alt="stats3" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/1ef9ba9b-e3ad-48e0-bdbf-ccbfe2c4f915">
