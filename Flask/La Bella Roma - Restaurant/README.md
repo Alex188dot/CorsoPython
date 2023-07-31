@@ -27,8 +27,7 @@ If they reject the order, the customer will receive another email:
 
 <img width="1843" alt="rejected order" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/1dd8f363-5816-4938-af03-292ce532fdcf">
 
-Additionally the Manager, by clicking on the "Statistiche" button, will be able to see up-to-date stats on how the business is doing: i.e. revenue    
-and sales in percentage per dish:
+Additionally the Manager, by clicking on the "Statistiche" button, will be able to see up-to-date stats on how the business is doing: i.e. revenue and sales in percentage per dish:
 
 <img width="1177" alt="stats1" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/55b55518-09d8-46ff-b955-6a441d49e314">
 
