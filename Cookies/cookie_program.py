@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, make_response
 import mysql.connector
 from datetime import datetime
 import matplotlib.pyplot as plt
@@ -39,9 +39,9 @@ def save_data_to_database(username, last_access):
         values = (username, last_access)
         cursor.execute(query, values)
         connection.commit()
-        print("Dati salvati correttamente nel database.")
+        print("User succesfully registered.")
     except mysql.connector.Error as error:
-        print("Errore durante il salvataggio dei dati:", error)
+        print("Error while saving data:", error)
     finally:
         if connection.is_connected():
             cursor.close()
@@ -52,11 +52,23 @@ def register_user():
     if request.method == 'POST':
         username = request.form['username']
         last_access = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        save_data_to_database(username, last_access)
-        return f'Dati salvati con successo per lo username: {username}'
+        # get the cookie value for the username
+        cookie_username = request.cookies.get('username')
+        # compare it with the form input
+        if cookie_username == username:
+            # print a welcome message
+            return f'Welcome back {username}'
+        else:
+            # save the data to the database
+            save_data_to_database(username, last_access)
+            # create a response object
+            response = make_response(f'{username} succesfully registered')
+            # set a new cookie with the username
+            response.set_cookie('username', username)
+            # return the response
+            return response
     else:
         return render_template('home.html')
-
 
 
 
