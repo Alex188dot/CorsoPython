@@ -17,7 +17,7 @@ On successful login the user will be able to select the products they want for t
 
 <img width="2221" alt="choose products" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/2e08ca1d-296b-47f4-8a73-535c2f1f3d0d">
 
-It is important to note that the user can also leave any of these select options blank, as they are not all mandatory. The user will then directed to an order recap webpage:  
+It is important to note that the user can also leave any of these select options blank, as they are not all mandatory. The user will then be directed to an order recap webpage:  
 
 <img width="2216" alt="order confirmation" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fefd0124-527b-4814-8fa0-bf3e50c2c6f6">
 
