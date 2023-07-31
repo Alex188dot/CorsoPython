@@ -21,7 +21,7 @@ It is important to note that the user can also leave any of these select options
 
 <img width="2216" alt="order confirmation" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fefd0124-527b-4814-8fa0-bf3e50c2c6f6">
 
-And will receive also an automated confirmation email:
+And will also receive an automated confirmation email:
 
 <img width="1903" alt="email-confirmation" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/84b675e2-43a3-479a-a739-f95be3d3b413">
 
