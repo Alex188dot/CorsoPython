@@ -27,7 +27,7 @@ class Biblioteca:
         for l in self.lista:
             print(l)
 
-# The data below will be saved onto the biblioteca1.pkl file, so it is not necessary anymore. Leaving it here for reference.
+# The data below will be saved onto the biblioteca1.pkl file, so it will not be necessary anymore. Leaving it here for reference.
 
 """
 l1 = Libro("Test", "Mario", 2000, True)
@@ -42,7 +42,7 @@ def save():
     f = open("biblioteca1.pkl", "wb")
     pickle.dump(biblio1.lista, f)
     f.close()
-    print("File salvato con successo")
+    print("Saved")
 
 def read_library():
     f = open("biblioteca1.pkl", "rb")
