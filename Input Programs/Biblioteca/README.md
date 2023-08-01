@@ -3,7 +3,7 @@
 This is a simple Python input program that represents a library management system which allows users to add, reserve, search and return books.   
 It uses a list of dictionaries to store book information, such as title, author, year of publishing and availability.   
 The program uses a while loop and a menu to let the user choose an option until they exit the program. The data  
-will be saved and stored in a pkl file, that uses the Pickle library, so that next time the user comes back the data can be loaded. 
+will be saved and stored in a pkl file, that uses the Pickle library, so that the next time the user comes back the data will be loaded. 
 
 Demo below:
 
