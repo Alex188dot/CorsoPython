@@ -20,6 +20,6 @@ The order is saved on the database:
 
 <img width="1730" alt="Meal 3" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/f9752c05-e955-4170-8759-f0266343b87d">
 
-After logout, the all meals on the "Customers" Table will be printed on the console (in this snippet only the last two), plus the revenue:
+After logout, all meals (rows) on the "Customers" Table will be printed on the console (in this snippet I am showing only the last two), plus the revenue:
 
 <img width="2063" alt="Meal 2" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/69f091ce-ab83-4219-9de1-b840b9ed4edc">
