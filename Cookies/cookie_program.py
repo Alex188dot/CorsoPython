@@ -135,7 +135,7 @@ plt.title("Accessi per Utente")
 plt.xlabel("Utenti")
 plt.ylabel("Accessi")
 
-plt.show()
+#plt.show()
 
 # PIE CHART
 
@@ -151,7 +151,7 @@ plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
 plt.title("Accessi per utente in percentuale")
 
 # Mostra il grafico
-plt.show()
+#plt.show()
 
 
 
@@ -211,4 +211,4 @@ plt.xlabel("Orario")
 plt.ylabel("Accessi")
 
 # Mostra il grafico
-plt.show()
+#plt.show()
