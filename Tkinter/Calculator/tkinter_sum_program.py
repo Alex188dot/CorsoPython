@@ -1,6 +1,14 @@
 """
-Scrivere una interfaccia grafica che ha due entry, un bottone e una etichetta. Il programma chiede di inserire due numeri e modifica il testo dell'etichetta con la somma dei due numeri. Attenzione: il metodo get() delle entry ritorna una stringa quindi è necessario fare il cast
+Scrivere una interfaccia grafica che ha due entry, un bottone e una etichetta. Il programma chiede di inserire
+due numeri e modifica il testo dell'etichetta con la somma dei due numeri.
+Attenzione: il metodo get() delle entry ritorna una stringa quindi è necessario fare il cast.
 La somma viene restituita alla pressione del pulsante
+
+Write a graphical interface that has two entries, a button and a label. The program asks you to enter
+two numbers and change the label text to the sum of the two numbers.
+Attention: the get() method of the entries returns a string so it is necessary to cast it.
+The sum is returned when the button is pressed.
+
 """
 
 from tkinter import *

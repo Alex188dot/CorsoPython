@@ -1,10 +1,3 @@
-"""
-Scrivere una interfaccia grafica che ha due entry, un bottone e una etichetta. Il programma chiede di inserire due
-numeri e modifica il testo dell'etichetta con la somma dei due numeri. Attenzione: il metodo get() delle entry ritorna
-una stringa quindi è necessario fare il cast.
-La somma viene restituita alla pressione del pulsante.
-"""
-
 from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
