@@ -16,8 +16,8 @@ master.title("Calculator")
 
 # Start code to center the window
 
-width = 600  # Width
-height = 300  # Height
+width = 300  # Width
+height = 150  # Height
 
 screen_width = master.winfo_screenwidth()  # Width of the screen
 screen_height = master.winfo_screenheight()  # Height of the screen
@@ -86,20 +86,20 @@ def subtract():
 button = tk.Button(master, command=show_alert)
 
 # button widget with red color text inside
-btn1 = Button(master, text="+",
-              fg="blue", command=sum)
-btn2 = Button(master, text="/",
-              fg="blue", command=divide)
-btn3 = Button(master, text="*",
-              fg="blue", command=multiply)
-btn4 = Button(master, text="-",
-              fg="blue", command=subtract)
+btn1 = Button(master, text="+", fg="blue", command=sum)
+btn2 = Button(master, text="/", fg="blue", command=divide)
+btn3 = Button(master, text="*", fg="blue", command=multiply)
+btn4 = Button(master, text="-", fg="blue", command=subtract)
 
-# Set Button Grid
-btn1.grid(column=3, row=4)
-btn2.grid(column=4, row=4)
-btn3.grid(column=3, row=6)
-btn4.grid(column=4, row=6)
+# Configure column 0 and 1 to expand and fill any extra space
+master.columnconfigure(0, weight=1)
+master.columnconfigure(1, weight=1)
+
+# Place the buttons in columns 0 and 1
+btn1.grid(column=0, row=4, sticky="nsew")
+btn2.grid(column=1, row=4, sticky="nsew")
+btn3.grid(column=0, row=6, sticky="nsew")
+btn4.grid(column=1, row=6, sticky="nsew")
 
 # Execute Tkinter
 master.mainloop()
