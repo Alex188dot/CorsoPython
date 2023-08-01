@@ -25,7 +25,16 @@ This data is recorded in a database. Create statistics on user access data.
 app = Flask(__name__)
 
 
-def save_data_to_database(username, last_access):
+@app.route('/')
+def index():
+    return render_template('home.html')
+
+@app.route('/register')
+def register_page():
+    return render_template('registration.html')
+
+
+def save_data_to_database(username, password, last_access):
     try:
         connection = mysql.connector.connect(
             host='localhost',
@@ -35,22 +44,46 @@ def save_data_to_database(username, last_access):
         )
 
         cursor = connection.cursor()
-        query = "INSERT INTO users2 (username, last_access) VALUES (%s, %s)"
-        values = (username, last_access)
+        query = "INSERT INTO users4 (username, password, last_access) VALUES (%s, %s, %s)"
+        values = (username, password, last_access)
         cursor.execute(query, values)
         connection.commit()
         print("User succesfully registered.")
     except mysql.connector.Error as error:
         print("Error while saving data:", error)
-    finally:
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=pwd,
+        database="Talentform"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM Talentform.users4;")
+    myresult = mycursor.fetchall()
+    conta = []
+    for x in myresult:
+        if username not in x and password not in x:
+            conta.append("0")
+        elif username in x and password in x:
+            conta.append("1")
+            if conta.count("1") == 1:
+                # Read the existing cookie, if present
+                username = request.cookies.get('username')
+                msg = f"Welcome back {username}! "
+                return render_template('successful_login.html', msg=msg)
+
+
+
+@app.route('/registration', methods=['GET', 'POST'])
 def register_user():
     if request.method == 'POST':
         username = request.form['username']
+        password = request.form['password']
         last_access = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         # get the cookie value for the username
         cookie_username = request.cookies.get('username')
@@ -60,13 +93,13 @@ def register_user():
             return f'Welcome back {username}'
         else:
             # save the data to the database
-            save_data_to_database(username, last_access)
+            save_data_to_database(username, password, last_access)
             # create a response object
-            response = make_response(f'{username} succesfully registered')
+            response = make_response(f'{username} succesfully registered!')
             # set a new cookie with the username
             response.set_cookie('username', username)
             # return the response
-            return response
+            return render_template('successful_registration.html', response=response)
     else:
         return render_template('home.html')
 
