@@ -2,7 +2,18 @@ import pickle
 import time
 
 """
-Creare un programma distributore. Ogni distributore ha associato un oggetto di tipo conto, con proprietà saldo, che rappresenta il saldo del conto, e id che rappresenta l'id del conto. L'oggetto distributore può invece: erogare caffè, erogare the, erogare acqua, erogare cioccolata a prezzi variabili, versare dei soldi nel conto. Il programma nel menu utente permette anche di creare un nuovo id con un nuovo saldo
+Creare un programma distributore. Ogni distributore ha associato un oggetto di tipo conto, con proprietà saldo, 
+che rappresenta il saldo del conto, e id che rappresenta l'id del conto. L'oggetto distributore può invece: 
+erogare caffè, erogare the, erogare acqua, erogare cioccolata a prezzi variabili, versare dei soldi nel conto. 
+Il programma nel menu utente permette anche di creare un nuovo id con un nuovo saldo
+
+Create a vending machine program. Each vending machine has an account type object associated with it, with 
+the following properties: balance, which represents the account balance; and ID, which represents the account ID. 
+The vending machine object can: distribute coffee, tea, water and chocolate at different prices. 
+There is also a method to deposit money into the account. Furthermore, the program also allows you to create 
+a new ID with a new balance.
+
+
 """
 
 
