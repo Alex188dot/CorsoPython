@@ -9,10 +9,13 @@ data = {
 
 myvar = pd.DataFrame(data)
 
-#print(myvar)
+print(myvar)
 
-#print(myvar.loc[2])
+print(myvar.loc[2])
 
+print("-----------------------------------------")
+
+print("Same dataframe but with index")
 
 data = {
   "calories": [420, 380, 390],
@@ -21,12 +24,11 @@ data = {
 
 df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
 
-#print(df)
+print(df)
 
 print(df.loc["day1"])
 
 print("-----------------------------------------")
-
 
 
 mydataset = {
