@@ -92,7 +92,7 @@ while inp != "5":
     1) Prelevare dal conto
     2) Versare sul conto
     3) Fare un bonifico ad un altro utente 
-    4) Visualizzare il proprio saldo
+    4) Visualizzare il proprio saldo e la lista degli ultimi movimenti
     5) Logout
     
     """)
@@ -135,7 +135,9 @@ while inp != "5":
         for c in b1.lista:
             if c.id == cliente.id:
                 print("Questo è il suo saldo:", c.saldo)
-                print(f"Questa è la lista degli ultimi movimenti: {c.movimenti}")
+                print(f"Questa è la lista degli ultimi movimenti:")
+                for mov in c.movimenti:
+                    print(mov)
     elif inp == "5":
         save()
         print("Logout effettuato con successo")
