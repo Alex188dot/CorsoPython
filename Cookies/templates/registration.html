@@ -101,7 +101,7 @@
   </head>
   <body>
     <div class="login_box">
-      <form action="" method="post">
+      <form action="/registration" method="post">
         <div>
           <div class="login">Register</div>
           <label class="label1" for="username">Username</label><br />
@@ -116,11 +116,12 @@
             <input type="submit" name="" id="" class="button" />
           </div>
           <div class="separator">
-            <div>Hai gia un account?</div>
+            <div>Hai già un account?</div>
             <p><a href="{{ url_for('index') }}">Login</a></p>
           </div>
         </div>
       </form>
+      <div>{{msg}}</div>
     </div>
     <script></script>
   </body>

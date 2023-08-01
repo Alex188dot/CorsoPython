@@ -52,7 +52,7 @@ def save_data_to_database(username, password, last_access):
     except mysql.connector.Error as error:
         print("Error while saving data:", error)
 
-@app.route('/', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
     password = request.form['password']
@@ -72,34 +72,71 @@ def login():
         elif username in x and password in x:
             conta.append("1")
             if conta.count("1") == 1:
-                # Read the existing cookie, if present
-                username = request.cookies.get('username')
-                msg = f"Welcome back {username}! "
+                # get the cookie value for the username
+                cookie_username = request.cookies.get('username')
+                # compare it with the form input
+                if cookie_username == username:
+                    # print a welcome message
+                    msg = f"Welcome back {cookie_username}!"
+                else:
+                    msg = f"Welcome back {username}!"
+                # Save access data to the database
+                last_access = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                try:
+                    connection = mysql.connector.connect(
+                        host='localhost',
+                        user='root',
+                        password=pwd,
+                        database='Talentform'
+                    )
+                    cursor = connection.cursor()
+                    query = "INSERT INTO users2 (username, last_access) VALUES (%s, %s)"
+                    values = (username, last_access)
+                    cursor.execute(query, values)
+                    connection.commit()
+                    print("User access succesfully registered.")
+                except mysql.connector.Error as error:
+                    print("Error while saving data:", error)
                 return render_template('successful_login.html', msg=msg)
 
 
 
-@app.route('/registration', methods=['GET', 'POST'])
+@app.route('/registration', methods=['POST'])
 def register_user():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         last_access = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        # get the cookie value for the username
-        cookie_username = request.cookies.get('username')
-        # compare it with the form input
-        if cookie_username == username:
-            # print a welcome message
-            return f'Welcome back {username}'
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password=pwd,
+            database="Talentform"
+        )
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT * FROM Talentform.users4;")
+        myresult = mycursor.fetchall()
+        conta = []
+        for x in myresult:
+            if username not in x and password not in x:
+                conta.append("0")
+            elif username in x and password in x:
+                conta.append("1")
+                if conta.count("1") == 1:
+                    msg = f"Utente {username} già registrato!"
+                    return render_template('registration.html', msg=msg)
         else:
             # save the data to the database
             save_data_to_database(username, password, last_access)
             # create a response object
             response = make_response(f'{username} succesfully registered!')
+            msg = f'{username} succesfully registered!'
             # set a new cookie with the username
             response.set_cookie('username', username)
+            # set a new cookie with last_access
+            response.set_cookie('last_access', last_access)
             # return the response
-            return render_template('successful_registration.html', response=response)
+            return render_template('successful_registration.html', response=response, msg=msg)
     else:
         return render_template('home.html')
 
@@ -168,6 +205,7 @@ plt.title("Accessi per Utente")
 plt.xlabel("Utenti")
 plt.ylabel("Accessi")
 
+# Show graph
 #plt.show()
 
 # PIE CHART
@@ -183,7 +221,7 @@ plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
 # Personalizzazione dell'aspetto del grafico
 plt.title("Accessi per utente in percentuale")
 
-# Mostra il grafico
+# Show graph
 #plt.show()
 
 
@@ -243,5 +281,5 @@ plt.title("Accessi totali al sito per orario")
 plt.xlabel("Orario")
 plt.ylabel("Accessi")
 
-# Mostra il grafico
+# Show graph
 #plt.show()

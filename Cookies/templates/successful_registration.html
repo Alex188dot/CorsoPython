@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
+      :root {
+        --font-style: "Nunito Sans", sans-serif;
+      }
+      body {
+        background: #131315;
+        font-family: var(--font-style);
+      }
+      * {
+        box-sizing: border-box;
+        font-family: var(--font-style --font-style);
+      }
+      a {
+        text-decoration: none;
+        text-align: center;
+        color: rgba(143, 124, 236, 0.7);
+        font-size: 1.5rem;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Response</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-size: 3rem;
+        text-align: center;
+        color: rgba(143, 124, 236, 0.7);
+        margin-bottom: 2rem;
+      "
+    >
+      {{msg}}
+    </div>
+    <div style="display: flex; justify-content: center">
+      <a href="{{ url_for('index') }}">Back to login page</a>
+    </div>
+    <script></script>
+  </body>
 </html>
