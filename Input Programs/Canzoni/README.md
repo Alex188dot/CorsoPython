@@ -1,6 +1,6 @@
 # Music program
   
-This is a simple input Python program that lets the user:   
+This is a simple Python input program that lets the user:   
 add new songs, search a song, print all the songs by author on the console and remove a song.
 
 Demo below:
