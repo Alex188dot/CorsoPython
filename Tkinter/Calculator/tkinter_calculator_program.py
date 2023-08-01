@@ -47,33 +47,54 @@ lbl3.grid(column=1, row=2)
 def show_alert(x):
     messagebox.showinfo(f"Total:", x)
 
-
 def sum():
-    somma = int(txt1.get()) + int(txt2.get())
-    res = f"Total: {somma}"
-    lbl3.configure(text=res)
-    show_alert(somma)
+    total = float(txt1.get()) + float(txt2.get())
+    if total.is_integer():
+        res = f"Total: {int(total)}"
+        lbl3.configure(text=res)
+        show_alert(int(total))
+    else:
+        res = f"Total: {total}"
+        lbl3.configure(text=res)
+        show_alert(total)
 
 
 def divide():
-    div = int(txt1.get()) / int(txt2.get())
-    res = f"Total: {div}"
-    lbl3.configure(text=res)
-    show_alert(div)
+    quotient = float(txt1.get()) / float(txt2.get())
+    if quotient.is_integer():
+        res = f"Total: {int(quotient)}"
+        lbl3.configure(text=res)
+        show_alert(int(quotient))
+    else:
+        res = f"Total: {quotient}"
+        lbl3.configure(text=res)
+        show_alert(quotient)
 
 
 def multiply():
-    mult = int(txt1.get()) * int(txt2.get())
-    res = f"Total: {mult}"
-    lbl3.configure(text=res)
-    show_alert(mult)
+    product = float(txt1.get()) * float(txt2.get())
+    if product.is_integer():
+        res = f"Total: {int(product)}"
+        lbl3.configure(text=res)
+        show_alert(int(product))
+    else:
+        res = f"Total: {product}"
+        lbl3.configure(text=res)
+        show_alert(product)
+
 
 
 def subtract():
-    sub = int(txt1.get()) - int(txt2.get())
-    res = f"Total: {sub}"
-    lbl3.configure(text=res)
-    show_alert(sub)
+    sub = float(txt1.get()) - float(txt2.get())
+    if sub.is_integer():  # check if sub is a whole number
+        res = f"Total: {int(sub)}" # convert sub to int and format it
+        print(int(sub))
+        lbl3.configure(text=res)
+        show_alert(int(sub))
+    else:
+        res = f"Total: {sub}"  # keep sub as float and format it
+        lbl3.configure(text=res)
+        show_alert(sub)
 
 
 button = tk.Button(master, command=show_alert)
