@@ -7,11 +7,11 @@ di prelevare dal conto, versare sul conto, fare un bonifico, visualizzare il sal
 a visualizzare la lista movimenti). Inoltre scrivere un programma che permette all'utente di usufruire del bancomat 
 dopo aver digitato lo username e l'id corretto associato al conto.
 
-Write a checking account class that represents a checking account. The account is represented by a username,
-an id and a balance. Then write the ATM class that initializes a current account list and allows
-to withdraw from the account, pay into the account, make a transfer, view the balance (plus if we succeed, 
-display the movement list). Also write a program that allows the user to use the ATM
-after entering the correct username and id associated with the account.
+Write a checking account class that represents a checking account. The account account includes a username,
+an id and the balance. Then write an ATM class that initializes a current account list and allows
+to withdraw from the account, deposit into the account, make a transfer and view the balance (plus if possible, 
+implement the function to display the transaction list). Also write a program that allows the user to use the ATM
+after entering the correct username and ID associated with the account.
 
 """
 
@@ -33,7 +33,7 @@ class Contocorrente:
 
     def bonifico(self, importo):
         self.saldo = self.saldo - importo - 1.5
-    # Transfer to another user function 1.5 euros represents the fee to pay for the transfer.
+    # Transfer to another user function: 1.5 represents the fee in euros to pay for the transfer.
     def visualizzare(self):
         return self.saldo
 
@@ -58,6 +58,20 @@ b1 = Bancomat(lista)
 b1.lista.append(c1)
 b1.lista.append(c2)
 
+
+def read_account():
+    f = open("conto.pkl", "rb")
+    unpickler = pickle.Unpickler(f)
+    b1.lista = unpickler.load()
+    f.close()
+
+def save():
+    f = open("conto.pkl", "wb")
+    pickle.dump(b1.lista, f)
+    f.close()
+    print("Saved")
+
+
 inp = input("Benvenuto nel BANCOMAT di Banca Python. Premere invio per continuare")
 
 accesso = False
@@ -71,6 +85,7 @@ while accesso == False:
             cliente = c
 
 while inp != "5":
+    read_account()
     inp = input(
         """
     Inserire uno dei seguenti pulsanti per avviare la corrispondente operazione:
@@ -83,35 +98,23 @@ while inp != "5":
     """)
     if inp == "1":
         importo = int(input("Inserire l'importo da prelevare: "))
-        f = open("conto.pkl", "rb")
-        unpickler = pickle.Unpickler(f)
-        b1.lista = unpickler.load()
-        f.close()
         for c in b1.lista:
             if c.id == cliente.id:
                 if importo < c.saldo:
                     c.prelevare(importo)
                     print("Importo prelevato correttamente, il suo saldo è:", c.saldo)
                     c.movimenti.append(f"Prelievo: -{importo}")
-                    f = open("conto.pkl", "wb")
-                    pickle.dump(b1.lista, f)
-                    f.close()
+                    save()
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
     elif inp == "2":
-        f = open("conto.pkl", "rb")
-        unpickler = pickle.Unpickler(f)
-        b1.lista = unpickler.load()
-        f.close()
         importo = int(input("Inserire l'importo da versare: "))
         for c in b1.lista:
             if c.id == cliente.id:
                 c.versare(importo)
                 print("Operazione effettuata con successo, questo è il suo nuovo saldo:", c.saldo)
                 c.movimenti.append(f"Versamento: +{importo}")
-                f = open("conto.pkl", "wb")
-                pickle.dump(b1.lista, f)
-                f.close()
+                save()
     elif inp == "3":
         importo = int(input("Inserire l'importo del bonifico: "))
         for c in b1.lista:
@@ -124,25 +127,17 @@ while inp != "5":
                             c.movimenti.append(f"Bonifico in uscita: -{importo}")
                             i.versare(importo)
                             i.movimenti.append(f"Bonifico in entrata: +{importo}")
-                            f = open("conto.pkl", "wb")
-                            pickle.dump(b1.lista, f)
-                            f.close()
                             print("Bonifico effettuato con successo, questo è il suo nuovo saldo:", c.saldo)
+                            save()
                 else:
                     print("Importo troppo elevato, liquidità insufficiente sul proprio conto ")
     elif inp == "4":
-        f = open("conto.pkl", "rb")
-        unpickler = pickle.Unpickler(f)
-        b1.lista = unpickler.load()
-        f.close()
         for c in b1.lista:
             if c.id == cliente.id:
                 print("Questo è il suo saldo:", c.saldo)
                 print(f"Questa è la lista degli ultimi movimenti: {c.movimenti}")
     elif inp == "5":
-        f = open("conto.pkl", "wb")
-        pickle.dump(b1.lista, f)
-        f.close()
+        save()
         print("Logout effettuato con successo")
         break
     else:
