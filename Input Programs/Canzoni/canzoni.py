@@ -11,11 +11,11 @@ class Canzone:
 
 listaCanzoni = []
 
-c1 = Canzone("Ciao", "Mario", "2019")
+c1 = Canzone("Volare", "Mario", "2019")
 listaCanzoni.append(c1)
-c2 = Canzone("Ciao2", "Luigi", "2020")
+c2 = Canzone("Cantare", "Luigi", "2020")
 listaCanzoni.append(c2)
-c3 = Canzone("Ciao3", "Mario", "1998")
+c3 = Canzone("Oh oh oh oh", "Mario", "1998")
 listaCanzoni.append(c3)
 
 inp = input("Benvenuto nel programma, premi invio per continuare: ")
@@ -27,7 +27,7 @@ Cosa vuoi fare? Inserisci il tasto corrispondente:
 2 cercare una canzone dalla lista per titolo
 3 stampare tutte le canzoni di un autore
 4 rimuovere una canzone dal titolo
-5 uscire dal programma"
+5 uscire dal programma
 """)
     if inp == "1":
         titolo = input("Inserisci il titolo della canzone: ")
@@ -36,14 +36,22 @@ Cosa vuoi fare? Inserisci il tasto corrispondente:
         listaCanzoni.append(Canzone(titolo, autore, pubblicazione))
     elif inp == "2":
         titolo = input("Inserisci il titolo della canzone: ")
+        found = False
         for canzone in listaCanzoni:
             if canzone.titolo == titolo:
                 print(f"La canzone è presente nella raccolta: { canzone } ")
+                found = True
+        if not found:
+            print("Canzone non presente nella raccolta, provare con un altro titolo")
     elif inp == "3":
         autore = input("Inserisci il nome dell'autore: ")
+        found = False
         for canzone in listaCanzoni:
             if canzone.autore == autore:
                 print(f"{ canzone } ")
+                found = True
+        if not found:
+            print("Autore non presente nella raccolta, provare con un altro autore")
     elif inp == "4":
         titolo = input("Inserisci il titolo della canzone: ")
         for canzone in listaCanzoni:
@@ -51,7 +59,7 @@ Cosa vuoi fare? Inserisci il tasto corrispondente:
                 listaCanzoni.remove(canzone)
     elif inp == "5":
         break
-    if inp != "1" or "2" or "3" or "4" or "5":
+    else:
         print("Scelta non valida")
 
 
