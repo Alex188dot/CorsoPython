@@ -1,0 +1,103 @@
+idprodotti_scelti,confezionati,freschi,frigo,elettrodomestici,username,email,totale,last_access
+1,Riso,Cetrioli,Ricotta,Lavatrice,Mario,email mancante,356,1970-01-01 00:00:00
+2,Pasta,Lattuga,Provola,Ferro da Stiro,username mancante,email mancante,40,1970-01-01 00:00:00
+3,Pasta,Cetrioli,Ricotta,Ferro da Stiro,username mancante,email mancante,41,1970-01-01 00:00:00
+4,Pasta,Cetrioli,Provola,Asciuga Capelli,username mancante,email mancante,54,1970-01-01 00:00:00
+5,Riso,Lattuga,Ricotta,Asciuga Capelli,username mancante,email mancante,55,1970-01-01 00:00:00
+6,Pasta,Carne,Ricotta,Ferro da Stiro,username mancante,email mancante,48,1970-01-01 00:00:00
+7,Pasta,Carne,Provola,Ferro da Stiro,username mancante,email mancante,47,1970-01-01 00:00:00
+8,Pasta,Lattuga,Ricotta,Ferro da Stiro,username mancante,email mancante,41,1970-01-01 00:00:00
+9,Pasta,Cetrioli,Provola,Lavatrice,username mancante,email mancante,355,1970-01-01 00:00:00
+10,Pasta,Lattuga,Provola,Asciuga Capelli,username mancante,email mancante,54,1970-01-01 00:00:00
+11,Pasta,Lattuga,Ricotta,Asciuga Capelli,username mancante,email mancante,55,1970-01-01 00:00:00
+12,Pasta,Cetrioli,Ricotta,Ferro da Stiro,username mancante,email mancante,41,1970-01-01 00:00:00
+13,Riso,Lattuga,Provola,Lavatrice,username mancante,email mancante,355,1970-01-01 00:00:00
+14,Pasta,Carne,Provola,Ferro da Stiro,username mancante,email mancante,47,1970-01-01 00:00:00
+15,Pane in cassetta,Lattuga,Ricotta,Ferro da Stiro,username mancante,email mancante,41,1970-01-01 00:00:00
+16,Pasta,Lattuga,Provola,Ferro da Stiro,EEE,eee@gmail.com,40,1970-01-01 00:00:00
+17,Pasta,Cetrioli,Provola,Ferro da Stiro,username mancante,email mancante,40,1970-01-01 00:00:00
+18,Pasta,Lattuga,Ricotta,Ferro da Stiro,abc,abc@gmail.com,41,1970-01-01 00:00:00
+19,Riso,Lattuga,Ricotta,elettrodomestico mancante,ttt,ttt@gmail.com,6,1970-01-01 00:00:00
+20,Pasta,Cetrioli,Provola,Asciuga Capelli,uuu,uuu@gmail.com,54,1970-01-01 00:00:00
+21,Pasta,Cetrioli,Latte,Ferro da Stiro,vvv,vvv@gmail.com,38,1970-01-01 00:00:00
+22,Pasta,Carne,Ricotta,elettrodomestico mancante,AlessioL,alessiol@gmail.com,13,1970-01-01 00:00:00
+23,Riso,Lattuga,Latte,Asciuga Capelli,AlessioL,alessiol@gmail.com,52,1970-01-01 00:00:00
+24,Pasta,Lattuga,Latte,Ferro da Stiro,test,test@gmail.com,38,1970-01-01 00:00:00
+25,Riso,Lattuga,Latte,Ferro da Stiro,test,test@gmail.com,38,1970-01-01 00:00:00
+26,Pasta,Cetrioli,Ricotta,Ferro da Stiro,test,test@gmail.com,41,1970-01-01 00:00:00
+27,Pasta,Carne,Ricotta,Asciuga Capelli,test,test@gmail.com,62,2023-07-26 11:25:13
+28,Pasta,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 12:43:15
+29,Pane in cassetta,Cetrioli,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-26 12:43:28
+30,Riso,Carne,Provola,Ferro da Stiro,test,test@gmail.com,47,2023-07-26 12:43:40
+31,Pane in cassetta,Cetrioli,Latte,Lavatrice,test,test@gmail.com,353,2023-07-26 12:43:53
+32,Riso,Lattuga,Ricotta,Ferro da Stiro,test,test@gmail.com,41,2023-07-26 12:53:04
+33,Pane in cassetta,Carne,Provola,elettrodomestico mancante,test,test@gmail.com,12,2023-07-26 12:53:13
+34,confezionato mancante,Cetrioli,Provola,Ferro da Stiro,test,test@gmail.com,39,2023-07-26 12:53:23
+35,confezionato mancante,Carne,Provola,Ferro da Stiro,test,test@gmail.com,46,2023-07-26 12:53:26
+36,Riso,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 14:08:06
+37,Pasta,fresco mancante,Provola,Lavatrice,test,test@gmail.com,354,2023-07-26 14:22:04
+38,Riso,Lattuga,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-26 14:22:15
+39,Pane in cassetta,Carne,Ricotta,elettrodomestico mancante,test,test@gmail.com,13,2023-07-26 14:22:22
+40,Pasta,Lattuga,Provola,Ferro da Stiro,test,test@gmail.com,40,2023-07-26 15:20:56
+41,Riso,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 15:21:05
+42,Riso,fresco mancante,Ricotta,elettrodomestico mancante,test,test@gmail.com,5,2023-07-26 15:21:09
+43,Riso,fresco mancante,Ricotta,Asciuga Capelli,test,test@gmail.com,54,2023-07-26 15:21:14
+44,Pasta,Carne,Ricotta,elettrodomestico mancante,test,test@gmail.com,13,2023-07-26 15:47:34
+45,Pasta,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 15:47:38
+46,confezionato mancante,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,5,2023-07-26 15:47:42
+47,confezionato mancante,fresco mancante,Provola,elettrodomestico mancante,test,test@gmail.com,3,2023-07-26 15:47:47
+48,Pasta,fresco mancante,Provola,elettrodomestico mancante,test,test@gmail.com,4,2023-07-26 15:47:53
+49,Riso,fresco mancante,Provola,Ferro da Stiro,test,test@gmail.com,39,2023-07-26 15:47:58
+50,Pane in cassetta,fresco mancante,Provola,Ferro da Stiro,test,test@gmail.com,39,2023-07-26 15:48:01
+51,Pasta,fresco mancante,Provola,Ferro da Stiro,test,test@gmail.com,39,2023-07-26 15:48:05
+52,confezionato mancante,fresco mancante,Provola,elettrodomestico mancante,test,test@gmail.com,3,2023-07-26 15:48:08
+53,Pasta,Cetrioli,Ricotta,Ferro da Stiro,test,test@gmail.com,41,2023-07-26 16:30:27
+54,Pasta,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 16:30:59
+55,Pasta,Lattuga,Ricotta,Ferro da Stiro,test,test@gmail.com,41,2023-07-26 17:09:51
+56,Pasta,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 17:11:27
+57,Pasta,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-26 17:13:02
+58,Pasta,Lattuga,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-26 17:14:00
+59,Pasta,Lattuga,Provola,elettrodomestico mancante,test,test@gmail.com,5,2023-07-26 17:18:09
+60,Pasta,Cetrioli,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-26 17:33:28
+61,Pasta,Lattuga,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-26 17:46:04
+62,Pane in cassetta,Carne,Ricotta,elettrodomestico mancante,test,test@gmail.com,13,2023-07-27 09:17:05
+63,Riso,Lattuga,Provola,elettrodomestico mancante,test,test@gmail.com,5,2023-07-27 09:17:15
+64,Pasta,Lattuga,Provola,elettrodomestico mancante,test,test@gmail.com,5,2023-07-27 09:17:20
+65,Pasta,Lattuga,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-27 09:17:27
+66,Pasta,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 10:38:02
+67,Pane in cassetta,Cetrioli,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 10:38:06
+68,Riso,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 10:38:11
+69,Pasta,Lattuga,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-27 12:23:13
+70,Riso,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 12:23:20
+71,Pasta,Lattuga,Ricotta,Ferro da Stiro,test,test@gmail.com,41,2023-07-27 12:23:26
+72,Pane in cassetta,Lattuga,Latte,Asciuga Capelli,test,test@gmail.com,52,2023-07-27 12:23:36
+73,Pane in cassetta,Lattuga,Provola,Lavatrice,test,test@gmail.com,355,2023-07-27 12:23:46
+74,Pasta,Lattuga,Provola,Lavatrice,test,test@gmail.com,355,2023-07-27 12:23:51
+75,Pasta,Lattuga,Ricotta,Lavatrice,test,test@gmail.com,356,2023-07-27 12:23:55
+76,Riso,Lattuga,Latte,Lavatrice,test,test@gmail.com,353,2023-07-27 12:24:01
+77,Riso,Lattuga,Latte,Ferro da Stiro,test,test@gmail.com,38,2023-07-27 12:24:06
+78,Riso,Lattuga,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-27 12:24:09
+79,Pasta,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 12:30:06
+80,Pasta,Lattuga,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-27 14:13:01
+81,Riso,Lattuga,Ricotta,elettrodomestico mancante,test,test@gmail.com,6,2023-07-27 14:13:06
+82,Riso,Lattuga,p. frigo mancante,elettrodomestico mancante,test,test@gmail.com,2,2023-07-27 14:13:10
+83,Pane in cassetta,fresco mancante,Latte,elettrodomestico mancante,test,test@gmail.com,2,2023-07-27 14:13:16
+84,Pane in cassetta,Lattuga,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-27 14:13:20
+85,Pane in cassetta,Lattuga,Latte,Asciuga Capelli,test,test@gmail.com,52,2023-07-27 14:13:24
+86,Pane in cassetta,Lattuga,Latte,elettrodomestico mancante,test,test@gmail.com,3,2023-07-27 14:13:29
+87,Pasta,Lattuga,Provola,Ferro da Stiro,Alex188,alexdotleo@gmail.com,40,2023-07-31 10:09:16
+88,Pasta,Lattuga,Provola,Asciuga Capelli,Alex188,alexdotleo@gmail.com,54,2023-07-31 10:26:17
+89,Riso,Lattuga,Provola,Lavatrice,Alex188,alexdotleo@gmail.com,355,2023-07-31 10:26:26
+90,Riso,Lattuga,p. frigo mancante,Lavatrice,Alex188,alexdotleo@gmail.com,352,2023-07-31 10:26:32
+91,Riso,Lattuga,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,353,2023-07-31 10:26:41
+92,Pane in cassetta,Carne,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,360,2023-07-31 10:26:49
+93,Pane in cassetta,Carne,Latte,Ferro da Stiro,Alex188,alexdotleo@gmail.com,45,2023-07-31 10:26:55
+94,Pane in cassetta,Carne,Latte,Ferro da Stiro,Alex188,alexdotleo@gmail.com,45,2023-07-31 10:27:25
+95,Pane in cassetta,Carne,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,360,2023-07-31 10:27:36
+96,Pane in cassetta,Carne,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,360,2023-07-31 10:27:41
+97,Pane in cassetta,Carne,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,360,2023-07-31 10:27:46
+98,Pane in cassetta,Carne,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,360,2023-07-31 10:28:57
+99,Pane in cassetta,Cetrioli,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,353,2023-07-31 10:29:03
+100,Riso,Cetrioli,Latte,Lavatrice,Alex188,alexdotleo@gmail.com,353,2023-07-31 10:29:08
+101,Riso,Cetrioli,Provola,Lavatrice,Alex188,alexdotleo@gmail.com,355,2023-07-31 10:29:13
+102,Riso,Cetrioli,Provola,Ferro da Stiro,Alex188,alexdotleo@gmail.com,40,2023-07-31 10:29:19

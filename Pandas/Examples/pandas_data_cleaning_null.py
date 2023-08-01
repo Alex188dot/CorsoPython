@@ -21,3 +21,6 @@ print(df.to_string())
 '''
 
 #df.fillna(130, inplace = True)
+
+# This line below will save the new Dataframe on a new file
+df.to_csv("new_prodotti_scelti.csv", index=False)
