@@ -97,13 +97,13 @@
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
   </head>
   <body>
     <div class="login_box">
       <form action="" method="post">
         <div>
-          <div class="login">Login</div>
+          <div class="login">Register</div>
           <label class="label1" for="username">Username</label><br />
           <input type="text" name="username" id="username" required />
         </div>
@@ -116,8 +116,8 @@
             <input type="submit" name="" id="" class="button" />
           </div>
           <div class="separator">
-            <div>Non hai un account?</div>
-            <p><a href="{{ url_for('register_page') }}">Registrati</a></p>
+            <div>Hai gia un account?</div>
+            <p><a href="{{ url_for('index') }}">Login</a></p>
           </div>
         </div>
       </form>
