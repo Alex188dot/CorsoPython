@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-pwd = "yoour-db-pwd"
+pwd = "your-db-pwd"
 
 """
 Creare una applicazione flask che utilizza i cookie di sessione. In particolare vogliamo registrare di un utente 
@@ -48,7 +48,7 @@ def save_data_to_database(username, password, last_access):
         values = (username, password, last_access)
         cursor.execute(query, values)
         connection.commit()
-        print("User succesfully registered.")
+        print("User successfully registered.")
     except mysql.connector.Error as error:
         print("Error while saving data:", error)
 
