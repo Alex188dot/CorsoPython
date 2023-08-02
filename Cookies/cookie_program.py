@@ -94,7 +94,7 @@ def login():
                     values = (username, last_access)
                     cursor.execute(query, values)
                     connection.commit()
-                    print("User access succesfully registered.")
+                    print("User access successfully registered.")
                 except mysql.connector.Error as error:
                     print("Error while saving data:", error)
                 return render_template('successful_login.html', msg=msg)
@@ -129,8 +129,8 @@ def register_user():
             # save the data to the database
             save_data_to_database(username, password, last_access)
             # create a response object
-            response = make_response(f'{username} succesfully registered!')
-            msg = f'{username} succesfully registered!'
+            response = make_response(f'{username} successfully registered!')
+            msg = f'{username} successfully registered!'
             # set a new cookie with the username
             response.set_cookie('username', username)
             # set a new cookie with last_access
