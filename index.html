@@ -104,7 +104,8 @@
 
       .front-end,
       .programs,
-      .full-stack {
+      .full-stack,
+      .faq {
         width: 100%;
         font-size: 2.3rem;
         font-weight: 700;
@@ -130,6 +131,17 @@
       }
       .carousel-item {
         margin-top: 1.3rem;
+      }
+      .accordion-button {
+        background-color: #5cdb95;
+        color: #05386b;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .accordion-body {
+        background-color: #8ee4af;
+        color: #05386b;
+        font-size: 1.2rem;
       }
     </style>
   </head>
@@ -709,6 +721,145 @@
       </div>
     </div>
     <!-- Personal-projects end -->
+    <!-- FAQ -->
+
+    <div class="container">
+      <div class="row">
+        <div
+          class="faq"
+          id="faq"
+          style="text-align: center; margin-bottom: 2rem"
+        >
+          FAQ
+        </div>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+              >
+                Are you available for work?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              class="accordion-collapse collapse show"
+            >
+              <div class="accordion-body">
+                Yes, I am available right now, although that might change in the
+                future as I am actively looking for a job.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                What is your favourite programming language?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                Python by far! I love its simplicity and its flexibility.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                What are you passionate about except for programming?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                I am interested in cryptocurrencies and blockchain, both for the
+                utility this technology could one day bring to the world and for
+                its potential for growth.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Why have you chosen to pursue programming and become a
+                developer?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                I have always been interested in technology in general and I
+                thought that because I didn't study Computer Science at
+                university this career just wasn't possible for me. However, I
+                discovered that by both attending courses and by studying by
+                myself, becoming a developer is absolutely possible.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Why have you chosen to pursue programming and become a
+                developer?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                I have always been interested in technology in general and I
+                thought that because I didn't study Computer Science at
+                university this career just wasn't possible for me. However, I
+                discovered that by both attending courses and by studying by
+                myself, becoming a developer is absolutely possible.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQ end -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
