@@ -138,10 +138,16 @@
         font-size: 1.5rem;
         font-weight: bold;
       }
+      .accordion-button:not(.collapsed) {
+        background-color: #5cdb95;
+      }
       .accordion-body {
         background-color: #8ee4af;
         color: #05386b;
         font-size: 1.2rem;
+      }
+      .faq-container {
+        margin-bottom: 3rem;
       }
     </style>
   </head>
@@ -665,7 +671,7 @@
             <div class="card-body">
               <h5 class="card-title">Web Scraping</h5>
               <p class="card-text">
-                A web scraping script that collects links from a website
+                A Python script that collects links from a website
               </p>
               <div class="btn-container">
                 <a
@@ -722,8 +728,7 @@
     </div>
     <!-- Personal-projects end -->
     <!-- FAQ -->
-
-    <div class="container">
+    <div class="container faq-container">
       <div class="row">
         <div
           class="faq"
@@ -732,7 +737,7 @@
         >
           FAQ
         </div>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion" id="accordionPanelsStayOpen">
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button
@@ -740,7 +745,7 @@
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
+                aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseOne"
               >
                 Are you available for work?
@@ -748,7 +753,7 @@
             </h2>
             <div
               id="panelsStayOpen-collapseOne"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse"
             >
               <div class="accordion-body">
                 Yes, I am available right now, although that might change in the
@@ -788,71 +793,93 @@
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseThree"
               >
-                What are you passionate about except for programming?
+                What languages and frameworks do you use?
               </button>
             </h2>
             <div
               id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                I use Python, JavaScript, HTML and CSS on a daily basis. As per
+                frameworks and libraries I use React, Flask, Django, Bootstrap.
+                I am currently learning NodeJS, ExpressJS and MongoDB. In the
+                near future I would like to learn PHP, Angular and Typescript.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFour"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFour"
+              >
+                Why have you chosen to pursue programming and become a
+                developer?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseFour"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                I have always been interested in technology in general and I
+                thought that because I didn't study Computer Science at
+                university this career just wasn't possible for me. However, I
+                discovered that by both attending courses and studying by
+                myself, becoming a developer is absolutely possible.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFive"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFive"
+              >
+                Are you interested in any other area of programming?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseFive"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                Yes, I am interested in Data Science and AI. I am just
+                fascinated by the way these models work and how they can predict
+                future events.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseSix"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseSix"
+              >
+                What are you passionate about, except for programming?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseSix"
               class="accordion-collapse collapse"
             >
               <div class="accordion-body">
                 I am interested in cryptocurrencies and blockchain, both for the
                 utility this technology could one day bring to the world and for
                 its potential for growth.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
-              >
-                Why have you chosen to pursue programming and become a
-                developer?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body">
-                I have always been interested in technology in general and I
-                thought that because I didn't study Computer Science at
-                university this career just wasn't possible for me. However, I
-                discovered that by both attending courses and by studying by
-                myself, becoming a developer is absolutely possible.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
-              >
-                Why have you chosen to pursue programming and become a
-                developer?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body">
-                I have always been interested in technology in general and I
-                thought that because I didn't study Computer Science at
-                university this career just wasn't possible for me. However, I
-                discovered that by both attending courses and by studying by
-                myself, becoming a developer is absolutely possible.
               </div>
             </div>
           </div>
