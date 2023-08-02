@@ -1,7 +1,7 @@
 # Calculator
 
 This is a Calculator program built with Tkinter. There are two entries where the user can input their numbers and four  
-operators (+, -, /, *). Both integers and float numbers can be used in the entries. Demo below:
+buttons representing the 4 operators (+, -, /, *). Both integers and float numbers can be used in the entries and in the result. Demo below:
 
 After running the program this is the UI that will be presented:
 
