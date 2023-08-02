@@ -15,7 +15,7 @@ If the user has already registered before and tries to register again, an error 
 
 However, if it is the first time the user signs up, a session cookie will be issued and the user will be redirected to another page where a confirmation message like the one below will appear:
 
-<img width="2211" alt="Register4" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/aab88f7a-ae79-4d0f-8bd1-9e859bd87d19">
+<img width="2205" alt="successful-registration" src="https://github.com/Alex188dot/Python/assets/117444853/410e20a5-8f3e-4ac8-8539-7f6259e75e5a">
 
 Finally, when the user tries to login with their credentials, the cookie will be read and the user will be redirected to another page where they will be welcomed back:
 
