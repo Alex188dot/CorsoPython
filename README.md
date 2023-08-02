@@ -15,5 +15,6 @@ You can see most of the main programs I coded during this course and more on my 
 
 https://alex188dot.github.io/Python/
 
+Preview:
 
-
+<img width="2225" alt="portfolio-preview" src="https://github.com/Alex188dot/Python/assets/117444853/00e3ec6a-f8fe-499c-8050-2aaae50df06c">
