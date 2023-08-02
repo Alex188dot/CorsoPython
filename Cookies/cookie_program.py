@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-pwd = "your-db-pwd"
+pwd = "yoour-db-pwd"
 
 """
 Creare una applicazione flask che utilizza i cookie di sessione. In particolare vogliamo registrare di un utente 
@@ -114,16 +114,16 @@ def register_user():
             database="Talentform"
         )
         mycursor = mydb.cursor()
-        mycursor.execute("SELECT * FROM Talentform.users4;")
+        mycursor.execute("SELECT username FROM Talentform.users4;")
         myresult = mycursor.fetchall()
         conta = []
         for x in myresult:
-            if username not in x and password not in x:
+            if username not in x:
                 conta.append("0")
-            elif username in x and password in x:
+            elif username in x:
                 conta.append("1")
                 if conta.count("1") == 1:
-                    msg = f"Utente {username} già registrato!"
+                    msg = f"User {username} already registered!"
                     return render_template('registration.html', msg=msg)
         else:
             # save the data to the database
@@ -203,10 +203,11 @@ plt.bar(categories, values)
 # Personalizzazione dell'aspetto del grafico
 plt.title("Accessi per Utente")
 plt.xlabel("Utenti")
+plt.xticks(rotation=20)
 plt.ylabel("Accessi")
 
 # Show graph
-#plt.show()
+plt.show()
 
 # PIE CHART
 
@@ -222,7 +223,7 @@ plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%')
 plt.title("Accessi per utente in percentuale")
 
 # Show graph
-#plt.show()
+plt.show()
 
 
 
@@ -282,4 +283,4 @@ plt.xlabel("Orario")
 plt.ylabel("Accessi")
 
 # Show graph
-#plt.show()
+plt.show()
