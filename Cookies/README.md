@@ -21,7 +21,7 @@ Finally, when the user tries to login with their credentials, the cookie will be
 
 <img width="2194" alt="Login5" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/529870ef-cae6-4036-b0ed-cfcf4638f3a4">
 
-The manager of the website, on the other hand, after running the program will be able to see the access stats, like the ones below:
+The manager of the website, on the other hand, after running the program will be able to see access stats, like the ones below:
 
 Total accesses per user:
 
