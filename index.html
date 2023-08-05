@@ -975,6 +975,37 @@
           for (let n of navLink) {
             n.style.backgroundColor = "#2f2e2e";
           }
+          // Navbar Brand and Nav Links hover effect
+          function mouseEnter() {
+            this.style.color = "rgb(220, 255, 17)";
+          }
+          navbarBrand.addEventListener("mouseenter", mouseEnter);
+          function mouseLeave() {
+            this.style.color = "#00F26B";
+          }
+          navbarBrand.addEventListener("mouseleave", mouseLeave);
+          navLink.forEach(function (n) {
+            n.addEventListener("mouseenter", mouseEnter);
+            n.addEventListener("mouseleave", mouseLeave);
+          });
+          function removeEventListeners() {
+            navLink.forEach(function (n) {
+              n.removeEventListener("mouseenter", mouseEnter);
+              n.removeEventListener("mouseleave", mouseLeave);
+            });
+          }
+          btn.addEventListener("click", function () {
+            removeEventListeners();
+            navbarBrand.removeEventListener("mouseenter", mouseEnter);
+            navbarBrand.removeEventListener("mouseleave", mouseLeave);
+          });
+          // Btn hover effect
+          btn.addEventListener("mouseenter", mouseEnter);
+          btn.addEventListener("mouseleave", mouseLeave);
+          btn.addEventListener("click", function () {
+            btn.removeEventListener("mouseenter", mouseEnter);
+            btn.removeEventListener("mouseleave", mouseLeave);
+          });
           // Containers
           for (let cont of container) {
             cont.style.backgroundColor = "#2f2e2e";
@@ -1001,7 +1032,7 @@
             b.style.backgroundColor = "#00F26B";
             b.style.color = "#2f2e2e";
           }
-          // Buttons
+          // Buttons hover effect
           function handleMouseEnter() {
             this.style.backgroundColor = "#171810";
             this.style.color = "white";
