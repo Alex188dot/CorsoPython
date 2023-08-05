@@ -37,6 +37,9 @@
       .navbar {
         --bs-navbar-padding-y: 0;
       }
+      .nav .container-fluid {
+        background-color: #8ee4af;
+      }
       .container-fluid,
       .container {
         background-color: #5cdb95;
@@ -46,7 +49,7 @@
         margin-top: 0;
         width: 70%;
         margin-bottom: 3rem;
-        background-color: #8ee4af !important;
+        background-color: #8ee4af;
       }
       .p {
         font-size: 1.4rem;
@@ -159,12 +162,17 @@
       .fa-brands {
         color: #05386b;
       }
+      .btn-toggle {
+        float: right;
+        margin-right: 3rem;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container-fluid" style="background-color: #8ee4af !important">
+    <nav class="navbar navbar-expand-lg sticky-top nav">
+      <div class="container-fluid" id="navbar">
         <a class="navbar-brand" href="#" style="font-size: 2.1rem">Portfolio</a>
         <button
           class="navbar-toggler"
@@ -205,9 +213,9 @@
     </nav>
     <!-- navbar end -->
     <div class="container-fluid" id="logo">
+      <i class="fa-solid fa-circle-half-stroke btn-toggle"></i>
       <img class="img-fluid" src="Alessio_Leodori_logo.png" alt="logo-green" />
     </div>
-
     <!-- Jumbotron -->
     <div class="container jumbotron rounded-3">
       <p class="p">
@@ -221,9 +229,7 @@
         problem-solving, communication and teamwork. I am confident that I can
         apply these skills to any programming project and deliver high-quality
         results. I am always open to new challenges and opportunities to learn
-        from others. If you are looking for a motivated, adaptable, and
-        enthusiastic Full Stack Developer, please feel free to contact me. I
-        would love to hear from you! To check out my projects, just scroll down!
+        from others.
       </p>
     </div>
     <!-- Front end -->
@@ -758,7 +764,7 @@
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseOne"
               >
-                Are you available for work?
+                What languages and frameworks do you use?
               </button>
             </h2>
             <div
@@ -766,8 +772,10 @@
               class="accordion-collapse collapse"
             >
               <div class="accordion-body">
-                Yes, I am available right now, although that might change in the
-                future as I am actively looking for a job.
+                I use Python, JavaScript, HTML and CSS on a daily basis. As per
+                frameworks and libraries I use React, Flask, Django, Bootstrap.
+                I am currently learning NodeJS, ExpressJS and MongoDB. In the
+                near future I would like to learn PHP, Angular and Typescript.
               </div>
             </div>
           </div>
@@ -803,37 +811,12 @@
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseThree"
               >
-                What languages and frameworks do you use?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              class="accordion-collapse collapse"
-            >
-              <div class="accordion-body">
-                I use Python, JavaScript, HTML and CSS on a daily basis. As per
-                frameworks and libraries I use React, Flask, Django, Bootstrap.
-                I am currently learning NodeJS, ExpressJS and MongoDB. In the
-                near future I would like to learn PHP, Angular and Typescript.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseFour"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseFour"
-              >
                 Why have you chosen to pursue programming and become a
                 developer?
               </button>
             </h2>
             <div
-              id="panelsStayOpen-collapseFour"
+              id="panelsStayOpen-collapseThree"
               class="accordion-collapse collapse"
             >
               <div class="accordion-body">
@@ -851,15 +834,15 @@
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseFive"
+                data-bs-target="#panelsStayOpen-collapseFour"
                 aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseFive"
+                aria-controls="panelsStayOpen-collapseFour"
               >
                 Are you interested in any other area of programming?
               </button>
             </h2>
             <div
-              id="panelsStayOpen-collapseFive"
+              id="panelsStayOpen-collapseFour"
               class="accordion-collapse collapse"
             >
               <div class="accordion-body">
@@ -875,15 +858,15 @@
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseSix"
+                data-bs-target="#panelsStayOpen-collapseFive"
                 aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseSix"
+                aria-controls="panelsStayOpen-collapseFive"
               >
-                What are you passionate about, except for programming?
+                What else are you passionate about?
               </button>
             </h2>
             <div
-              id="panelsStayOpen-collapseSix"
+              id="panelsStayOpen-collapseFive"
               class="accordion-collapse collapse"
             >
               <div class="accordion-body">
@@ -908,8 +891,12 @@
           </p>
           <p>
             Feel free to contact me either by sending me an
-            <a href="mailto:alessio.leodori@gmail.com">email</a> or via
+            <a class="social-links" href="mailto:alessio.leodori@gmail.com"
+              >email</a
+            >
+            or via
             <a
+              class="social-links"
               href="https://www.linkedin.com/in/alessio-leodori-a04276280/"
               target="_blank"
               >Linkedin</a
@@ -918,13 +905,105 @@
           </p>
           <p>
             You can also check out my
-            <a href="https://github.com/Alex188dot" target="_blank">Github</a>
+            <a
+              class="social-links"
+              href="https://github.com/Alex188dot"
+              target="_blank"
+              >Github</a
+            >
             <i class="fa-brands fa-github"></i>
           </p>
         </div>
       </div>
     </div>
     <!-- Contact me end -->
+
+    <script>
+      const btn = document.querySelector(".btn-toggle"); // change to .btn-toggle
+      let isBlackLime = false;
+
+      btn.addEventListener("click", function () {
+        const elements = document.querySelectorAll("*");
+        const navbar = document.querySelector("#navbar");
+        const navbarNav = document.querySelector("#navbarNav");
+        const navbarBrand = document.querySelector(".navbar-brand");
+        const navItem = document.querySelectorAll(".nav-item");
+        const navLink = document.querySelectorAll(".nav-link");
+        const container = document.querySelectorAll(".container");
+        const image = document.querySelector(".img-fluid");
+        const par = document.querySelectorAll(".p");
+        const cards = document.querySelectorAll(".card-body");
+        const cardTitle = document.querySelectorAll(".card-title");
+        const cardText = document.querySelectorAll(".card-text");
+        const btnContainer = document.querySelectorAll(".btn-container");
+        const btnText = document.querySelectorAll(".btn-container a");
+        const accordionBody = document.querySelectorAll(".accordion-body");
+        const socials = document.querySelectorAll(".social-links");
+
+        if (isBlackLime) {
+          // If it is Black and Lime, change it to the Original theme
+          for (let element of elements) {
+            element.style.backgroundColor = "";
+            element.style.color = "";
+          }
+          // Image
+          image.src = "Alessio_Leodori_logo.png";
+          isBlackLime = false;
+        } else {
+          // If it is not Black and Lime, change it to Black and Lime theme
+          for (let element of elements) {
+            element.style.backgroundColor = "#171810";
+            element.style.color = "#00F26B";
+          }
+          // Navbar
+          navbar.style.backgroundColor = "#2f2e2e";
+          navbarNav.style.backgroundColor = "#2f2e2e";
+          navbarBrand.style.backgroundColor = "#2f2e2e";
+          for (let n of navItem) {
+            n.style.backgroundColor = "#2f2e2e";
+          }
+          for (let n of navLink) {
+            n.style.backgroundColor = "#2f2e2e";
+          }
+          // Containers
+          for (let cont of container) {
+            cont.style.backgroundColor = "#2f2e2e";
+          }
+          for (let p of par) {
+            p.style.backgroundColor = "#2f2e2e";
+          }
+          // Image
+          image.src = "Alessio_Leodori_Logo_Black.png";
+          // Cards
+          for (let card of cards) {
+            card.style.backgroundColor = "#2f2e2e";
+          }
+          for (let cardT of cardTitle) {
+            cardT.style.backgroundColor = "";
+          }
+          for (let card of cardText) {
+            card.style.backgroundColor = "";
+          }
+          for (let btn of btnContainer) {
+            btn.style.backgroundColor = "";
+          }
+          for (let b of btnText) {
+            b.style.backgroundColor = "#00F26B";
+            b.style.color = "#2f2e2e";
+          }
+          // Accordion
+          for (acc of accordionBody) {
+            acc.style.backgroundColor = "#2f2e2e";
+          }
+          // Contact me
+          for (let s of socials) {
+            s.style.color = "white";
+          }
+          isBlackLime = true;
+        }
+      });
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
