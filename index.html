@@ -993,15 +993,26 @@
             b.style.color = "#2f2e2e";
           }
           // Buttons
+          function handleMouseEnter() {
+            this.style.backgroundColor = "#171810";
+            this.style.color = "white";
+          }
+          function handleMouseLeave() {
+            this.style.backgroundColor = "#00F26B";
+            this.style.color = "#2f2e2e";
+          }
           btnHoverElements.forEach(function (btnHover) {
-            btnHover.addEventListener("mouseenter", function () {
-              btnHover.style.backgroundColor = "#171810";
-              btnHover.style.color = "white";
+            btnHover.addEventListener("mouseenter", handleMouseEnter);
+            btnHover.addEventListener("mouseleave", handleMouseLeave);
+          });
+          function removeHoverEventListeners() {
+            btnHoverElements.forEach(function (btnHover) {
+              btnHover.removeEventListener("mouseenter", handleMouseEnter);
+              btnHover.removeEventListener("mouseleave", handleMouseLeave);
             });
-            btnHover.addEventListener("mouseleave", function () {
-              btnHover.style.backgroundColor = "#00F26B";
-              btnHover.style.color = "#2f2e2e";
-            });
+          }
+          btn.addEventListener("click", function () {
+            removeHoverEventListeners();
           });
           // Accordion
           for (acc of accordionBody) {
