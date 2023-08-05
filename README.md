@@ -15,6 +15,10 @@ You can see most of the main programs I coded during this course and more on my 
 
 https://alex188dot.github.io/Python/
 
-Preview:
+Preview - Light mode:
 
-<img width="2223" alt="portfolio-preview" src="https://github.com/Alex188dot/Python/assets/117444853/2b90a74c-8b68-400d-892f-59f5b2734b9f">
+<img width="1429" alt="Light mode" src="https://github.com/Alex188dot/Python/assets/117444853/924258a3-5433-40db-a989-4689157bd5f5">
+
+Preview - Dark mode:
+
+<img width="1424" alt="Dark mode" src="https://github.com/Alex188dot/Python/assets/117444853/dcfc66c1-a417-450e-888d-0c53daca7042">
