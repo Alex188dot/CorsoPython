@@ -1,0 +1,154 @@
+body {
+  background-color: #5cdb95;
+  color: #05386b;
+  font-family: "Roboto Slab", serif;
+}
+.navbar-brand,
+.nav-link {
+  margin-right: 2rem;
+  color: #05386b;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar {
+  --bs-navbar-padding-y: 0;
+}
+.navbar-brand:hover {
+  color: rgb(34, 34, 195);
+}
+.navbar-nav {
+  --bs-nav-link-hover-color: rgb(34, 34, 195);
+}
+.nav .container-fluid {
+  background-color: #8ee4af;
+}
+.container-fluid,
+.container {
+  background-color: #5cdb95;
+}
+.container.jumbotron {
+  padding: 3rem;
+  margin-top: 0;
+  width: 70%;
+  margin-bottom: 3rem;
+  background-color: #8ee4af;
+}
+.p {
+  font-size: 1.4rem;
+}
+.container-fluid .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 3rem;
+}
+.card {
+  margin: 3rem 0.4rem;
+  transition: transform 0.2s ease-in-out;
+}
+.card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+.card-title:hover {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+}
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-text:hover {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+}
+.card-body {
+  background-color: #8ee4af;
+  color: #05386b;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.btn {
+  background-color: #05386b;
+  color: #8ee4af;
+}
+.btn:hover {
+  border: 1px solid #05386b;
+  background-color: #5cdb95;
+}
+.hovered {
+  background-color: #171810;
+}
+.front-end,
+.programs,
+.full-stack,
+.faq {
+  width: 100%;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+#logo {
+  text-align: center;
+  margin-top: 3rem;
+  background-size: cover;
+  width: 100%;
+}
+.col-lg-8 {
+  display: flex;
+  justify-content: center;
+}
+.col-lg-8 img {
+  border-radius: 25px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.col-lg-4 {
+  margin-top: 3.5rem;
+}
+.carousel-item {
+  margin-top: 1.3rem;
+}
+.accordion-button {
+  background-color: #5cdb95;
+  color: #05386b;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #5cdb95;
+}
+.accordion-body {
+  background-color: #8ee4af;
+  color: #05386b;
+  font-size: 1.2rem;
+}
+.faq-container {
+  margin-bottom: 5rem;
+}
+.contact p a {
+  text-decoration: none;
+}
+.fa-brands {
+  color: #05386b;
+}
+.btn-toggle {
+  float: right;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+.btn-toggle:hover {
+  color: rgb(34, 34, 195);
+}
