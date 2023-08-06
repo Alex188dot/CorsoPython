@@ -94,6 +94,7 @@ body {
 .front-end,
 .programs,
 .full-stack,
+.personal-projects,
 .faq {
   width: 100%;
   font-size: 2.3rem;
@@ -146,9 +147,15 @@ body {
 }
 .btn-toggle {
   float: right;
-  margin-right: 3rem;
+  margin-right: 2rem;
   cursor: pointer;
 }
 .btn-toggle:hover {
   color: rgb(34, 34, 195);
+}
+#language {
+  float: right;
+  margin-right: 2rem;
+  cursor: pointer;
+  width: 1rem;
 }
