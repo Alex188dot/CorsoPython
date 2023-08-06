@@ -21,6 +21,9 @@ btn.addEventListener("click", function () {
   const btnHoverElements = document.querySelectorAll(".btn");
   const accordionBody = document.querySelectorAll(".accordion-body");
   const socials = document.querySelectorAll(".social-links");
+  const email = document.querySelector(".email");
+  const linkedin = document.querySelector(".linkedin");
+  const github = document.querySelector(".github");
 
   if (isBlackLime) {
     // If it is Black and Lime, change it to the Original theme
@@ -30,6 +33,8 @@ btn.addEventListener("click", function () {
     }
     // Image
     image.src = "Alessio_Leodori_logo.png";
+    btn.title = "Dark mode";
+
     isBlackLime = false;
   } else {
     // If it is not Black and Lime, change it to Black and Lime theme
@@ -130,10 +135,16 @@ btn.addEventListener("click", function () {
     for (acc of accordionBody) {
       acc.style.backgroundColor = "#2f2e2e";
     }
-    // Contact me
+    // Socials
     for (let s of socials) {
       s.style.color = "white";
     }
+
+    email.style.color = "white";
+    linkedin.style.color = "white";
+    github.style.color = "white";
+
+    btn.title = "Light mode";
     isBlackLime = true;
   }
 });
@@ -150,6 +161,10 @@ lang.addEventListener("click", function () {
   const nav3 = document.querySelector("#nav3");
   const nav4 = document.querySelector("#nav4");
   const jumbo = document.querySelector("#jumbo-section");
+  const programs = document.querySelector(".programs");
+  const fullStack = document.querySelector(".full-stack");
+  const personalProjects = document.querySelector(".personal-projects");
+  const contactMe = document.querySelector("#contact-title");
   const card1 = document.querySelector("#card1");
   const card2 = document.querySelector("#card2");
   const card3 = document.querySelector("#card3");
@@ -189,6 +204,7 @@ lang.addEventListener("click", function () {
   const cardText22 = document.querySelector("#card-text22");
   const cardText23 = document.querySelector("#card-text23");
   const cardText24 = document.querySelector("#card-text24");
+  const cardBtn = document.querySelectorAll(".btn");
   const accordionB1 = document.querySelector("#accordion-button-one");
   const accordionB2 = document.querySelector("#accordion-button-two");
   const accordionB3 = document.querySelector("#accordion-button-three");
@@ -199,9 +215,186 @@ lang.addEventListener("click", function () {
   const accordionBody3 = document.querySelector("#accordion-body-three");
   const accordionBody4 = document.querySelector("#accordion-body-four");
   const accordionBody5 = document.querySelector("#accordion-body-five");
-  const contact = document.querySelector("#contact");
   const contactTitle = document.querySelector("#contact-title");
   const contactText1 = document.querySelector("#contact-text1");
   const contactText2 = document.querySelector("#contact-text2");
   const contactText3 = document.querySelector("#contact-text3");
+  const linkedinIcon = document.querySelector(".fa-linkedin");
+  const githubIcon = document.querySelector(".fa-github");
+
+  let elems = document.querySelectorAll("[data-original-text]");
+
+  if (isItalian) {
+    // If language is Italian, change it to the Original language
+    elems.forEach(function (elem) {
+      elem.textContent = elem.getAttribute("data-original-text");
+    });
+    cardBtn.forEach((card) => (card.textContent = "Learn more"));
+    let email = document.createElement("a");
+    email.setAttribute("href", "mailto:alessio.leodori@gmail.com");
+    email.setAttribute("target", "_blank");
+    email.textContent = "email ";
+    email.classList.add("email");
+    let linkedin = document.createElement("a");
+    linkedin.setAttribute(
+      "href",
+      "https://www.linkedin.com/in/alessio-leodori-a04276280/"
+    );
+    linkedin.classList.add("linkedin");
+    linkedin.setAttribute("target", "_blank");
+    let or = document.createElement("span");
+    or.textContent = "or via ";
+    linkedin.textContent = "Linkedin ";
+    contactText2.textContent =
+      "Feel free to contact me either by sending me an ";
+    contactText2.appendChild(email);
+    contactText2.appendChild(or);
+    contactText2.appendChild(linkedin);
+    contactText2.appendChild(linkedinIcon);
+    contactText3.textContent = "You can also check out my ";
+    let github = document.createElement("a");
+    github.setAttribute("href", "https://github.com/Alex188dot");
+    github.setAttribute("target", "_blank");
+    github.textContent = "Github ";
+    github.classList.add("github");
+    contactText3.appendChild(github);
+    contactText3.appendChild(githubIcon);
+
+    if (isBlackLime) {
+      email.style.color = "white";
+      linkedin.style.color = "white";
+      github.style.color = "white";
+    }
+
+    lang.src = "italy.png";
+    lang.alt = "italian";
+    lang.title = "Italian";
+    isItalian = false;
+  } else {
+    // If language is not Italian, change it to Italian
+    nav1.textContent = "Programmi";
+    nav2.textContent = "App Full Stack";
+    nav3.textContent = "Progetti Personali";
+    nav4.textContent = "Contatti";
+    jumbo.textContent = `Benvenuti nel mio portfolio! Mi chiamo Alessio e sono un Full 
+    Stack Developer bilingue. Ho una passione per l'apprendimento e per la programmazione di App che hanno un look moderno, che costruisco grazie ad una solida base in HTML e CSS, ma in particolare con Javascript, React e Python. Finiti i corsi, ho intenzione di continuare ad imparare
+    linguaggi e framework, come ad esempio PHP, Angular e Typescript, in modo da espandere
+    il mio portfolio e le mie capacità. Nella mia carriera ho svolto diverse professioni e mansioni, nel campo del trading,
+    dell'istruzione e del supporto tecnico, che mi hanno fornito preziose competenze in ambito, rispettivamente, di 
+    problem solving, comunicazione e teamwork. Sono sicuro di poter
+    applicare queste competenze a qualsiasi progetto di programmazione e fornire risultati di alta qualità. In generale, sono sempre aperto a nuove sfide e alla possibilità di imparare dagli altri.`;
+    programs.textContent = "Programmi";
+    fullStack.textContent = "App Full Stack";
+    personalProjects.textContent = "Progetti Personali";
+    contactMe.textContent = "Contatti";
+    card1.textContent = "Clone di Netflix";
+    card2.textContent = "Canzoni";
+    card3.textContent = "Gestionale Biblioteca";
+    card4.textContent = "Conto Corrente";
+    card5.textContent = "Ristorante";
+    card6.textContent = "Calcolatrice";
+    card7.textContent = "Bancomat";
+    card8.textContent = "Ristorante con Grafica";
+    card9.textContent = "Autosalone";
+    card10.textContent = "Distributore";
+    card11.textContent = "Crittografia";
+    card12.textContent = "Scuola di Formazione";
+    card13.textContent = "Supermercato Flask";
+    card14.textContent = "Generatore di QR Code";
+    card15.textContent = "App Meteo";
+    cardText1.textContent = "Una pagina che riproduce la homepage di Netflix";
+    cardText2.textContent =
+      "Un sito di un'agenzia di viaggi completamente responsive";
+    cardText3.textContent =
+      "Un portale per la ricerca di lavoro, con capacità di filtro";
+    cardText4.textContent = "Una landing page di una Pizzeria creata con React";
+    cardText5.textContent =
+      "Un semplice programma di gestione di una raccolta musicale";
+    cardText6.textContent = "Un sistema di gestione di una biblioteca";
+    cardText7.textContent = "Un semplice programma di home banking";
+    cardText8.textContent = "Un programma SQL di gestione di un ristorante";
+    cardText9.textContent = "Una calcolatrice creata con Tkinter";
+    cardText10.textContent = "Un Bancomat creato con grafica";
+    cardText11.textContent =
+      "Un programma di gestione di un ristorante creato con Tkinter";
+    cardText12.textContent =
+      "Un programma di gestione di un autosalone creato con Tkinter";
+    cardText13.textContent = "Un programma di Slot Machine creato con Tkinter";
+    cardText14.textContent = "Un distributore automatico con grafica";
+    cardText15.textContent = "Un programma di codifica crittografica";
+    cardText16.textContent = "Un programma di simulazione di una blockchain";
+    cardText17.textContent = "Un'app che utilizza i cookies del browser";
+    cardText18.textContent = "Una scuola di formazione costruita con Django";
+    cardText19.textContent = "Un'app di getione ristorante costruita con Flask";
+    cardText20.textContent =
+      "Un'app di gestione supermercato costruita con Flask";
+    cardText21.textContent = "Uno script Python per la generazione di QR code";
+    cardText22.textContent =
+      "Uno script Python per lo scraping di link da un sito web";
+    cardText23.textContent =
+      "Uno script Python per la sentiment analysis di articoli";
+    cardText24.textContent = "Un'app Meteo costruita con Tkinter";
+    cardBtn.forEach((card) => (card.textContent = "Scopri di più"));
+    accordionB1.textContent = "Quali linguaggi e framework utilizzi?";
+    accordionB2.textContent = "Qual è il tuo linguaggio preferito?";
+    accordionB3.textContent =
+      "Perchè hai scelto la programmazione e di diventare uno sviluppatore?";
+    accordionB4.textContent =
+      "Sei interessato a qualche altra area della programmazione?";
+    accordionB5.textContent = "Di che cos'altro sei appassionato?";
+    accordionBody1.textContent =
+      "Utilizzo Python, Javascript, HTML e CSS ogni giorno. Per quanto riguarda framework e librerie utilizzo React, Flask, Django e Bootstrap. Al momento sto imparando NodeJS, ExpressJS e MongoDB. Nel futuro prossimo voglio imparare anche PHP, Angular e TypeScript.";
+    accordionBody2.textContent =
+      "Python di gran lunga! Adoro la sua semplicità e flessibilità.";
+    accordionBody3.textContent =
+      "Sono sempre stato interessato alla tecnologia in generale, ma pensavo che siccome non avevo studiato Informatica all'università questa carriera per me non fosse possibile. Invece, poi ho scoperto che sia frequentando corsi in materia, che studiando per conto mio, diventare programmatore è assolutamente possibile!";
+    accordionBody4.textContent =
+      "Si, sono interessato alla Data Science e all'intelligenza artificiale. Sono affascianto dal modo in cui questi modelli  funzionano ed in particolare da come riescono a prevedere eventi futuri.";
+    accordionBody5.textContent =
+      "Sono interessato alle criptovalute e alla blockchain, sia per l'utilità che un giorno questa tecnologia potrà apportare, sia per il suo potenziale di crescita.";
+    contactTitle.textContent = "Contatti";
+    contactText1.textContent =
+      "Hai trovato il mio portfolio interessante e vorresti saperne di più. Qual è il prossimo passo?";
+    // Contact Text 2
+    let email = document.createElement("a");
+    email.setAttribute("href", "mailto:alessio.leodori@gmail.com");
+    email.setAttribute("target", "_blank");
+    email.textContent = "email ";
+    email.classList.add("email");
+    let linkedin = document.createElement("a");
+    linkedin.setAttribute(
+      "href",
+      "https://www.linkedin.com/in/alessio-leodori-a04276280/"
+    );
+    linkedin.setAttribute("target", "_blank");
+    let or = document.createElement("span");
+    or.textContent = "o ";
+    linkedin.textContent = "Linkedin ";
+    linkedin.classList.add("linkedin");
+    contactText2.textContent = "Sentiti libero di contattarmi tramite ";
+    contactText2.appendChild(email);
+    contactText2.appendChild(or);
+    contactText2.appendChild(linkedin);
+    contactText2.appendChild(linkedinIcon);
+    // Contact Text 3
+    let github = document.createElement("a");
+    github.setAttribute("href", "https://github.com/Alex188dot");
+    github.setAttribute("target", "_blank");
+    github.textContent = "Github ";
+    github.classList.add("github");
+    contactText3.textContent = "Dai un'occhiata alla mia pagina ";
+    contactText3.appendChild(github);
+    contactText3.appendChild(githubIcon);
+
+    if (isBlackLime) {
+      email.style.color = "white";
+      linkedin.style.color = "white";
+      github.style.color = "white";
+    }
+
+    lang.src = "united-kingdom.png";
+    lang.alt = "english";
+    lang.title = "English";
+    isItalian = true;
+  }
 });
