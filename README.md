@@ -17,8 +17,10 @@ https://alex188dot.github.io/Python/
 
 Preview - Light mode:
 
-<img width="1429" alt="Light mode" src="https://github.com/Alex188dot/Python/assets/117444853/924258a3-5433-40db-a989-4689157bd5f5">
+<img width="1428" alt="Light_mode" src="https://github.com/Alex188dot/Python/assets/117444853/4351393b-5e42-4e41-b886-17e94347963c">
 
 Preview - Dark mode:
 
-<img width="1424" alt="Dark mode" src="https://github.com/Alex188dot/Python/assets/117444853/dcfc66c1-a417-450e-888d-0c53daca7042">
+<img width="1425" alt="Dark_mode" src="https://github.com/Alex188dot/Python/assets/117444853/3b1fc938-20c8-4d34-bc40-9d77f4d7181a">
+
+Update: added Italian language
