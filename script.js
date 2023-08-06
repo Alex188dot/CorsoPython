@@ -1,3 +1,5 @@
+// Light/Dark Theme section
+
 const btn = document.querySelector(".btn-toggle");
 let isBlackLime = false;
 
@@ -134,4 +136,72 @@ btn.addEventListener("click", function () {
     }
     isBlackLime = true;
   }
+});
+
+// Italian/English Language section
+
+const lang = document.querySelector("#language");
+
+let isItalian = false;
+
+lang.addEventListener("click", function () {
+  const nav1 = document.querySelector("#nav1");
+  const nav2 = document.querySelector("#nav2");
+  const nav3 = document.querySelector("#nav3");
+  const nav4 = document.querySelector("#nav4");
+  const jumbo = document.querySelector("#jumbo-section");
+  const card1 = document.querySelector("#card1");
+  const card2 = document.querySelector("#card2");
+  const card3 = document.querySelector("#card3");
+  const card4 = document.querySelector("#card4");
+  const card5 = document.querySelector("#card5");
+  const card6 = document.querySelector("#card6");
+  const card7 = document.querySelector("#card7");
+  const card8 = document.querySelector("#card8");
+  const card9 = document.querySelector("#card9");
+  const card10 = document.querySelector("#card10");
+  const card11 = document.querySelector("#card11");
+  const card12 = document.querySelector("#card12");
+  const card13 = document.querySelector("#card13");
+  const card14 = document.querySelector("#card14");
+  const card15 = document.querySelector("#card15");
+  const cardText1 = document.querySelector("#card-text1");
+  const cardText2 = document.querySelector("#card-text2");
+  const cardText3 = document.querySelector("#card-text3");
+  const cardText4 = document.querySelector("#card-text4");
+  const cardText5 = document.querySelector("#card-text5");
+  const cardText6 = document.querySelector("#card-text6");
+  const cardText7 = document.querySelector("#card-text7");
+  const cardText8 = document.querySelector("#card-text8");
+  const cardText9 = document.querySelector("#card-text9");
+  const cardText10 = document.querySelector("#card-text10");
+  const cardText11 = document.querySelector("#card-text11");
+  const cardText12 = document.querySelector("#card-text12");
+  const cardText13 = document.querySelector("#card-text13");
+  const cardText14 = document.querySelector("#card-text14");
+  const cardText15 = document.querySelector("#card-text15");
+  const cardText16 = document.querySelector("#card-text16");
+  const cardText17 = document.querySelector("#card-text17");
+  const cardText18 = document.querySelector("#card-text18");
+  const cardText19 = document.querySelector("#card-text19");
+  const cardText20 = document.querySelector("#card-text20");
+  const cardText21 = document.querySelector("#card-text21");
+  const cardText22 = document.querySelector("#card-text22");
+  const cardText23 = document.querySelector("#card-text23");
+  const cardText24 = document.querySelector("#card-text24");
+  const accordionB1 = document.querySelector("#accordion-button-one");
+  const accordionB2 = document.querySelector("#accordion-button-two");
+  const accordionB3 = document.querySelector("#accordion-button-three");
+  const accordionB4 = document.querySelector("#accordion-button-four");
+  const accordionB5 = document.querySelector("#accordion-button-five");
+  const accordionBody1 = document.querySelector("#accordion-body-one");
+  const accordionBody2 = document.querySelector("#accordion-body-two");
+  const accordionBody3 = document.querySelector("#accordion-body-three");
+  const accordionBody4 = document.querySelector("#accordion-body-four");
+  const accordionBody5 = document.querySelector("#accordion-body-five");
+  const contact = document.querySelector("#contact");
+  const contactTitle = document.querySelector("#contact-title");
+  const contactText1 = document.querySelector("#contact-text1");
+  const contactText2 = document.querySelector("#contact-text2");
+  const contactText3 = document.querySelector("#contact-text3");
 });
