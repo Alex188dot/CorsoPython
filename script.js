@@ -325,7 +325,7 @@ lang.addEventListener("click", function () {
     cardText16.textContent = "Un programma di simulazione di una blockchain";
     cardText17.textContent = "Un'app che utilizza i cookies del browser";
     cardText18.textContent = "Una scuola di formazione costruita con Django";
-    cardText19.textContent = "Un'app di getione ristorante costruita con Flask";
+    cardText19.textContent = "Un'app di gestione ristorante costruita con Flask";
     cardText20.textContent =
       "Un'app di gestione supermercato costruita con Flask";
     cardText21.textContent = "Uno script Python per la generazione di QR code";
