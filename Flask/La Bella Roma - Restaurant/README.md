@@ -11,7 +11,7 @@ Once they have chosen, they will see a recap of their order and they will be tol
 
 <img width="2231" alt="menu-confirmation" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/1c3a0bef-36af-42ba-b1a5-7d59f882f78f">
 
-At this point the Manager, who logs in through the top right link in the navbar, and and who has a their own credentials:
+At this point the Manager, who logs in through the top right link in the navbar, and who has their own credentials:
 
 <img width="2223" alt="admin_login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/8d24b615-e2c6-454c-a955-9098d7dccfad">
 
