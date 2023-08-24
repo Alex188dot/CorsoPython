@@ -23,4 +23,4 @@ Preview - Dark mode:
 
 <img width="1425" alt="Dark_mode" src="https://github.com/Alex188dot/Python/assets/117444853/3b1fc938-20c8-4d34-bc40-9d77f4d7181a">
 
-Update: added Italian language
+Update: added 🇮🇹 Italian language
