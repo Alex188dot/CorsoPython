@@ -32,7 +32,7 @@ btn.addEventListener("click", function () {
       element.style.color = "";
     }
     // Image
-    image.src = "Alessio_Leodori_logo.png";
+    image.src = "Assets/Alessio_Leodori_logo.png";
     btn.title = "Dark mode";
 
     isBlackLime = false;
@@ -91,7 +91,7 @@ btn.addEventListener("click", function () {
       p.style.backgroundColor = "#2f2e2e";
     }
     // Image
-    image.src = "Alessio_Leodori_Logo_Black.png";
+    image.src = "Assets/Alessio_Leodori_Logo_Black.png";
     // Cards
     for (let card of cards) {
       card.style.backgroundColor = "#2f2e2e";
@@ -266,7 +266,7 @@ lang.addEventListener("click", function () {
       github.style.color = "white";
     }
 
-    lang.src = "italy.png";
+    lang.src = "Assets/italy.png";
     lang.alt = "italian";
     lang.title = "Italian";
     isItalian = false;
@@ -325,7 +325,8 @@ lang.addEventListener("click", function () {
     cardText16.textContent = "Un programma di simulazione di una blockchain";
     cardText17.textContent = "Un'app che utilizza i cookies del browser";
     cardText18.textContent = "Una scuola di formazione costruita con Django";
-    cardText19.textContent = "Un'app di gestione ristorante costruita con Flask";
+    cardText19.textContent =
+      "Un'app di gestione ristorante costruita con Flask";
     cardText20.textContent =
       "Un'app di gestione supermercato costruita con Flask";
     cardText21.textContent = "Uno script Python per la generazione di QR code";
@@ -392,7 +393,7 @@ lang.addEventListener("click", function () {
       github.style.color = "white";
     }
 
-    lang.src = "united-kingdom.png";
+    lang.src = "Assets/united-kingdom.png";
     lang.alt = "english";
     lang.title = "English";
     isItalian = true;
