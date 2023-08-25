@@ -323,7 +323,7 @@ lang.addEventListener("click", function () {
     cardText14.textContent = "Un distributore automatico con grafica";
     cardText15.textContent = "Un programma di codifica crittografica";
     cardText16.textContent = "Un programma di simulazione di una blockchain";
-    cardText17.textContent = "Un'app che utilizza i cookies del browser";
+    cardText17.textContent = "Una web app per un negozio di elettronica online";
     cardText18.textContent = "Una scuola di formazione costruita con Django";
     cardText19.textContent =
       "Un'app di gestione ristorante costruita con Flask";
