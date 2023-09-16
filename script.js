@@ -273,12 +273,6 @@ lang.addEventListener("click", function () {
     personalProjects.textContent = "Progetti Personali";
     contactMe.textContent = "Contatti";
     card1.textContent = "Clone di Netflix";
-    card2.textContent = "Canzoni";
-    card3.textContent = "Gestionale Biblioteca";
-    card4.textContent = "Conto Corrente";
-    card5.textContent = "Ristorante";
-    card6.textContent = "Calcolatrice";
-    card7.textContent = "Bancomat";
     card8.textContent = "Ristorante con Grafica";
     card9.textContent = "Autosalone";
     card10.textContent = "Distributore";
@@ -293,13 +287,6 @@ lang.addEventListener("click", function () {
     cardText3.textContent =
       "Un portale per la ricerca di lavoro, con capacità di filtro";
     cardText4.textContent = "Una landing page di una Pizzeria creata con React";
-    cardText5.textContent =
-      "Un semplice programma di gestione di una raccolta musicale";
-    cardText6.textContent = "Un sistema di gestione di una biblioteca";
-    cardText7.textContent = "Un semplice programma di home banking";
-    cardText8.textContent = "Un programma SQL di gestione di un ristorante";
-    cardText9.textContent = "Una calcolatrice creata con Tkinter";
-    cardText10.textContent = "Un Bancomat creato con grafica";
     cardText11.textContent =
       "Un programma di gestione di un ristorante creato con Tkinter";
     cardText12.textContent =
