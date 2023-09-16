@@ -30,7 +30,7 @@ The manager, on the other hand has their own Reserved Area where they can login
 <img width="600" alt="Admin login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fe09d6ac-a6f3-44a8-8450-1fac17041447">
 
 
-and check how the business is going (total revenue), by itself or through the use of graphs, and/or download a PDF of the stats:
+and check how the business is doing by clicking the Show Total Revenue button. There are also graphs showing sales per category and per user, and a button to download them as PDF:
 
 <img width="257" alt="Total revenue" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7774b989-4b08-4790-94c3-6aa3e85a0c5d">   
 <img width="598" alt="Admin Area" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/d28f3634-7b42-4ea1-a663-9351a5e0e610">   
