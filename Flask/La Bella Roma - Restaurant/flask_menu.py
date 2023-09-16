@@ -12,12 +12,6 @@ matplotlib.use('Agg')
 
 pwd = "your-db-pwd"
 
-"""
-Creare un file html con 4 select che rappresentano le scelte degli utenti per un ristorante.
-Le select rappresentano il primo, il secondo, il contorno e il dolce.
-Ogni select avrà valori diversi per il primo es. “lasagna”, “risotto” etc
-per il secondo “cotoletta”, “spigola” etc.
-"""
 
 
 class Piatto:
@@ -404,71 +398,44 @@ def stats2():
     contorni =["Cicoria", "Patatine fritte", "Insalata"]
     dolci = ["Tiramisù", "Crem Caramel", "Panna Cotta"]
 
-    # Define an empty list to store the values
+
     values_h = []
 
-    # Loop over the primi list
     for dish in primi:
-        # Define the parameterized query
         sql = "SELECT * FROM accepted_orders WHERE Primo = %s"
-        # Execute the query with the dish as a parameter
         mycursor.execute(sql, (dish,))
-        # Fetch the results
         myresult = mycursor.fetchall()
-        # Initialize a sum variable
         sum = 0
-        # Loop over the results and add the quantity to the sum
         for x in myresult:
             sum += int(x[6])
-        # Append the sum to the values list
         values_h.append(sum)
 
-    # Loop over the secondi list
     for dish in secondi:
-        # Define the parameterized query
         sql = "SELECT * FROM accepted_orders WHERE Secondo = %s"
-        # Execute the query with the dish as a parameter
         mycursor.execute(sql, (dish,))
-        # Fetch the results
         myresult = mycursor.fetchall()
-        # Initialize a sum variable
         sum = 0
-        # Loop over the results and add the quantity to the sum
         for x in myresult:
             sum += int(x[6])
-        # Append the sum to the values list
         values_h.append(sum)
 
-    # Loop over the contorni list
     for dish in contorni:
-        # Define the parameterized query
         sql = "SELECT * FROM accepted_orders WHERE Contorno = %s"
-        # Execute the query with the dish as a parameter
         mycursor.execute(sql, (dish,))
-        # Fetch the results
         myresult = mycursor.fetchall()
-        # Initialize a sum variable
         sum = 0
-        # Loop over the results and add the quantity to the sum
         for x in myresult:
             sum += int(x[6])
-        # Append the sum to the values list
         values_h.append(sum)
 
-    # Loop over the dolci list
     for dish in dolci:
-        # Define the parameterized query
         sql = "SELECT * FROM accepted_orders WHERE Dolce = %s"
-        # Execute the query with the dish as a parameter
         mycursor.execute(sql, (dish,))
         # Fetch the results
         myresult = mycursor.fetchall()
-        # Initialize a sum variable
         sum = 0
-        # Loop over the results and add the quantity to the sum
         for x in myresult:
             sum += int(x[6])
-        # Append the sum to the values list
         values_h.append(sum)
 
 
