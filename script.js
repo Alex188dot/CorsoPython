@@ -277,11 +277,8 @@ lang.addEventListener("click", function () {
     nav3.textContent = "Progetti Personali";
     nav4.textContent = "Contatti";
     jumbo.textContent = `Benvenuti nel mio portfolio! Mi chiamo Alessio e sono un Full 
-    Stack Developer bilingue. Ho una passione per l'apprendimento e per la programmazione di App che hanno un look moderno, che costruisco grazie ad una solida base in HTML e CSS, ma in particolare con Javascript, React e Python. Finiti i corsi, ho intenzione di continuare ad imparare
-    linguaggi e framework, come ad esempio PHP, Angular e Typescript, in modo da espandere
-    il mio portfolio e le mie capacità. Nella mia carriera ho svolto diverse professioni e mansioni, nel campo del trading,
-    dell'istruzione e del supporto tecnico, che mi hanno fornito preziose competenze in ambito, rispettivamente, di 
-    problem solving, comunicazione e teamwork. Sono sicuro di poter
+    Stack Developer bilingue. Ho una passione per l'apprendimento e per la programmazione di App che hanno un look moderno. Il mio Tech Stack comprende: HTML, CSS, Javascript, MongoDB, ExpressJS, React, NodeJS, PHP, Java e Python. Nella mia carriera ho svolto diverse professioni e mansioni, che mi hanno fornito preziose competenze in ambito di 
+    problem solving e comunicazione. Sono sicuro di poter
     applicare queste competenze a qualsiasi progetto di programmazione e fornire risultati di alta qualità. In generale, sono sempre aperto a nuove sfide e alla possibilità di imparare dagli altri.`;
     programs.textContent = "Programmi";
     fullStack.textContent = "App Full Stack";
