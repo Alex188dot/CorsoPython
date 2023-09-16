@@ -341,7 +341,7 @@ lang.addEventListener("click", function () {
       "Sei interessato a qualche altra area della programmazione?";
     accordionB5.textContent = "Di che cos'altro sei appassionato?";
     accordionBody1.textContent =
-      "Utilizzo Python, Javascript, HTML e CSS ogni giorno. Per quanto riguarda framework e librerie utilizzo React, Flask, Django e Bootstrap. Al momento sto imparando NodeJS, ExpressJS e MongoDB. Nel futuro prossimo voglio imparare anche PHP, Angular e TypeScript.";
+      "Utilizzo Python, Javascript, HTML e CSS ogni giorno. Per quanto riguarda framework e librerie utilizzo React, Flask oppure Django e Bootstrap.";
     accordionBody2.textContent =
       "Python di gran lunga! Adoro la sua semplicità e flessibilità.";
     accordionBody3.textContent =
