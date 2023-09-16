@@ -184,35 +184,23 @@ def admin_area():
                 for row in myresult:
                     dt_tuple = row
                     dt_obj = dt_tuple[0]
-                    # Format it into a string with the desired components separated by commas
                     dt_str = dt_obj.strftime("%Y,%m,%d,%H,%M,%S")
-                    # Split the string into a list of its components
                     dt_list = dt_str.split(",")
-                    # Convert each element of the list into an integer
                     dt_int = map(int, dt_list)
-                    # Convert the list into a tuple
                     final_tuple = tuple(dt_int)
                     new_result.append(final_tuple)
 
                 # Create an empty list to store the hours
                 hours = []
 
-                # Loop through each row in myresult
                 for row in new_result:
-                    # Create a datetime object from the tuple elements
                     last_access = datetime(row[0], row[1], row[2], row[3], row[4], row[5])
-                    # Get the hour component and append it to the list
                     if last_access.date() == date.today():
-                        # Get the hour component and append it to the list
                         hours.append(last_access.hour)
 
-                # Create a Counter object from the list
                 counter = collections.Counter(hours)
-                # Get a list of the counts
                 counts = list(counter.values())
-                # Create a set object from the list
                 myset = set(hours)
-                # Convert the set object to a list
                 unique = list(myset)
 
 
