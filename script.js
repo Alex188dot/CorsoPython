@@ -364,7 +364,6 @@ lang.addEventListener("click", function () {
       linkedin.style.color = "white";
       github.style.color = "white";
     }
-
     lang.src = "Assets/united-kingdom.png";
     lang.alt = "english";
     lang.title = "English";
