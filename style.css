@@ -87,6 +87,7 @@ body {
 .btn {
   background-color: #05386b;
   color: #8ee4af;
+  font-size: 0.8rem;
 }
 .btn:hover {
   border: 1px solid #05386b;
