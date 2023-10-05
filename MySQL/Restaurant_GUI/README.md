@@ -12,7 +12,7 @@ MySQL Connector to connect to the database, Tkinter for the GUI, SMTPlib for sen
 Once the program is run, the user can insert their own email:
 
 <p align="center">
-  <img width="602" alt="User's login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c60120bc-e21e-4eee-9045-40c4db470c1e" align="center">
+  <img width="602" alt="User's login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c60120bc-e21e-4eee-9045-40c4db470c1e">
 </p>
 
 And then they can choose the meals they want to order:
