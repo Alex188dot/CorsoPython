@@ -53,6 +53,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
+  text-align: center;
 }
 .card-title:hover {
   white-space: normal;
@@ -72,6 +73,9 @@ body {
 .card-body {
   background-color: #8ee4af;
   color: #05386b;
+}
+.skills {
+  cursor: text;
 }
 .btn-container {
   display: flex;

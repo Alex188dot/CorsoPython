@@ -17,7 +17,7 @@ btn.addEventListener("click", function () {
   const cardTitle = document.querySelectorAll(".card-title");
   const cardText = document.querySelectorAll(".card-text");
   const btnContainer = document.querySelectorAll(".btn-container");
-  const btnText = document.querySelectorAll(".btn-container a");
+  const btnText = document.querySelectorAll(".btn-container *");
   const btnHoverElements = document.querySelectorAll(".btn");
   const accordionBody = document.querySelectorAll(".accordion-body");
   const socials = document.querySelectorAll(".social-links");
