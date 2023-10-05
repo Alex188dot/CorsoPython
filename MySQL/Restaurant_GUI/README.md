@@ -11,27 +11,39 @@ MySQL Connector to connect to the database, Tkinter for the GUI, SMTPlib for sen
 
 Once the program is run, the user can insert their own email:
 
-<img width="602" alt="User's login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c60120bc-e21e-4eee-9045-40c4db470c1e">
-
+<p align=“center”>
+  <img width="602" alt="User's login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/c60120bc-e21e-4eee-9045-40c4db470c1e">
+</p>
 
 And then they can choose the meals they want to order:
 
-<img width="602" alt="user's choice" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/a12c1e18-4012-4a8f-9bec-22a5be2dc61e">
-
+<p align=“center”>
+  <img width="602" alt="user's choice" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/a12c1e18-4012-4a8f-9bec-22a5be2dc61e">
+</p>
 
 Once they are done, they can click on the Fatto!✅ button, which will trigger an automated confirmation email  
 that will be sent to the user, example below:
 
-<img width="567" alt="Confirmation email" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/35b14fc1-6399-4fe0-b68d-38593d17626a">
-
+<p align=“center”>
+  <img width="567" alt="Confirmation email" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/35b14fc1-6399-4fe0-b68d-38593d17626a">
+</p>
 
 The manager, on the other hand has their own Reserved Area where they can login
 
-<img width="600" alt="Admin login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fe09d6ac-a6f3-44a8-8450-1fac17041447">
-
+<p align=“center”>
+  <img width="600" alt="Admin login" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/fe09d6ac-a6f3-44a8-8450-1fac17041447">
+</p>
 
 and check how the business is doing by clicking the Show Total Revenue button. There are also graphs showing sales per category and per user, and a button to download them as PDF:
 
-<img width="257" alt="Total revenue" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7774b989-4b08-4790-94c3-6aa3e85a0c5d">   
-<img width="598" alt="Admin Area" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/d28f3634-7b42-4ea1-a663-9351a5e0e610">   
-<img width="1072" alt="graphs" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/768babca-458e-487f-9db2-796d2665b4ff">   
+<p align=“center”>
+  <img width="257" alt="Total revenue" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7774b989-4b08-4790-94c3-6aa3e85a0c5d">  
+</p>
+
+<p align=“center”>
+  <img width="598" alt="Admin Area" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/d28f3634-7b42-4ea1-a663-9351a5e0e610">  
+</p>
+
+<p align=“center”>  
+  <img width="1072" alt="graphs" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/768babca-458e-487f-9db2-796d2665b4ff">   
+</p>
