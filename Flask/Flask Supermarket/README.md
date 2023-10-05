@@ -31,7 +31,9 @@ The Manager on the other hand, by clicking on the top right link on the Navbar (
 
 By logging in with their credentials, they will be able to see the revenue of the current day (updated automatically):
 
-<img width="505" alt="revenue-stats" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7bd1c516-4168-4589-969f-a61ff2882368">
+<p align="center">
+  <img width="505" alt="revenue-stats" src="https://github.com/Alex188dot/CorsoPython/assets/117444853/7bd1c516-4168-4589-969f-a61ff2882368">
+</p>
 
 The amount of purchases per hour of the day (between 9 and 22):
 
