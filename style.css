@@ -75,8 +75,6 @@ body {
   color: #05386b;
 }
 .skills {
-  cursor: text;
-
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
