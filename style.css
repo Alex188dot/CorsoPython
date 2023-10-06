@@ -1,12 +1,20 @@
+:root {
+  --primaryGreen: #5cdb95;
+  --secondaryGreen: #8ee4af;
+  --primaryBlue: #05386b;
+  --secondaryBlue: rgb(34, 34, 195);
+  --primaryBlack: #171810;
+}
+
 body {
-  background-color: #5cdb95;
-  color: #05386b;
+  background-color: var(--primaryGreen);
+  color: var(--primaryBlue);
   font-family: "Roboto Slab", serif;
 }
 .navbar-brand,
 .nav-link {
   margin-right: 2rem;
-  color: #05386b;
+  color: var(--primaryBlue);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -14,24 +22,24 @@ body {
   --bs-navbar-padding-y: 0;
 }
 .navbar-brand:hover {
-  color: rgb(34, 34, 195);
+  color: var(--secondaryBlue);
 }
 .navbar-nav {
-  --bs-nav-link-hover-color: rgb(34, 34, 195);
+  --bs-nav-link-hover-color: var(--secondaryBlue);
 }
 .nav .container-fluid {
-  background-color: #8ee4af;
+  background-color: var(--secondaryGreen);
 }
 .container-fluid,
 .container {
-  background-color: #5cdb95;
+  background-color: var(--primaryGreen);
 }
 .container.jumbotron {
   padding: 3rem;
   margin-top: 0;
   width: 70%;
   margin-bottom: 3rem;
-  background-color: #8ee4af;
+  background-color: var(--secondaryGreen);
 }
 .p {
   font-size: 1.4rem;
@@ -71,8 +79,8 @@ body {
   text-overflow: initial;
 }
 .card-body {
-  background-color: #8ee4af;
-  color: #05386b;
+  background-color: var(--secondaryGreen);
+  color: var(--primaryBlue);
 }
 .skills {
   --bs-btn-padding-x: 0.75rem;
@@ -111,8 +119,8 @@ body {
   background-color: var(--bs-btn-bg);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #05386b;
-  color: #8ee4af;
+  background-color: var(--primaryBlue);
+  color: var(--primaryGreen);
   font-size: 0.8rem !important;
 }
 .btn-container {
@@ -123,16 +131,16 @@ body {
   transform: scale(1.1);
 }
 .btn {
-  background-color: #05386b;
-  color: #8ee4af;
+  background-color: var(--primaryBlue);
+  color: var(--secondaryGreen);
   font-size: 0.8rem !important;
 }
 .btn:hover {
-  border: 1px solid #05386b;
-  background-color: #5cdb95;
+  border: 1px solid var(--primaryBlue);
+  background-color: var(--primaryGreen);
 }
 .hovered {
-  background-color: #171810;
+  background-color: var(--primaryBlack);
 }
 .front-end,
 .programs,
@@ -166,17 +174,17 @@ body {
   margin-top: 1.3rem;
 }
 .accordion-button {
-  background-color: #5cdb95;
-  color: #05386b;
+  background-color: var(--primaryGreen);
+  color: var(--primaryBlue);
   font-size: 1.5rem;
   font-weight: bold;
 }
 .accordion-button:not(.collapsed) {
-  background-color: #5cdb95;
+  background-color: var(--primaryGreen);
 }
 .accordion-body {
-  background-color: #8ee4af;
-  color: #05386b;
+  background-color: var(--secondaryGreen);
+  color: var(--primaryBlue);
   font-size: 1.2rem;
 }
 .faq-container {
@@ -186,7 +194,7 @@ body {
   text-decoration: none;
 }
 .fa-brands {
-  color: #05386b;
+  color: var(--primaryBlue);
 }
 .btn-toggle {
   float: right;
@@ -194,7 +202,7 @@ body {
   cursor: pointer;
 }
 .btn-toggle:hover {
-  color: rgb(34, 34, 195);
+  color: var(--secondaryBlue);
 }
 #language {
   float: right;

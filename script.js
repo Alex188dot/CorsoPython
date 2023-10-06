@@ -1,4 +1,8 @@
-// Light/Dark Theme section
+const lime = "#00F26B";
+const black = "#171810";
+const lemon = "rgb(220, 255, 17)";
+const gray = "#2f2e2e";
+const white = "#ffffff";
 
 const btn = document.querySelector(".btn-toggle");
 let isBlackLime = false;
@@ -39,26 +43,26 @@ btn.addEventListener("click", function () {
   } else {
     // If it is not Black and Lime, change it to Black and Lime theme
     for (let element of elements) {
-      element.style.backgroundColor = "#171810";
-      element.style.color = "#00F26B";
+      element.style.backgroundColor = black;
+      element.style.color = lime;
     }
     // Navbar
-    navbar.style.backgroundColor = "#2f2e2e";
-    navbarNav.style.backgroundColor = "#2f2e2e";
-    navbarBrand.style.backgroundColor = "#2f2e2e";
+    navbar.style.backgroundColor = gray;
+    navbarNav.style.backgroundColor = gray;
+    navbarBrand.style.backgroundColor = gray;
     for (let n of navItem) {
-      n.style.backgroundColor = "#2f2e2e";
+      n.style.backgroundColor = gray;
     }
     for (let n of navLink) {
-      n.style.backgroundColor = "#2f2e2e";
+      n.style.backgroundColor = gray;
     }
     // Navbar Brand and Nav Links hover effect
     function mouseEnter() {
-      this.style.color = "rgb(220, 255, 17)";
+      this.style.color = lemon;
     }
     navbarBrand.addEventListener("mouseenter", mouseEnter);
     function mouseLeave() {
-      this.style.color = "#00F26B";
+      this.style.color = lime;
     }
     navbarBrand.addEventListener("mouseleave", mouseLeave);
     navLink.forEach(function (n) {
@@ -85,16 +89,16 @@ btn.addEventListener("click", function () {
     });
     // Containers
     for (let cont of container) {
-      cont.style.backgroundColor = "#2f2e2e";
+      cont.style.backgroundColor = gray;
     }
     for (let p of par) {
-      p.style.backgroundColor = "#2f2e2e";
+      p.style.backgroundColor = gray;
     }
     // Image
     image.src = "Assets/Alessio_Leodori_Logo_Black.png";
     // Cards
     for (let card of cards) {
-      card.style.backgroundColor = "#2f2e2e";
+      card.style.backgroundColor = gray;
     }
     for (let cardT of cardTitle) {
       cardT.style.backgroundColor = "";
@@ -106,17 +110,17 @@ btn.addEventListener("click", function () {
       btn.style.backgroundColor = "";
     }
     for (let b of btnText) {
-      b.style.backgroundColor = "#00F26B";
-      b.style.color = "#2f2e2e";
+      b.style.backgroundColor = lime;
+      b.style.color = gray;
     }
     // Buttons hover effect
     function handleMouseEnter() {
-      this.style.backgroundColor = "#171810";
-      this.style.color = "white";
+      this.style.backgroundColor = black;
+      this.style.color = white;
     }
     function handleMouseLeave() {
-      this.style.backgroundColor = "#00F26B";
-      this.style.color = "#2f2e2e";
+      this.style.backgroundColor = lime;
+      this.style.color = gray;
     }
     btnHoverElements.forEach(function (btnHover) {
       btnHover.addEventListener("mouseenter", handleMouseEnter);
@@ -133,16 +137,16 @@ btn.addEventListener("click", function () {
     });
     // Accordion
     for (acc of accordionBody) {
-      acc.style.backgroundColor = "#2f2e2e";
+      acc.style.backgroundColor = gray;
     }
     // Socials
     for (let s of socials) {
-      s.style.color = "white";
+      s.style.color = white;
     }
 
-    email.style.color = "white";
-    linkedin.style.color = "white";
-    github.style.color = "white";
+    email.style.color = white;
+    linkedin.style.color = white;
+    github.style.color = white;
 
     btn.title = "Light mode";
     isBlackLime = true;
@@ -249,9 +253,9 @@ lang.addEventListener("click", function () {
     contactText3.appendChild(githubIcon);
 
     if (isBlackLime) {
-      email.style.color = "white";
-      linkedin.style.color = "white";
-      github.style.color = "white";
+      email.style.color = white;
+      linkedin.style.color = white;
+      github.style.color = white;
     }
 
     lang.src = "Assets/italy.png";
@@ -360,9 +364,9 @@ lang.addEventListener("click", function () {
     contactText3.appendChild(githubIcon);
 
     if (isBlackLime) {
-      email.style.color = "white";
-      linkedin.style.color = "white";
-      github.style.color = "white";
+      email.style.color = white;
+      linkedin.style.color = white;
+      github.style.color = white;
     }
     lang.src = "Assets/united-kingdom.png";
     lang.alt = "english";
