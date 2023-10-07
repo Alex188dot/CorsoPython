@@ -17,6 +17,7 @@ btn.addEventListener("click", function () {
   const container = document.querySelectorAll(".container");
   const image = document.querySelector(".img-fluid");
   const par = document.querySelectorAll(".p");
+  const cardEl = document.querySelectorAll(".card");
   const cards = document.querySelectorAll(".card-body");
   const cardTitle = document.querySelectorAll(".card-title");
   const cardText = document.querySelectorAll(".card-text");
@@ -97,6 +98,13 @@ btn.addEventListener("click", function () {
     // Image
     image.src = "Assets/Alessio_Leodori_Logo_Black.png";
     // Cards
+    for (let card of cardEl) {
+      card.style.setProperty(
+        "--bs-card-border-width",
+        "var(--bs-border-width)"
+      );
+      card.style.setProperty("--bs-card-border-color", "#6c757d");
+    }
     for (let card of cards) {
       card.style.backgroundColor = gray;
     }

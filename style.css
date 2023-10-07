@@ -54,6 +54,13 @@ body {
   margin: 3rem 0.4rem;
   transition: transform 0.2s ease-in-out;
 }
+div.card > :first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.card-img-top {
+  border-radius: 5px 5px 0 0;
+}
 .card-title {
   font-size: 1.6rem;
   font-weight: bold;
@@ -81,6 +88,7 @@ body {
 .card-body {
   background-color: var(--secondaryGreen);
   color: var(--primaryBlue);
+  border-radius: 0 0 5px 5px;
 }
 .skills {
   --bs-btn-padding-x: 0.75rem;
