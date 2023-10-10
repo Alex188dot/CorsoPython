@@ -25,6 +25,10 @@ btn.addEventListener("click", function () {
   const btnText = document.querySelectorAll(".btn-container *");
   const btnHoverElements = document.querySelectorAll(".btn");
   const accordionBody = document.querySelectorAll(".accordion-body");
+  const firstAccordionHeader = document.querySelector(
+    ".first-accordion-header"
+  );
+  const lastAccordionHeader = document.querySelector(".last-accordion-header");
   const socials = document.querySelectorAll(".social-links");
   const email = document.querySelector(".email");
   const linkedin = document.querySelector(".linkedin");
@@ -147,6 +151,8 @@ btn.addEventListener("click", function () {
     for (acc of accordionBody) {
       acc.style.backgroundColor = gray;
     }
+    firstAccordionHeader.style.borderRadius = "5px 5px 0 0";
+    lastAccordionHeader.style.borderRadius = "0 0 5px 5px";
     // Socials
     for (let s of socials) {
       s.style.color = white;
