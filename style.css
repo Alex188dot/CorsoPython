@@ -53,6 +53,8 @@ body {
 .card {
   margin: 3rem 0.4rem;
   transition: transform 0.2s ease-in-out;
+  --bs-card-border-width: var(--bs-border-width);
+  --bs-card-border-color: #6c757d;
 }
 div.card > :first-child {
   border-radius: 5px 5px 0 0;
