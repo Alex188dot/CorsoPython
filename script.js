@@ -288,7 +288,7 @@ lang.addEventListener("click", function () {
     card10.textContent = "Distributore";
     card11.textContent = "Crittografia";
     card12.textContent = "Scuola di Formazione";
-    card13.textContent = "Supermercato Flask";
+    card13.textContent = "Gestionale HR";
     card14.textContent = "Generatore di QR Code";
     card15.textContent = "App Meteo";
     cardText1.textContent = "Una pagina che riproduce la homepage di Netflix";
@@ -307,8 +307,7 @@ lang.addEventListener("click", function () {
     cardText16.textContent = "Un programma di simulazione di una blockchain";
     cardText17.textContent = "Una web app per un negozio di elettronica online";
     cardText18.textContent = "Una scuola di formazione costruita con Django";
-    cardText19.textContent =
-      "Un'app di gestione ristorante costruita con Flask";
+    cardText19.textContent = "Un'app di HR gestionale costruita con PHP";
     cardText20.textContent =
       "Un'app di gestione supermercato costruita con Flask";
     cardText21.textContent = "Uno script Python per la generazione di QR code";
