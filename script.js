@@ -184,6 +184,7 @@ lang.addEventListener("click", function () {
   const card13 = document.querySelector("#card13");
   const card14 = document.querySelector("#card14");
   const card15 = document.querySelector("#card15");
+  const card16 = document.querySelector("#card16");
   const cardText1 = document.querySelector("#card-text1");
   const cardText2 = document.querySelector("#card-text2");
   const cardText3 = document.querySelector("#card-text3");
@@ -286,11 +287,12 @@ lang.addEventListener("click", function () {
     card8.textContent = "Ristorante con Grafica";
     card9.textContent = "Autosalone";
     card10.textContent = "Distributore";
-    card11.textContent = "Crittografia";
+    card11.textContent = "Gioco di carte";
     card12.textContent = "Scuola di Formazione";
     card13.textContent = "Gestionale HR";
     card14.textContent = "Generatore di QR Code";
     card15.textContent = "App Meteo";
+    card16.textContent = "Piattaforma HR";
     cardText1.textContent = "Una pagina che riproduce la homepage di Netflix";
     cardText2.textContent =
       "Un sito di un'agenzia di viaggi completamente responsive";
@@ -303,8 +305,9 @@ lang.addEventListener("click", function () {
       "Un programma di gestione di un autosalone creato con Tkinter";
     cardText13.textContent = "Un programma di Slot Machine creato con Tkinter";
     cardText14.textContent = "Un distributore automatico con grafica";
-    cardText15.textContent = "Un programma di codifica crittografica";
-    cardText16.textContent = "Un programma di simulazione di una blockchain";
+    cardText15.textContent =
+      "Una rappresentazione divertente delle Interfacce in Java";
+    cardText16.textContent = "Un'app gestionale HR costruita con Java Swing";
     cardText17.textContent = "Una web app per un negozio di elettronica online";
     cardText18.textContent = "Una scuola di formazione costruita con Django";
     cardText19.textContent = "Un'app di HR gestionale costruita con PHP";
