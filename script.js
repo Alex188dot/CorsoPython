@@ -185,6 +185,7 @@ lang.addEventListener("click", function () {
   const card14 = document.querySelector("#card14");
   const card15 = document.querySelector("#card15");
   const card16 = document.querySelector("#card16");
+  const card17 = document.querySelector("#card17");
   const cardText1 = document.querySelector("#card-text1");
   const cardText2 = document.querySelector("#card-text2");
   const cardText3 = document.querySelector("#card-text3");
@@ -203,6 +204,8 @@ lang.addEventListener("click", function () {
   const cardText22 = document.querySelector("#card-text22");
   const cardText23 = document.querySelector("#card-text23");
   const cardText24 = document.querySelector("#card-text24");
+  const cardText25 = document.querySelector("#card-text25");
+  const cardText26 = document.querySelector("#card-text26");
   const cardBtn = document.querySelectorAll(".btn");
   const accordionB1 = document.querySelector("#accordion-button-one");
   const accordionB2 = document.querySelector("#accordion-button-two");
@@ -292,7 +295,8 @@ lang.addEventListener("click", function () {
     card13.textContent = "Gestionale HR";
     card14.textContent = "Generatore di QR Code";
     card15.textContent = "App Meteo";
-    card16.textContent = "Piattaforma HR";
+    card16.textContent = "Supermercato Flask";
+    card17.textContent = "Piattaforma HR";
     cardText1.textContent = "Una pagina che riproduce la homepage di Netflix";
     cardText2.textContent =
       "Un sito di un'agenzia di viaggi completamente responsive";
@@ -312,13 +316,17 @@ lang.addEventListener("click", function () {
     cardText18.textContent = "Una scuola di formazione costruita con Django";
     cardText19.textContent = "Un'app di HR gestionale costruita con PHP";
     cardText20.textContent =
-      "Un'app di gestione supermercato costruita con Flask";
+      "Un'app di gestione ristorante costruita con Flask";
     cardText21.textContent = "Uno script Python per la generazione di QR code";
     cardText22.textContent =
       "Uno script Python per lo scraping di link da un sito web";
     cardText23.textContent =
       "Uno script Python per la sentiment analysis di articoli";
     cardText24.textContent = "Un'app Meteo costruita con Tkinter";
+    cardText25.textContent =
+      "Un'app di social media per gli amanti degli animali";
+    cardText26.textContent =
+      "Un'app di gestione supermercato costruita con Flask";
     cardBtn.forEach((card) => (card.textContent = "Scopri di più"));
     accordionB1.textContent = "Quali linguaggi e framework utilizzi?";
     accordionB2.textContent = "Qual è il tuo linguaggio preferito?";
