@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/robotoslab-regular-webfont.woff2") format("woff2"),
+    url("fonts/robotoslab-regular-webfont.woff") format("woff");
+}
 
 :root {
   --primaryGreen: #5cdb95;
