@@ -210,12 +210,10 @@ lang.addEventListener("click", function () {
   const accordionB1 = document.querySelector("#accordion-button-one");
   const accordionB2 = document.querySelector("#accordion-button-two");
   const accordionB3 = document.querySelector("#accordion-button-three");
-  const accordionB4 = document.querySelector("#accordion-button-four");
   const accordionB5 = document.querySelector("#accordion-button-five");
   const accordionBody1 = document.querySelector("#accordion-body-one");
   const accordionBody2 = document.querySelector("#accordion-body-two");
   const accordionBody3 = document.querySelector("#accordion-body-three");
-  const accordionBody4 = document.querySelector("#accordion-body-four");
   const accordionBody5 = document.querySelector("#accordion-body-five");
   const contactTitle = document.querySelector("#contact-title");
   const contactText1 = document.querySelector("#contact-text1");
@@ -278,8 +276,7 @@ lang.addEventListener("click", function () {
     nav2.textContent = "App Full Stack";
     nav3.textContent = "Progetti Personali";
     nav4.textContent = "Contatti";
-    jumbo.textContent = `Benvenuti nel mio portfolio! Mi chiamo Alessio e sono un Full 
-    Stack Developer bilingue. Ho una passione per l'apprendimento e per la programmazione di App che hanno un look moderno. Il mio Tech Stack comprende: HTML, CSS, Javascript, MongoDB, ExpressJS, React, NodeJS, PHP, Java e Python. Nella mia carriera ho svolto diverse professioni e mansioni, che mi hanno fornito preziose competenze in ambito di 
+    jumbo.textContent = `Benvenuti nel mio portfolio! Mi chiamo Alessio e sono un Python Developer bilingue. Ho una passione per l'Intelligenza Artificiale, il Machine Learning e per la programmazione di App che hanno un look moderno. Il mio Tech Stack comprende: HTML, CSS, Javascript, MongoDB, ExpressJS, React, NodeJS, PHP, Java e Python. Nella mia carriera ho svolto diverse professioni e mansioni, che mi hanno fornito preziose competenze in ambito di 
     problem solving e comunicazione. Sono sicuro di poter
     applicare queste competenze a qualsiasi progetto di programmazione e fornire risultati di alta qualità. In generale, sono sempre aperto a nuove sfide e alla possibilità di imparare dagli altri.`;
     programs.textContent = "Programmi";
@@ -332,8 +329,6 @@ lang.addEventListener("click", function () {
     accordionB2.textContent = "Qual è il tuo linguaggio preferito?";
     accordionB3.textContent =
       "Perchè hai scelto la programmazione e di diventare uno sviluppatore?";
-    accordionB4.textContent =
-      "Sei interessato a qualche altra area della programmazione?";
     accordionB5.textContent = "Di che cos'altro sei appassionato?";
     accordionBody1.textContent =
       "Utilizzo Python, Javascript, HTML e CSS ogni giorno. Per quanto riguarda framework e librerie utilizzo React, Flask oppure Django e Bootstrap.";
@@ -341,8 +336,6 @@ lang.addEventListener("click", function () {
       "Python di gran lunga! Adoro la sua semplicità e flessibilità.";
     accordionBody3.textContent =
       "Sono sempre stato interessato alla tecnologia in generale, ma pensavo che siccome non avevo studiato Informatica all'università questa carriera per me non fosse possibile. Invece, poi ho scoperto che sia frequentando corsi in materia, che studiando per conto mio, diventare programmatore è assolutamente possibile!";
-    accordionBody4.textContent =
-      "Si, sono interessato alla Data Science e all'intelligenza artificiale. Sono affascianto dal modo in cui questi modelli  funzionano ed in particolare da come riescono a prevedere eventi futuri.";
     accordionBody5.textContent =
       "Sono interessato alle criptovalute e alla blockchain, sia per l'utilità che un giorno questa tecnologia potrà apportare, sia per il suo potenziale di crescita.";
     contactTitle.textContent = "Contatti";
